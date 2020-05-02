@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/>
+<meta name="GENERATOR" content="hevea 1.10"/>
+<link href="manual.css" rel="stylesheet" type="text/css"/>
+<title>Lexical conventions</title>
+</head>
+<body>
+<a href="language.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual010.html"><img src="next_motif.gif" alt="Next"/></a>
+<hr/>
+<h2 class="section"><a name="htoc52">6.1</a>&#XA0;&#XA0;Lexical conventions</h2><h4 class="subsubsection">Blanks</h4><p>The following characters are considered as blanks: space, newline,
+horizontal tabulation, carriage return, line feed and form feed. Blanks are
+ignored, but they separate adjacent identifiers, literals and
+keywords that would otherwise be confused as one single identifier,
+literal or keyword.</p><h4 class="subsubsection">Comments</h4><p>Comments are introduced by the two characters <tt>(*</tt>, with no
+intervening blanks, and terminated by the characters <tt>*)</tt>, with
+no intervening blanks. Comments are treated as blank characters.
+Comments do not occur inside string or character literals. Nested
+comments are handled correctly.</p><h4 class="subsubsection">Identifiers</h4><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="ident" class="syntax"><font color="maroon">ident</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">&#XA0;(<i><a href="#letter" class="syntax"><font color="maroon">letter</font></a></i>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>)&#XA0;{&#XA0;<i><a href="#letter" class="syntax"><font color="maroon">letter</font></a></i>&#X2223;&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#X2223;&#XA0;<font color="blue"><tt>'</tt></font>&#XA0;}&#XA0;&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="letter" class="syntax"><font color="maroon">letter</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>A</tt></font>&#XA0;&#X2026;&#XA0;<font color="blue"><tt>Z</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>a</tt></font>&#XA0;&#X2026;&#XA0;<font color="blue"><tt>z</tt></font></td></tr>
+</table></td></tr>
+</table><p>Identifiers are sequences of letters, digits, <tt>_</tt> (the underscore
+character), and <tt>'</tt> (the single quote), starting with a
+letter or an underscore.
+Letters contain at least the 52 lowercase and uppercase
+letters from the ASCII set. The current implementation
+also recognizes as letters all accented characters from the ISO
+8859-1 (&#X201C;ISO Latin 1&#X201D;) set. All characters in an identifier are
+meaningful. The current implementation accepts identifiers up to
+16000000 characters in length.</p><h4 class="subsubsection">Integer literals</h4><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="integer-literal" class="syntax"><font color="maroon">integer-literal</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+[<font color="blue"><tt>-</tt></font>]&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>)&#XA0;{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;[<font color="blue"><tt>-</tt></font>]&#XA0;(<font color="blue"><tt>0x</tt></font>&#X2223;&#XA0;<font color="blue"><tt>0X</tt></font>)&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>A</tt></font>&#X2026;<font color="blue"><tt>F</tt></font>&#X2223;&#XA0;<font color="blue"><tt>a</tt></font>&#X2026;<font color="blue"><tt>f</tt></font>)
+{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>A</tt></font>&#X2026;<font color="blue"><tt>F</tt></font>&#X2223;&#XA0;<font color="blue"><tt>a</tt></font>&#X2026;<font color="blue"><tt>f</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;[<font color="blue"><tt>-</tt></font>]&#XA0;(<font color="blue"><tt>0o</tt></font>&#X2223;&#XA0;<font color="blue"><tt>0O</tt></font>)&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>7</tt></font>)&#XA0;{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>7</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;[<font color="blue"><tt>-</tt></font>]&#XA0;(<font color="blue"><tt>0b</tt></font>&#X2223;&#XA0;<font color="blue"><tt>0B</tt></font>)&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>1</tt></font>)&#XA0;{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>1</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}</td></tr>
+</table></td></tr>
+</table><p>An integer literal is a sequence of one or more digits, optionally
+preceded by a minus sign. By default, integer literals are in decimal
+(radix 10). The following prefixes select a different radix:
+</p><div class="center"><table border="1" cellspacing="0" cellpadding="1" width="80%"><tr><td align="center" nowrap="nowrap"><b>Prefix</b></td><td align="center" nowrap="nowrap"><b>Radix</b></td></tr>
+<tr><td align="left" nowrap="nowrap">
+<tt>0x</tt>, <tt>0X</tt></td><td align="left" nowrap="nowrap">hexadecimal (radix 16)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>0o</tt>, <tt>0O</tt></td><td align="left" nowrap="nowrap">octal (radix 8)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>0b</tt>, <tt>0B</tt></td><td align="left" nowrap="nowrap">binary (radix 2)</td></tr>
+</table></div><p>
+(The initial <tt>0</tt> is the digit zero; the <tt>O</tt> for octal is the letter O.)
+The interpretation of integer literals that fall outside the range of
+representable integer values is undefined.</p><p>For convenience and readability, underscore characters (<tt>_</tt>) are accepted
+(and ignored) within integer literals.</p><h4 class="subsubsection">Floating-point literals</h4><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="float-literal" class="syntax"><font color="maroon">float-literal</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+[<font color="blue"><tt>-</tt></font>]&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>)&#XA0;{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}&#XA0;[<font color="blue"><tt>.</tt></font>&#XA0;{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}]
+[(<font color="blue"><tt>e</tt></font>&#X2223;&#XA0;<font color="blue"><tt>E</tt></font>)&#XA0;[<font color="blue"><tt>+</tt></font>&#X2223;&#XA0;<font color="blue"><tt>-</tt></font>]&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>)&#XA0;{&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#XA0;}]</td></tr>
+</table></td></tr>
+</table><p>Floating-point decimals consist in an integer part, a decimal part and
+an exponent part. The integer part is a sequence of one or more
+digits, optionally preceded by a minus sign. The decimal part is a
+decimal point followed by zero, one or more digits.
+The exponent part is the character <tt>e</tt> or <tt>E</tt> followed by an
+optional <tt>+</tt> or <tt>-</tt> sign, followed by one or more digits.
+The decimal part or the exponent part can be omitted, but not both to
+avoid ambiguity with integer literals.
+The interpretation of floating-point literals that fall outside the
+range of representable floating-point values is undefined.</p><p>For convenience and readability, underscore characters (<tt>_</tt>) are accepted
+(and ignored) within floating-point literals.</p><h4 class="subsubsection">Character literals</h4><p>
+<a name="s:characterliteral"></a></p><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="char-literal" class="syntax"><font color="maroon">char-literal</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="blue"><tt>'</tt></font>&#XA0;<font color="maroon"><i>regular-char</i></font>&#XA0;<font color="blue"><tt>'</tt></font>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>'</tt></font>&#XA0;<i><a href="#escape-sequence" class="syntax"><font color="maroon">escape-sequence</font></a></i>&#XA0;<font color="blue"><tt>'</tt></font>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="escape-sequence" class="syntax"><font color="maroon">escape-sequence</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="blue"><tt>\</tt></font>&#XA0;(<font color="blue"><tt>\</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>"</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>'</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>n</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>t</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>b</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>r</tt></font>)
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>\</tt></font>&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>)&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>)&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>)
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>\x</tt></font>&#XA0;(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>A</tt></font>&#X2026;<font color="blue"><tt>F</tt></font>&#X2223;&#XA0;<font color="blue"><tt>a</tt></font>&#X2026;<font color="blue"><tt>f</tt></font>)
+(<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>A</tt></font>&#X2026;<font color="blue"><tt>F</tt></font>&#X2223;&#XA0;<font color="blue"><tt>a</tt></font>&#X2026;<font color="blue"><tt>f</tt></font>)</td></tr>
+</table></td></tr>
+</table><p>Character literals are delimited by <tt>'</tt> (single quote) characters.
+The two single quotes enclose either one character different from
+<tt>'</tt> and <tt>\</tt>, or one of the escape sequences below:
+</p><div class="center"><table border="1" cellspacing="0" cellpadding="1" width="80%"><tr><td align="center" nowrap="nowrap"><b>Sequence</b></td><td align="center" nowrap="nowrap"><b>Character denoted</b></td></tr>
+<tr><td align="left" nowrap="nowrap">
+<tt>\\</tt></td><td align="left" nowrap="nowrap">backslash (<tt>\</tt>)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\"</tt></td><td align="left" nowrap="nowrap">double quote (<tt>"</tt>)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\'</tt></td><td align="left" nowrap="nowrap">single quote (<tt>'</tt>)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\n</tt></td><td align="left" nowrap="nowrap">linefeed (LF)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\r</tt></td><td align="left" nowrap="nowrap">carriage return (CR)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\t</tt></td><td align="left" nowrap="nowrap">horizontal tabulation (TAB)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\b</tt></td><td align="left" nowrap="nowrap">backspace (BS)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\</tt><i>space</i></td><td align="left" nowrap="nowrap">space (SPC)</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\</tt><i>ddd</i></td><td align="left" nowrap="nowrap">the character with ASCII code <i>ddd</i> in decimal</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>\x</tt><i>hh</i></td><td align="left" nowrap="nowrap">the character with ASCII code <i>hh</i> in hexadecimal</td></tr>
+</table></div><h4 class="subsubsection">String literals</h4><p>
+<a name="s:stringliteral"></a></p><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="string-literal" class="syntax"><font color="maroon">string-literal</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="blue"><tt>"</tt></font>&#XA0;{&#XA0;<i><a href="#string-character" class="syntax"><font color="maroon">string-character</font></a></i>&#XA0;}&#XA0;<font color="blue"><tt>"</tt></font>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="string-character" class="syntax"><font color="maroon">string-character</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="maroon"><i>regular-char-str</i></font>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;<i><a href="#escape-sequence" class="syntax"><font color="maroon">escape-sequence</font></a></i></td></tr>
+</table></td></tr>
+</table><p>String literals are delimited by <tt>"</tt> (double quote) characters.
+The two double quotes enclose a sequence of either characters
+different from <tt>"</tt> and <tt>\</tt>, or escape sequences from the
+table given above for character literals.</p><p>To allow splitting long string literals across lines, the sequence
+<tt>\</tt><i>newline</i>&#XA0;<i>blanks</i> (a <tt>\</tt> at end-of-line followed by any
+number of blanks at the beginning of the next line) is ignored inside
+string literals.</p><p>The current implementation places practically no restrictions on the
+length of string literals.</p><h4 class="subsubsection">Naming labels</h4><p>To avoid ambiguities, naming labels in expressions cannot just be defined
+syntactically as the sequence of the three tokens <tt>~</tt>, <i><a href="#ident" class="syntax"><font color="maroon">ident</font></a></i> and
+<tt>:</tt>, and have to be defined at the lexical level.</p><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="label-name" class="syntax"><font color="maroon">label-name</font></a></i>&#XA0;</td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">&#XA0;(<font color="blue"><tt>a</tt></font>&#XA0;&#X2026;&#XA0;<font color="blue"><tt>z</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>)&#XA0;{&#XA0;<i><a href="#letter" class="syntax"><font color="maroon">letter</font></a></i>&#X2223;&#XA0;<font color="blue"><tt>0</tt></font>&#X2026;<font color="blue"><tt>9</tt></font>&#X2223;&#XA0;<font color="blue"><tt>_</tt></font>&#X2223;&#XA0;<font color="blue"><tt>'</tt></font>&#XA0;}&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="label" class="syntax"><font color="maroon">label</font></a></i>&#XA0;</td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>~</tt></font>&#XA0;<i><a href="#label-name" class="syntax"><font color="maroon">label-name</font></a></i>&#XA0;<font color="blue"><tt>:</tt></font>&#XA0;&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="optlabel" class="syntax"><font color="maroon">optlabel</font></a></i>&#XA0;</td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>?</tt></font>&#XA0;<i><a href="#label-name" class="syntax"><font color="maroon">label-name</font></a></i>&#XA0;<font color="blue"><tt>:</tt></font></td></tr>
+</table></td></tr>
+</table><p>Naming labels come in two flavours: <i><a href="#label" class="syntax"><font color="maroon">label</font></a></i> for normal arguments and
+<i><a href="#optlabel" class="syntax"><font color="maroon">optlabel</font></a></i> for optional ones. They are simply distinguished by their
+first character, either <tt>~</tt> or <tt>?</tt>.</p><p>Despite <i><a href="#label" class="syntax"><font color="maroon">label</font></a></i> and <i><a href="#optlabel" class="syntax"><font color="maroon">optlabel</font></a></i> being lexical entities in expressions,
+their expansions <font color="blue"><tt>~</tt></font> <i><a href="#label-name" class="syntax"><font color="maroon">label-name</font></a></i> <font color="blue"><tt>:</tt></font> and <font color="blue"><tt>?</tt></font> <i><a href="#label-name" class="syntax"><font color="maroon">label-name</font></a></i> <font color="blue"><tt>:</tt></font> will be
+used in grammars, for the sake of readability. Note also that inside
+type expressions, this expansion can be taken literally, <em>i.e.</em>
+there are really 3 tokens, with optional spaces beween them.</p><h4 class="subsubsection">Prefix and infix symbols</h4><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="infix-symbol" class="syntax"><font color="maroon">infix-symbol</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+(<font color="blue"><tt>=</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>&lt;</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>&gt;</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>@</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>^</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>|</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>&amp;</tt></font>&#XA0;&#X2223;&#XA0;
+<font color="blue"><tt>+</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>-</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>*</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>/</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>$</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>%</tt></font>)&#XA0;{&#XA0;<i><a href="#operator-char" class="syntax"><font color="maroon">operator-char</font></a></i>&#XA0;}
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="prefix-symbol" class="syntax"><font color="maroon">prefix-symbol</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="blue"><tt>!</tt></font>&#XA0;{&#XA0;<i><a href="#operator-char" class="syntax"><font color="maroon">operator-char</font></a></i>&#XA0;}
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;(<font color="blue"><tt>?</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>~</tt></font>)&#XA0;{&#XA0;<i><a href="#operator-char" class="syntax"><font color="maroon">operator-char</font></a></i>&#XA0;}<sup>+</sup>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+<tr><td align="right" nowrap="nowrap">
+<i><a name="operator-char" class="syntax"><font color="maroon">operator-char</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="blue"><tt>!</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>$</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>%</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>&amp;</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>*</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>+</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>-</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>.</tt></font>&#XA0;&#X2223;&#XA0;
+<font color="blue"><tt>/</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>:</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>&lt;</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>=</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>&gt;</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>?</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>@</tt></font>&#XA0;&#X2223;&#XA0;
+<font color="blue"><tt>^</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>|</tt></font>&#XA0;&#X2223;&#XA0;&#XA0;<font color="blue"><tt>~</tt></font>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+</table></td></tr>
+</table><p>Sequences of &#X201C;operator characters&#X201D;, such as <tt>&lt;=&gt;</tt> or <tt>!!</tt>,
+are read as a single token from the <i><a href="#infix-symbol" class="syntax"><font color="maroon">infix-symbol</font></a></i> or <i><a href="#prefix-symbol" class="syntax"><font color="maroon">prefix-symbol</font></a></i>
+class. These symbols are parsed as prefix and infix operators inside
+expressions, but otherwise behave like normal identifiers.
+</p><h4 class="subsubsection">Keywords</h4><p>The identifiers below are reserved as keywords, and cannot be employed
+otherwise:
+</p><pre>      and         as          assert      asr         begin       class
+      constraint  do          done        downto      else        end
+      exception   external    false       for         fun         function
+      functor     if          in          include     inherit     initializer
+      land        lazy        let         lor         lsl         lsr
+      lxor        match       method      mod         module      mutable
+      new         object      of          open        or          private
+      rec         sig         struct      then        to          true
+      try         type        val         virtual     when        while
+      with
+</pre><p>The following character sequences are also keywords:
+</p><pre>
+<tt>    !=    #     &amp;     &amp;&amp;    '     (     )     *     +     ,     -</tt>
+<tt>    -.    -&gt;    .     ..    :     ::    :=    :&gt;    ;     ;;    &lt;</tt>
+<tt>    &lt;-    =     &gt;     &gt;]    &gt;}    ?     ??    [     [&lt;    [&gt;    [|</tt>
+<tt>    ]     _     `     {     {&lt;    |     |]    }     ~</tt>
+</pre><p>
+Note that the following identifiers are keywords of the Camlp4
+extensions and should be avoided for compatibility reasons.
+</p><pre>    parser    value   &lt;&lt;    &lt;:    &gt;&gt;    $     $$    $:
+</pre><h4 class="subsubsection">Ambiguities</h4><p>Lexical ambiguities are resolved according to the &#X201C;longest match&#X201D;
+rule: when a character sequence can be decomposed into two tokens in
+several different ways, the decomposition retained is the one with the
+longest first token.</p><h4 class="subsubsection">Line number directives</h4><table class="display dcenter"><tr valign="middle"><td class="dcell"><table cellspacing="6" cellpadding="0"><tr><td align="right" nowrap="nowrap">
+<i><a name="linenum-directive" class="syntax"><font color="maroon">linenum-directive</font></a></i></td><td align="center" nowrap="nowrap">::=</td><td align="left" nowrap="nowrap">
+<font color="blue"><tt>#</tt></font>&#XA0;{<font color="blue"><tt>0</tt></font>&#XA0;&#X2026;&#XA0;<font color="blue"><tt>9</tt></font>}<sup>+</sup>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td><td align="center" nowrap="nowrap">&#X2223;</td><td align="left" nowrap="nowrap">&#XA0;<font color="blue"><tt>#</tt></font>&#XA0;{<font color="blue"><tt>0</tt></font>&#XA0;&#X2026;&#XA0;<font color="blue"><tt>9</tt></font>}<sup>+</sup>&#XA0;<font color="blue"><tt>"</tt></font>&#XA0;{&#XA0;<i><a href="#string-character" class="syntax"><font color="maroon">string-character</font></a></i>&#XA0;}&#XA0;<font color="blue"><tt>"</tt></font>
+&#XA0;</td></tr>
+<tr><td align="right" nowrap="nowrap">&nbsp;</td></tr>
+</table></td></tr>
+</table><p>Preprocessors that generate OCaml source code can insert line number
+directives in their output so that error messages produced by the
+compiler contain line numbers and file names referring to the source
+file before preprocessing, instead of after preprocessing.
+A line number directive is composed of a <tt>#</tt> (sharp sign), followed by
+a positive integer (the source line number), optionally followed by a
+character string (the source file name).
+Line number directives are treated as blank characters during lexical
+analysis.</p><hr/>
+<a href="language.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual010.html"><img src="next_motif.gif" alt="Next"/></a>
+</body>
+</html>

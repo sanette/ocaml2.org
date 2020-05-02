@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<meta name="GENERATOR" content="hevea 1.10"/>
+<link href="manual.css" rel="stylesheet" type="text/css"/>
+<title>The dbm library: access to NDBM databases</title>
+</head>
+<body>
+<a href="manual039.html"><img src="previous_motif.gif" alt="Previous"/></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual041.html"><img src="next_motif.gif" alt="Next"/></a>
+<hr/>
+<h1 class="chapter"><a name="htoc272">Chapter 26</a>  The dbm library: access to NDBM databases</h1><p>The <tt>dbm</tt> library provides access to NDBM databases under Unix.
+NDBM databases maintain key/data associations, where both the key and
+the data are arbitrary strings. They support fairly large databases
+(several gigabytes) and can retrieve a keyed item in one or two file
+system accesses. Refer to the Unix manual pages for more information.</p><blockquote class="quote"><font color="purple">Unix:</font>  
+Programs that use the <tt>dbm</tt> library must be linked as follows:
+<pre>
+        ocamlc <i>other options</i> dbm.cma <i>other files</i>
+        ocamlopt <i>other options</i> dbm.cmxa <i>other files</i>
+</pre>
+For interactive use of the <tt>dbm</tt> library, do:
+<pre>
+        ocamlmktop -o mytop dbm.cma
+        ./mytop
+</pre>
+</blockquote><p>
+or (if dynamic linking of C libraries is supported on your platform),
+start <tt>ocaml</tt> and type <tt>#load "dbm.cma";;</tt>.</p><blockquote class="quote"><font color="purple">Windows:</font>  
+This library is not available.
+</blockquote><ul class="ftoc2"><li class="li-links">
+<a href="libref/Dbm.html">Module <tt>Dbm</tt>: interface to the NDBM database</a>
+</li></ul><hr/>
+<a href="manual039.html"><img src="previous_motif.gif" alt="Previous"/></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual041.html"><img src="next_motif.gif" alt="Next"/></a>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="Obj.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.10/Obj.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.10</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="#top">Obj</a></div><ul></ul></nav></header>
+
+<h1>Module <a href="type_Obj.html">Obj</a></h1>
+
+<pre><span id="MODULEObj"><span class="keyword">module</span> Obj</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Obj.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Operations on internal representations of values.</p>
+
+<p>Not for the casual user.</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="VALrepr"><span class="keyword">val</span> repr</span> : <code class="type">'a -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALobj"><span class="keyword">val</span> obj</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; 'a</code></pre>
+<pre><span id="VALmagic"><span class="keyword">val</span> magic</span> : <code class="type">'a -&gt; 'b</code></pre>
+<pre><span id="VALis_block"><span class="keyword">val</span> is_block</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; bool</code></pre>
+<pre><span id="VALis_int"><span class="keyword">val</span> is_int</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; bool</code></pre>
+<pre><span id="VALtag"><span class="keyword">val</span> tag</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALreachable_words"><span class="keyword">val</span> reachable_words</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
+<div class="info-desc">
+<p>Computes the total size (in words, including the headers) of all
+     heap blocks accessible from the argument.  Statically
+     allocated blocks are excluded.</p>
+
+<p>@Since 4.04</p>
+</div>
+</div>
+
+<pre><span id="VALfield"><span class="keyword">val</span> field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALset_field"><span class="keyword">val</span> set_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>When using flambda:</p>
+
+<p><code class="code">set_field</code> MUST NOT be called on immutable blocks.  (Blocks allocated
+    in C stubs, or with <code class="code">new_block</code> below, are always considered mutable.)</p>
+
+<p>The same goes for <code class="code">set_double_field</code> and <code class="code">set_tag</code>.  However, for
+    <code class="code">set_tag</code>, in the case of immutable blocks where the middle-end optimizers
+    never see code that discriminates on their tag (for example records), the
+    operation should be safe.  Such uses are nonetheless discouraged.</p>
+
+<p>For experts only:
+    <code class="code">set_field</code> et al can be made safe by first wrapping the block in
+    <a href="Sys.html#VALopaque_identity"><code class="code"><span class="constructor">Sys</span>.opaque_identity</code></a>, so any information about its contents will not
+    be propagated.</p>
+</div>
+</div>
+
+<pre><span id="VALset_tag"><span class="keyword">val</span> set_tag</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALdouble_field"><span class="keyword">val</span> double_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; float</code></pre>
+<pre><span id="VALset_double_field"><span class="keyword">val</span> set_double_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; float -&gt; unit</code></pre>
+<pre><span id="VALnew_block"><span class="keyword">val</span> new_block</span> : <code class="type">int -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALdup"><span class="keyword">val</span> dup</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALadd_offset"><span class="keyword">val</span> add_offset</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; <a href="Int32.html#TYPEt">Int32.t</a> -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALwith_tag"><span class="keyword">val</span> with_tag</span> : <code class="type">int -&gt; <a href="Obj.html#TYPEt">t</a> -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALfirst_non_constant_constructor_tag"><span class="keyword">val</span> first_non_constant_constructor_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALlast_non_constant_constructor_tag"><span class="keyword">val</span> last_non_constant_constructor_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALlazy_tag"><span class="keyword">val</span> lazy_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALclosure_tag"><span class="keyword">val</span> closure_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALobject_tag"><span class="keyword">val</span> object_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALinfix_tag"><span class="keyword">val</span> infix_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALforward_tag"><span class="keyword">val</span> forward_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALno_scan_tag"><span class="keyword">val</span> no_scan_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALabstract_tag"><span class="keyword">val</span> abstract_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALstring_tag"><span class="keyword">val</span> string_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALdouble_tag"><span class="keyword">val</span> double_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALdouble_array_tag"><span class="keyword">val</span> double_array_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALcustom_tag"><span class="keyword">val</span> custom_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALfinal_tag"><span class="keyword">val</span> final_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALint_tag"><span class="keyword">val</span> int_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALout_of_heap_tag"><span class="keyword">val</span> out_of_heap_tag</span> : <code class="type">int</code></pre>
+<pre><span id="VALunaligned_tag"><span class="keyword">val</span> unaligned_tag</span> : <code class="type">int</code></pre>
+<pre><span id="MODULEExtension_constructor"><span class="keyword">module</span> <a href="Obj.Extension_constructor.html">Extension_constructor</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Obj.Extension_constructor.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="VALextension_constructor"><span class="keyword">val</span> extension_constructor</span> : <code class="type">'a -&gt; extension_constructor</code></pre>
+<pre><span id="VALextension_name"><span class="keyword">val</span> extension_name</span> : <code class="type">extension_constructor -&gt; string</code></pre>
+<pre><span id="VALextension_id"><span class="keyword">val</span> extension_id</span> : <code class="type">extension_constructor -&gt; int</code></pre><p>The following two functions are deprecated.  Use module <a href="Marshal.html"><code class="code"><span class="constructor">Marshal</span></code></a>
+    instead.</p>
+
+<pre><span id="VALmarshal"><span class="keyword">val</span> marshal</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; bytes</code></pre>
+<pre><span id="VALunmarshal"><span class="keyword">val</span> unmarshal</span> : <code class="type">bytes -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a> * int</code></pre>
+<pre><span id="MODULEEphemeron"><span class="keyword">module</span> <a href="Obj.Ephemeron.html">Ephemeron</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Obj.Ephemeron.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.10/Obj.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

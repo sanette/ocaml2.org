@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="ArrayLabels.html" rel="previous"/>
+<link href="Ast_invariants.html" rel="next"/>
+<link href="index.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg.html" title="Arg" rel="Chapter"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Array.html" title="Array" rel="Chapter"/>
+<link href="ArrayLabels.html" title="ArrayLabels" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Bigarray.html" title="Bigarray" rel="Chapter"/>
+<link href="Buffer.html" title="Buffer" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="Bytes.html" title="Bytes" rel="Chapter"/>
+<link href="BytesLabels.html" title="BytesLabels" rel="Chapter"/>
+<link href="Callback.html" title="Callback" rel="Chapter"/>
+<link href="CamlinternalFormat.html" title="CamlinternalFormat" rel="Chapter"/>
+<link href="CamlinternalFormatBasics.html" title="CamlinternalFormatBasics" rel="Chapter"/>
+<link href="CamlinternalLazy.html" title="CamlinternalLazy" rel="Chapter"/>
+<link href="CamlinternalMod.html" title="CamlinternalMod" rel="Chapter"/>
+<link href="CamlinternalOO.html" title="CamlinternalOO" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Char.html" title="Char" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Complex.html" title="Complex" rel="Chapter"/>
+<link href="Condition.html" title="Condition" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Depend.html" title="Depend" rel="Chapter"/>
+<link href="Digest.html" title="Digest" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Dynlink.html" title="Dynlink" rel="Chapter"/>
+<link href="Ephemeron.html" title="Ephemeron" rel="Chapter"/>
+<link href="Event.html" title="Event" rel="Chapter"/>
+<link href="Filename.html" title="Filename" rel="Chapter"/>
+<link href="Format.html" title="Format" rel="Chapter"/>
+<link href="Gc.html" title="Gc" rel="Chapter"/>
+<link href="Genlex.html" title="Genlex" rel="Chapter"/>
+<link href="Graphics.html" title="Graphics" rel="Chapter"/>
+<link href="GraphicsX11.html" title="GraphicsX11" rel="Chapter"/>
+<link href="Hashtbl.html" title="Hashtbl" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Int32.html" title="Int32" rel="Chapter"/>
+<link href="Int64.html" title="Int64" rel="Chapter"/>
+<link href="Lazy.html" title="Lazy" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Lexing.html" title="Lexing" rel="Chapter"/>
+<link href="List.html" title="List" rel="Chapter"/>
+<link href="ListLabels.html" title="ListLabels" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Map.html" title="Map" rel="Chapter"/>
+<link href="Marshal.html" title="Marshal" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="MoreLabels.html" title="MoreLabels" rel="Chapter"/>
+<link href="Mutex.html" title="Mutex" rel="Chapter"/>
+<link href="Nativeint.html" title="Nativeint" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Obj.html" title="Obj" rel="Chapter"/>
+<link href="Oo.html" title="Oo" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Parsing.html" title="Parsing" rel="Chapter"/>
+<link href="Pervasives.html" title="Pervasives" rel="Chapter"/>
+<link href="Pparse.html" title="Pparse" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Printexc.html" title="Printexc" rel="Chapter"/>
+<link href="Printf.html" title="Printf" rel="Chapter"/>
+<link href="Profile.html" title="Profile" rel="Chapter"/>
+<link href="Queue.html" title="Queue" rel="Chapter"/>
+<link href="Random.html" title="Random" rel="Chapter"/>
+<link href="Scanf.html" title="Scanf" rel="Chapter"/>
+<link href="Set.html" title="Set" rel="Chapter"/>
+<link href="Simplif.html" title="Simplif" rel="Chapter"/>
+<link href="Sort.html" title="Sort" rel="Chapter"/>
+<link href="Spacetime.html" title="Spacetime" rel="Chapter"/>
+<link href="Stack.html" title="Stack" rel="Chapter"/>
+<link href="StdLabels.html" title="StdLabels" rel="Chapter"/>
+<link href="Str.html" title="Str" rel="Chapter"/>
+<link href="Stream.html" title="Stream" rel="Chapter"/>
+<link href="String.html" title="String" rel="Chapter"/>
+<link href="StringLabels.html" title="StringLabels" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Sys.html" title="Sys" rel="Chapter"/>
+<link href="Targetint.html" title="Targetint" rel="Chapter"/>
+<link href="Tbl.html" title="Tbl" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Thread.html" title="Thread" rel="Chapter"/>
+<link href="ThreadUnix.html" title="ThreadUnix" rel="Chapter"/>
+<link href="Typemod.html" title="Typemod" rel="Chapter"/>
+<link href="Uchar.html" title="Uchar" rel="Chapter"/>
+<link href="Unix.html" title="Unix" rel="Chapter"/>
+<link href="UnixLabels.html" title="UnixLabels" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/>
+<link href="Weak.html" title="Weak" rel="Chapter"/><link href="#1_Defaultlocations" title="Default locations" rel="Section"/>
+<link href="#1_Constants" title="Constants" rel="Section"/>
+<link href="#1_Corelanguage" title="Core language" rel="Section"/>
+<link href="#1_Modulelanguage" title="Module language" rel="Section"/>
+<link href="#1_Classlanguage" title="Class language" rel="Section"/>
+<title>Ast_helper</title>
+</head>
+<body>
+<div class="navbar"><a href="ArrayLabels.html" class="pre" title="ArrayLabels">Previous</a>
+&nbsp;<a href="index.html" class="up" title="Index">Up</a>
+&nbsp;<a href="Ast_invariants.html" class="post" title="Ast_invariants">Next</a>
+</div>
+<h1>Module <a href="type_Ast_helper.html">Ast_helper</a></h1>
+
+<pre><span id="MODULEAst_helper"><span class="keyword">module</span> Ast_helper</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Helpers to produce Parsetree fragments</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="TYPElid"><span class="keyword">type</span> <code class="type"></code>lid</span> = <code class="type"><a href="Longident.html#TYPEt">Longident.t</a> <a href="Asttypes.html#TYPEloc">Asttypes.loc</a></code> </pre>
+
+
+<pre><span id="TYPEstr"><span class="keyword">type</span> <code class="type"></code>str</span> = <code class="type">string <a href="Asttypes.html#TYPEloc">Asttypes.loc</a></code> </pre>
+
+
+<pre><span id="TYPEloc"><span class="keyword">type</span> <code class="type"></code>loc</span> = <code class="type"><a href="Location.html#TYPEt">Location.t</a></code> </pre>
+
+
+<pre><span id="TYPEattrs"><span class="keyword">type</span> <code class="type"></code>attrs</span> = <code class="type"><a href="Parsetree.html#TYPEattribute">Parsetree.attribute</a> list</code> </pre>
+
+<h2 id="1_Defaultlocations">Default locations</h2>
+<pre><span id="VALdefault_loc"><span class="keyword">val</span> default_loc</span> : <code class="type"><a href="Ast_helper.html#TYPEloc">loc</a> <a href="Pervasives.html#TYPEref">ref</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Default value for all optional location arguments.</p>
+</div>
+</div>
+
+<pre><span id="VALwith_default_loc"><span class="keyword">val</span> with_default_loc</span> : <code class="type"><a href="Ast_helper.html#TYPEloc">loc</a> -> (unit -> 'a) -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Set the <code class="code">default_loc</code> within the scope of the execution
+        of the provided function.</p>
+</div>
+</div>
+<h2 id="1_Constants">Constants</h2>
+<pre><span id="MODULEConst"><span class="keyword">module</span> <a href="Ast_helper.Const.html">Const</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Const.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><h2 id="1_Corelanguage">Core language</h2>
+<pre><span id="MODULETyp"><span class="keyword">module</span> <a href="Ast_helper.Typ.html">Typ</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Typ.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Type expressions</p>
+
+</div>
+
+<pre><span id="MODULEPat"><span class="keyword">module</span> <a href="Ast_helper.Pat.html">Pat</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Pat.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Patterns</p>
+
+</div>
+
+<pre><span id="MODULEExp"><span class="keyword">module</span> <a href="Ast_helper.Exp.html">Exp</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Exp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Expressions</p>
+
+</div>
+
+<pre><span id="MODULEVal"><span class="keyword">module</span> <a href="Ast_helper.Val.html">Val</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Val.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Value declarations</p>
+
+</div>
+
+<pre><span id="MODULEType"><span class="keyword">module</span> <a href="Ast_helper.Type.html">Type</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Type declarations</p>
+
+</div>
+
+<pre><span id="MODULETe"><span class="keyword">module</span> <a href="Ast_helper.Te.html">Te</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Te.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Type extensions</p>
+
+</div>
+<h2 id="1_Modulelanguage">Module language</h2>
+<pre><span id="MODULEMty"><span class="keyword">module</span> <a href="Ast_helper.Mty.html">Mty</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Mty.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Module type expressions</p>
+
+</div>
+
+<pre><span id="MODULEMod"><span class="keyword">module</span> <a href="Ast_helper.Mod.html">Mod</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Mod.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Module expressions</p>
+
+</div>
+
+<pre><span id="MODULESig"><span class="keyword">module</span> <a href="Ast_helper.Sig.html">Sig</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Sig.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Signature items</p>
+
+</div>
+
+<pre><span id="MODULEStr"><span class="keyword">module</span> <a href="Ast_helper.Str.html">Str</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Str.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Structure items</p>
+
+</div>
+
+<pre><span id="MODULEMd"><span class="keyword">module</span> <a href="Ast_helper.Md.html">Md</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Md.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Module declarations</p>
+
+</div>
+
+<pre><span id="MODULEMtd"><span class="keyword">module</span> <a href="Ast_helper.Mtd.html">Mtd</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Mtd.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Module type declarations</p>
+
+</div>
+
+<pre><span id="MODULEMb"><span class="keyword">module</span> <a href="Ast_helper.Mb.html">Mb</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Mb.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Module bindings</p>
+
+</div>
+
+<pre><span id="MODULEOpn"><span class="keyword">module</span> <a href="Ast_helper.Opn.html">Opn</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Opn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Opens</p>
+
+</div>
+
+<pre><span id="MODULEIncl"><span class="keyword">module</span> <a href="Ast_helper.Incl.html">Incl</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Incl.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Includes</p>
+
+</div>
+
+<pre><span id="MODULEVb"><span class="keyword">module</span> <a href="Ast_helper.Vb.html">Vb</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Vb.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Value bindings</p>
+
+</div>
+<h2 id="1_Classlanguage">Class language</h2>
+<pre><span id="MODULECty"><span class="keyword">module</span> <a href="Ast_helper.Cty.html">Cty</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Cty.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Class type expressions</p>
+
+</div>
+
+<pre><span id="MODULECtf"><span class="keyword">module</span> <a href="Ast_helper.Ctf.html">Ctf</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Ctf.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Class type fields</p>
+
+</div>
+
+<pre><span id="MODULECl"><span class="keyword">module</span> <a href="Ast_helper.Cl.html">Cl</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Cl.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Class expressions</p>
+
+</div>
+
+<pre><span id="MODULECf"><span class="keyword">module</span> <a href="Ast_helper.Cf.html">Cf</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Cf.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Class fields</p>
+
+</div>
+
+<pre><span id="MODULECi"><span class="keyword">module</span> <a href="Ast_helper.Ci.html">Ci</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Ci.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Classes</p>
+
+</div>
+
+<pre><span id="MODULECsig"><span class="keyword">module</span> <a href="Ast_helper.Csig.html">Csig</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Csig.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Class signatures</p>
+
+</div>
+
+<pre><span id="MODULECstr"><span class="keyword">module</span> <a href="Ast_helper.Cstr.html">Cstr</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ast_helper.Cstr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Class structures</p>
+
+</div>
+</body></html>

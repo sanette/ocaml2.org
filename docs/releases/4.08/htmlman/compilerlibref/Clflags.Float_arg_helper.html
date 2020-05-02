@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="Clflags.Int_arg_helper.html" rel="previous"/>
+<link href="Clflags.Compiler_pass.html" rel="next"/>
+<link href="Clflags.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Build_path_prefix_map.html" title="Build_path_prefix_map" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="CamlinternalMenhirLib.html" title="CamlinternalMenhirLib" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Compiler_libs.html" title="Compiler_libs" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Depend.html" title="Depend" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Load_path.html" title="Load_path" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Pparse.html" title="Pparse" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Profile.html" title="Profile" rel="Chapter"/>
+<link href="Simplif.html" title="Simplif" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Targetint.html" title="Targetint" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Typemod.html" title="Typemod" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/><title>Clflags.Float_arg_helper</title>
+</head>
+<body>
+<div class="navbar"><a href="Clflags.Int_arg_helper.html" class="pre" title="Clflags.Int_arg_helper">Previous</a>
+&nbsp;<a href="Clflags.html" class="up" title="Clflags">Up</a>
+&nbsp;<a href="Clflags.Compiler_pass.html" class="post" title="Clflags.Compiler_pass">Next</a>
+</div>
+<h1>Module <a href="type_Clflags.Float_arg_helper.html">Clflags.Float_arg_helper</a></h1>
+
+<pre><span id="MODULEFloat_arg_helper"><span class="keyword">module</span> Float_arg_helper</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Clflags.Float_arg_helper.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Optimization parameters represented as floats indexed by round number.</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="TYPEparsed"><span class="keyword">type</span> <code class="type"></code>parsed</span> </pre>
+
+
+<pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">string -> string -> <a href="Clflags.Float_arg_helper.html#TYPEparsed">parsed</a> ref -> unit</code></pre>
+<pre><code><span id="TYPEparse_result"><span class="keyword">type</span> <code class="type"></code>parse_result</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTparse_result.Ok"><span class="constructor">Ok</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTparse_result.Parse_failed"><span class="constructor">Parse_failed</span></span> <span class="keyword">of</span> <code class="type">exn</code></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALparse_no_error"><span class="keyword">val</span> parse_no_error</span> : <code class="type">string -><br/>       <a href="Clflags.Float_arg_helper.html#TYPEparsed">parsed</a> ref -><br/>       <a href="Clflags.Float_arg_helper.html#TYPEparse_result">parse_result</a></code></pre>
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">key:int -> <a href="Clflags.Float_arg_helper.html#TYPEparsed">parsed</a> -> float</code></pre></body></html>

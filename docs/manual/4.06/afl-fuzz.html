@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="afl-fuzz.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>Manual &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    <link href="../../css/manual_ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/manual/4.06/afl-fuzz.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="manual content"><ul class="part_menu"><li><a href="comp.html">Batch compilation (ocamlc)</a></li><li><a href="toplevel.html">The toplevel system or REPL (ocaml)</a></li><li><a href="runtime.html">The runtime system (ocamlrun)</a></li><li><a href="native.html">Native-code compilation (ocamlopt)</a></li><li><a href="lexyacc.html">Lexer and parser generators (ocamllex, ocamlyacc)</a></li><li><a href="depend.html">Dependency generator (ocamldep)</a></li><li><a href="browser.html">The browser/editor (ocamlbrowser)</a></li><li><a href="ocamldoc.html">The documentation generator (ocamldoc)</a></li><li><a href="debugger.html">The debugger (ocamldebug)</a></li><li><a href="profil.html">Profiling (ocamlprof)</a></li><li><a href="manual033.html">The ocamlbuild compilation manager</a></li><li><a href="intfc.html">Interfacing C with OCaml</a></li><li><a href="flambda.html">Optimisation with Flambda</a></li><li><a href="spacetime.html">Memory profiling with Spacetime</a></li><li class="active"><a href="afl-fuzz.html">Fuzzing with afl-fuzz</a></li><li><a href="plugins.html">Compiler plugins</a></li></ul>
+
+
+
+
+<h1 class="chapter" id="sec536"><span>Chapter 23</span>&nbsp;&nbsp;Fuzzing with afl-fuzz</h1>
+<header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">Version 4.06</a></div><div class="toc_title"><a href="#">Fuzzing with afl-fuzz</a></div><ul><li class="top"><a href="#">Top</a></li>
+<li><a href="afl-fuzz.html#sec537">1&nbsp;&nbsp;Overview</a>
+</li><li><a href="afl-fuzz.html#sec538">2&nbsp;&nbsp;Generating instrumentation</a>
+</li><li><a href="afl-fuzz.html#sec540">3&nbsp;&nbsp;Example</a>
+</li></ul></nav></header>
+
+<h2 class="section" id="sec537">1&nbsp;&nbsp;Overview</h2>
+<p>American fuzzy lop (“afl-fuzz”) is a <em>fuzzer</em>, a tool for
+testing software by providing randomly-generated inputs, searching for
+those inputs which cause the program to crash.</p><p>Unlike most fuzzers, afl-fuzz observes the internal behaviour of the
+program being tested, and adjusts the test cases it generates to
+trigger unexplored execution paths. As a result, test cases generated
+by afl-fuzz cover more of the possible behaviours of the tested
+program than other fuzzers.</p><p>This requires that programs to be tested are instrumented to
+communicate with afl-fuzz. The native-code compiler “ocamlopt” can
+generate such instrumentation, allowing afl-fuzz to be used against
+programs written in OCaml.</p><p>For more information on afl-fuzz, see the website at
+<a href="http://lcamtuf.coredump.cx/afl/">http://lcamtuf.coredump.cx/afl/</a>.
+</p>
+<h2 class="section" id="sec538">2&nbsp;&nbsp;Generating instrumentation</h2>
+<p>The instrumentation that afl-fuzz requires is not generated by
+default, and must be explicitly enabled, by passing the <span class="c003">-afl-instrument</span> option to <span class="c003">ocamlopt</span>.</p><p>To fuzz a large system without modifying build tools, OCaml’s <span class="c003">configure</span> script also accepts the <span class="c003">afl-instrument</span> option. If
+OCaml is configured with <span class="c003">afl-instrument</span>, then all programs
+compiled by <span class="c003">ocamlopt</span> will be instrumented.</p>
+<h3 class="subsection" id="sec539">2.1&nbsp;&nbsp;Advanced options</h3>
+<p>In rare cases, it is useful to control the amount of instrumentation
+generated. By passing the <span class="c003">-afl-inst-ratio N</span> argument to <span class="c003">ocamlopt</span> with <span class="c003">N</span> less than 100, instrumentation can be
+generated for only N% of branches. (See the afl-fuzz documentation on
+the parameter <span class="c003">AFL_INST_RATIO</span> for the precise effect of this).</p>
+<h2 class="section" id="sec540">3&nbsp;&nbsp;Example</h2>
+<p>As an example, we fuzz-test the following program, <span class="c003">readline.ml</span>:</p><pre>let _ =
+  let s = read_line () in
+  match Array.to_list (Array.init (String.length s) (String.get s)) with
+    ['s'; 'e'; 'c'; 'r'; 'e'; 't'; ' '; 'c'; 'o'; 'd'; 'e'] -&gt; failwith "uh oh"
+  | _ -&gt; ()
+</pre><p>
+There is a single input (the string “secret code”) which causes this
+program to crash, but finding it by blind random search is infeasible.</p><p>Instead, we compile with afl-fuzz instrumentation enabled:
+</p><pre>ocamlopt -afl-instrument readline.ml -o readline
+</pre><p>Next, we run the program under afl-fuzz:
+</p><pre>mkdir input
+echo asdf &gt; input/testcase
+mkdir output
+afl-fuzz -i input -o output ./readline
+</pre><p>By inspecting instrumentation output, the fuzzer finds the crashing input quickly.
+
+</p>
+<hr/>
+
+
+
+
+
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/manual/4.06/afl-fuzz.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

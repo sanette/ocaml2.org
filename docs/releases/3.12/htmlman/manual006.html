@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<meta name="GENERATOR" content="hevea 1.10"/>
+<link href="manual.css" rel="stylesheet" type="text/css"/>
+<title>Labels and variants</title>
+</head>
+<body>
+<a href="manual005.html"><img src="previous_motif.gif" alt="Previous"/></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual007.html"><img src="next_motif.gif" alt="Next"/></a>
+<hr/>
+<h1 class="chapter"><a name="htoc36">Chapter 4</a>  Labels and variants</h1><ul>
+<li><a href="manual006.html#toc35">Labels</a>
+</li><li><a href="manual006.html#toc36">Polymorphic variants</a>
+</li></ul>
+<p> <a name="c:labl-examples"></a>
+</p><p><i>(Chapter written by Jacques Garrigue)</i></p><p><br/>
+<br/>
+</p><p>This chapter gives an overview of the new features in
+OCaml 3: labels, and polymorphic variants.</p><h2 class="section"><a name="toc35"></a><a name="htoc37">4.1</a>  Labels</h2><p>If you have a look at modules ending in <tt>Labels</tt> in the standard
+library, you will see that function types have annotations you did not
+have in the functions you defined yourself.</p><pre><font color="black">#</font><font color="blue">ListLabels.map;;
+</font><font color="maroon">- : f:(&#X2019;a -&gt; &#X2019;b) -&gt; &#X2019;a list -&gt; &#X2019;b list = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">StringLabels.sub;;
+</font>- : string -&gt; pos:int -&gt; len:int -&gt; string = &lt;fun&gt;
+</font></pre><p>Such annotations of the form <tt>name:</tt> are called <em>labels</em>. They are
+meant to document the code, allow more checking, and give more
+flexibility to function application.
+You can give such names to arguments in your programs, by prefixing them
+with a tilde <tt>~</tt>.</p><pre><font color="black">#</font><font color="blue">let f ~x ~y = x - y;;
+</font><font color="maroon">val f : x:int -&gt; y:int -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">let x = 3 and y = 2 in f ~x ~y;;
+</font>- : int = 1
+</font></pre><p>When you want to use distinct names for the variable and the label
+appearing in the type, you can use a naming label of the form
+<tt>~name:</tt>. This also applies when the argument is not a variable.</p><pre><font color="black">#</font><font color="blue">let f ~x:x1 ~y:y1 = x1 - y1;;
+</font><font color="maroon">val f : x:int -&gt; y:int -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">f ~x:3 ~y:2;;
+</font>- : int = 1
+</font></pre><p>Labels obey the same rules as other identifiers in Caml, that is you
+cannot use a reserved keyword (like <tt>in</tt> or <tt>to</tt>) as label.</p><p>Formal parameters and arguments are matched according to their
+respective labels<sup><a href="#note1" name="text1">1</a></sup>, the absence of label
+being interpreted as the empty label.
+This allows commuting arguments in applications. One can also
+partially apply a function on any argument, creating a new function of
+the remaining parameters.</p><pre><font color="black">#</font><font color="blue">let f ~x ~y = x - y;;
+</font><font color="maroon">val f : x:int -&gt; y:int -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">f ~y:2 ~x:3;;
+</font>- : int = 1
+ 
+<font color="black">#</font><font color="blue">ListLabels.fold_left;;
+</font>- : f:(&#X2019;a -&gt; &#X2019;b -&gt; &#X2019;a) -&gt; init:&#X2019;a -&gt; &#X2019;b list -&gt; &#X2019;a = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">ListLabels.fold_left [1;2;3] ~init:0 ~f:(+);;
+</font>- : int = 6
+ 
+<font color="black">#</font><font color="blue">ListLabels.fold_left ~init:0;;
+</font>- : f:(int -&gt; &#X2019;a -&gt; int) -&gt; &#X2019;a list -&gt; int = &lt;fun&gt;
+</font></pre><p>If in a function several arguments bear the same label (or no label),
+they will not commute among themselves, and order matters. But they
+can still commute with other arguments.</p><pre><font color="black">#</font><font color="blue">let hline ~x:x1 ~x:x2 ~y = (x1, x2, y);;
+</font><font color="maroon">val hline : x:&#X2019;a -&gt; x:&#X2019;b -&gt; y:&#X2019;c -&gt; &#X2019;a * &#X2019;b * &#X2019;c = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">hline ~x:3 ~y:2 ~x:5;;
+</font>- : int * int * int = (3, 5, 2)
+</font></pre><p>As an exception to the above parameter matching rules, if an
+application is total, labels may be omitted. In practice, most
+applications are total, so that labels can be omitted in applications.
+</p><pre><font color="black">#</font><font color="blue">f 3 2;;
+</font><font color="maroon">- : int = 1
+ 
+<font color="black">#</font><font color="blue">ListLabels.map succ [1;2;3];;
+</font>- : int list = [2; 3; 4]
+</font></pre><p>
+But beware that functions like <tt>ListLabels.fold_left</tt> whose result
+type is a type variable will never be considered as totally applied.
+</p><pre><font color="black">#</font><font color="blue">ListLabels.fold_left <u>(+)</u> 0 [1;2;3];;
+</font><font color="maroon">Error: This expression has type int -&gt; int -&gt; int
+       but an expression was expected of type &#X2019;a list
+</font></pre><p>When a function is passed as an argument to an higher-order function,
+labels must match in both types. Neither adding nor removing labels
+are allowed.
+</p><pre><font color="black">#</font><font color="blue">let h g = g ~x:3 ~y:2;;
+</font><font color="maroon">val h : (x:int -&gt; y:int -&gt; &#X2019;a) -&gt; &#X2019;a = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">h f;;
+</font>- : int = 1
+ 
+<font color="black">#</font><font color="blue">h <u>(+)</u>;;
+</font>Error: This expression has type int -&gt; int -&gt; int
+       but an expression was expected of type x:int -&gt; y:int -&gt; &#X2019;a
+</font></pre><p>
+Note that when you don&#X2019;t need an argument, you can still use a wildcard
+pattern, but you must prefix it with the label.
+</p><pre><font color="black">#</font><font color="blue">h (fun ~x:_ ~y -&gt; y+1);;
+</font><font color="maroon">- : int = 3
+</font></pre><h3 class="subsection"><a name="htoc38">4.1.1</a>  Optional arguments</h3><p>An interesting feature of labeled arguments is that they can be made
+optional. For optional parameters, the question mark <tt>?</tt> replaces the
+tilde <tt>~</tt> of non-optional ones, and the label is also prefixed by <tt>?</tt>
+in the function type.
+Default values may be given for such optional parameters.</p><pre><font color="black">#</font><font color="blue">let bump ?(step = 1) x = x + step;;
+</font><font color="maroon">val bump : ?step:int -&gt; int -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">bump 2;;
+</font>- : int = 3
+ 
+<font color="black">#</font><font color="blue">bump ~step:3 2;;
+</font>- : int = 5
+</font></pre><p>A function taking some optional arguments must also take at least one
+non-labeled argument. This is because the criterion for deciding
+whether an optional has been omitted is the application on a
+non-labeled argument appearing after this optional argument in the
+function type.</p><pre><font color="black">#</font><font color="blue">let test ?(x = 0) ?(y = 0) () ?(z = 0) () = (x, y, z);;
+</font><font color="maroon">val test : ?x:int -&gt; ?y:int -&gt; unit -&gt; ?z:int -&gt; unit -&gt; int * int * int =
+  &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">test ();;
+</font>- : ?z:int -&gt; unit -&gt; int * int * int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">test ~x:2 () ~z:3 ();;
+</font>- : int * int * int = (2, 0, 3)
+</font></pre><p>Optional parameters may also commute with non-optional or unlabelled
+ones, as long as they are applied simultaneously. By nature, optional
+arguments do not commute with unlabeled arguments applied
+independently.
+</p><pre><font color="black">#</font><font color="blue">test ~y:2 ~x:3 () ();;
+</font><font color="maroon">- : int * int * int = (3, 2, 0)
+ 
+<font color="black">#</font><font color="blue">test () () ~z:1 ~y:2 ~x:3;;
+</font>- : int * int * int = (3, 2, 1)
+ 
+<font color="black">#</font><font color="blue"><u>(test () ())</u> ~z:1;;
+</font>Error: This expression is not a function; it cannot be applied
+</font></pre><p>
+Here <tt>(test () ())</tt> is already <tt>(0,0,0)</tt> and cannot be further
+applied.</p><p>Optional arguments are actually implemented as option types. If
+you do not give a default value, you have access to their internal
+representation, <tt>type &#X2019;a option = None | Some of &#X2019;a</tt>. You can then
+provide different behaviors when an argument is present or not.</p><pre><font color="black">#</font><font color="blue">let bump ?step x =
+   match step with
+   | None -&gt; x * 2
+   | Some y -&gt; x + y
+ ;;
+</font><font color="maroon">val bump : ?step:int -&gt; int -&gt; int = &lt;fun&gt;
+</font></pre><p>It may also be useful to relay an optional argument from a function
+call to another. This can be done by prefixing the applied argument
+with <tt>?</tt>. This question mark disables the wrapping of optional
+argument in an option type.</p><pre><font color="black">#</font><font color="blue">let test2 ?x ?y () = test ?x ?y () ();;
+</font><font color="maroon">val test2 : ?x:int -&gt; ?y:int -&gt; unit -&gt; int * int * int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">test2 ?x:None;;
+</font>- : ?y:int -&gt; unit -&gt; int * int * int = &lt;fun&gt;
+</font></pre><h3 class="subsection"><a name="htoc39">4.1.2</a>  Labels and type inference</h3><p>
+<a name="ss:label-inference"></a></p><p>While they provide an increased comfort for writing function
+applications, labels and optional arguments have the pitfall that they
+cannot be inferred as completely as the rest of the language.</p><p>You can see it in the following two examples.
+</p><pre><font color="black">#</font><font color="blue">let h&#X2019; g = g ~y:2 ~x:3;;
+</font><font color="maroon">val h&#X2019; : (y:int -&gt; x:int -&gt; &#X2019;a) -&gt; &#X2019;a = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">h&#X2019; <u>f</u>;;
+</font>Error: This expression has type x:int -&gt; y:int -&gt; int
+       but an expression was expected of type y:int -&gt; x:int -&gt; &#X2019;a
+ 
+<font color="black">#</font><font color="blue">let bump_it bump x =
+   bump ~step:2 x;;
+</font>val bump_it : (step:int -&gt; &#X2019;a -&gt; &#X2019;b) -&gt; &#X2019;a -&gt; &#X2019;b = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">bump_it <u>bump</u> 1;;
+</font>Error: This expression has type ?step:int -&gt; int -&gt; int
+       but an expression was expected of type step:int -&gt; &#X2019;a -&gt; &#X2019;b
+</font></pre><p>
+The first case is simple: <tt>g</tt> is passed <tt>~y</tt> and then <tt>~x</tt>, but <tt>f</tt>
+expects <tt>~x</tt> and then <tt>~y</tt>. This is correctly handled if we know the
+type of <tt>g</tt> to be <tt>x:int -&gt; y:int -&gt; int</tt> in advance, but otherwise
+this causes the above type clash. The simplest workaround is to apply
+formal parameters in a standard order.</p><p>The second example is more subtle: while we intended the argument
+<tt>bump</tt> to be of type <tt>?step:int -&gt; int -&gt; int</tt>, it is inferred as
+<tt>step:int -&gt; int -&gt; &#X2019;a</tt>.
+These two types being incompatible (internally normal and optional
+arguments are different), a type error occurs when applying <tt>bump_it</tt>
+to the real <tt>bump</tt>.</p><p>We will not try here to explain in detail how type inference works.
+One must just understand that there is not enough information in the
+above program to deduce the correct type of <tt>g</tt> or <tt>bump</tt>. That is,
+there is no way to know whether an argument is optional or not, or
+which is the correct order, by looking only at how a function is
+applied. The strategy used by the compiler is to assume that there are
+no optional arguments, and that applications are done in the right
+order.</p><p>The right way to solve this problem for optional parameters is to add
+a type annotation to the argument <tt>bump</tt>.
+</p><pre><font color="black">#</font><font color="blue">let bump_it (bump : ?step:int -&gt; int -&gt; int) x =
+   bump ~step:2 x;;
+</font><font color="maroon">val bump_it : (?step:int -&gt; int -&gt; int) -&gt; int -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">bump_it bump 1;;
+</font>- : int = 3
+</font></pre><p>
+In practive, such problems appear mostly when using objects whose
+methods have optional arguments, so that writing the type of object
+arguments is often a good idea.</p><p>Normally the compiler generates a type error if you attempt to pass to
+a function a parameter whose type is different from the expected one.
+However, in the specific case where the expected type is a non-labeled
+function type, and the argument is a function expecting optional
+parameters, the compiler will attempt to transform the argument to
+have it match the expected type, by passing <tt>None</tt> for all optional
+parameters.</p><pre><font color="black">#</font><font color="blue">let twice f (x : int) = f(f x);;
+</font><font color="maroon">val twice : (int -&gt; int) -&gt; int -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">twice bump 2;;
+</font>- : int = 8
+</font></pre><p>This transformation is coherent with the intended semantics,
+including side-effects. That is, if the application of optional
+parameters shall produce side-effects, these are delayed until the
+received function is really applied to an argument.</p><h3 class="subsection"><a name="htoc40">4.1.3</a>  Suggestions for labeling</h3><p>Like for names, choosing labels for functions is not an easy task. A
+good labeling is a labeling which</p><ul class="itemize"><li class="li-itemize">
+makes programs more readable,
+</li><li class="li-itemize">is easy to remember,
+</li><li class="li-itemize">when possible, allows useful partial applications.
+</li></ul><p>We explain here the rules we applied when labeling OCaml
+libraries.</p><p>To speak in an &#X201C;object-oriented&#X201D; way, one can consider that each
+function has a main argument, its <em>object</em>, and other arguments
+related with its action, the <em>parameters</em>. To permit the
+combination of functions through functionals in commuting label mode, the
+object will not be labeled. Its role is clear by the function
+itself. The parameters are labeled with names reminding either of
+their nature or role. Best labels combine in their meaning nature and
+role. When this is not possible the role is to prefer, since the nature will
+often be given by the type itself. Obscure abbreviations should be
+avoided.
+</p><pre><font color="maroon">ListLabels.map : f:(&#X2019;a -&gt; &#X2019;b) -&gt; &#X2019;a list -&gt; &#X2019;b list
+UnixLabels.write : file_descr -&gt; buf:string -&gt; pos:int -&gt; len:int -&gt; unit
+</font></pre><p>When there are several objects of same nature and role, they are all
+left unlabeled.
+</p><pre><font color="maroon">ListLabels.iter2 : f:(&#X2019;a -&gt; &#X2019;b -&gt; &#X2019;c) -&gt; &#X2019;a list -&gt; &#X2019;b list -&gt; unit
+</font></pre><p>When there is no preferable object, all arguments are labeled.
+</p><pre><font color="maroon">StringLabels.blit :
+  src:string -&gt; src_pos:int -&gt; dst:string -&gt; dst_pos:int -&gt; len:int -&gt; unit
+</font></pre><p>However, when there is only one argument, it is often left unlabeled.
+</p><pre><font color="maroon">StringLabels.create : int -&gt; string
+</font></pre><p>
+This principle also applies to functions of several arguments whose
+return type is a type variable, as long as the role of each argument
+is not ambiguous. Labeling such functions may lead to awkward error
+messages when one attempts to omit labels in an application, as we
+have seen with <tt>ListLabels.fold_left</tt>.</p><p>Here are some of the label names you will find throughout the
+libraries.</p><div class="center"><table border="1" cellspacing="0" cellpadding="1" width="80%"><tr><td align="center" nowrap="nowrap"><b>Label</b></td><td align="center" nowrap="nowrap"><b>Meaning</b></td></tr>
+<tr><td align="left" nowrap="nowrap">
+<tt>f:</tt></td><td align="left" nowrap="nowrap">a function to be applied</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>pos:</tt></td><td align="left" nowrap="nowrap">a position in a string or array</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>len:</tt></td><td align="left" nowrap="nowrap">a length</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>buf:</tt></td><td align="left" nowrap="nowrap">a string used as buffer</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>src:</tt></td><td align="left" nowrap="nowrap">the source of an operation</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>dst:</tt></td><td align="left" nowrap="nowrap">the destination of an operation</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>init:</tt></td><td align="left" nowrap="nowrap">the initial value for an iterator</td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>cmp:</tt></td><td align="left" nowrap="nowrap">a comparison function, <i>e.g.</i> <tt>Pervasives.compare</tt></td></tr>
+<tr><td align="left" nowrap="nowrap"><tt>mode:</tt></td><td align="left" nowrap="nowrap">an operation mode or a flag list</td></tr>
+</table></div><p>All these are only suggestions, but one shall keep in mind that the
+choice of labels is essential for readability. Bizarre choices will
+make the program harder to maintain.</p><p>In the ideal, the right function name with right labels shall be
+enough to understand the function&#X2019;s meaning. Since one can get this
+information with OCamlBrowser or the <tt>ocaml</tt> toplevel, the documentation
+is only used when a more detailed specification is needed.</p><h2 class="section"><a name="toc36"></a><a name="htoc41">4.2</a>  Polymorphic variants</h2><p>Variants as presented in section <a href="manual003.html#s:tut-recvariants">1.4</a> are a
+powerful tool to build data structures and algorithms. However they
+sometimes lack flexibility when used in modular programming. This is
+due to the fact every constructor reserves a name to be used with a
+unique type. One cannot use the same name in another type, or consider
+a value of some type to belong to some other type with more
+constructors.</p><p>With polymorphic variants, this original assumption is removed. That
+is, a variant tag does not belong to any type in particular, the type
+system will just check that it is an admissible value according to its
+use. You need not define a type before using a variant tag. A variant
+type will be inferred independently for each of its uses.</p><h3 class="subsection">Basic use</h3><p>In programs, polymorphic variants work like usual ones. You just have
+to prefix their names with a backquote character <tt>&#X2018;</tt>.
+</p><pre><font color="black">#</font><font color="blue">[&#X2018;On; &#X2018;Off];;
+</font><font color="maroon">- : [&gt; &#X2018;Off | &#X2018;On ] list = [&#X2018;On; &#X2018;Off]
+ 
+<font color="black">#</font><font color="blue">&#X2018;Number 1;;
+</font>- : [&gt; &#X2018;Number of int ] = &#X2018;Number 1
+ 
+<font color="black">#</font><font color="blue">let f = function &#X2018;On -&gt; 1 | &#X2018;Off -&gt; 0 | &#X2018;Number n -&gt; n;;
+</font>val f : [&lt; &#X2018;Number of int | &#X2018;Off | &#X2018;On ] -&gt; int = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">List.map f [&#X2018;On; &#X2018;Off];;
+</font>- : int list = [1; 0]
+</font></pre><p>
+<tt>[&gt;&#X2018;Off|&#X2018;On] list</tt> means that to match this list, you should at
+least be able to match <tt>&#X2018;Off</tt> and <tt>&#X2018;On</tt>, without argument.
+<tt>[&lt;&#X2018;On|&#X2018;Off|&#X2018;Number of int]</tt> means that <tt>f</tt> may be applied to <tt>&#X2018;Off</tt>,
+<tt>&#X2018;On</tt> (both without argument), or <tt>&#X2018;Number</tt> <i>n</i> where 
+<i>n</i> is an integer.
+The <tt>&gt;</tt> and <tt>&lt;</tt> inside the variant type shows that they may still be
+refined, either by defining more tags or allowing less. As such they
+contain an implicit type variable. Both variant types appearing only
+once in the type, the implicit type variables they constrain are not
+shown.</p><p>The above variant types were polymorphic, allowing further refinement.
+When writing type annotations, one will most often describe fixed
+variant types, that is types that can be no longer refined. This is
+also the case for type abbreviations. Such types do not contain <tt>&lt;</tt> or
+<tt>&gt;</tt>, but just an enumeration of the tags and their associated types,
+just like in a normal datatype definition. 
+</p><pre><font color="black">#</font><font color="blue">type &#X2019;a vlist = [&#X2018;Nil | &#X2018;Cons of &#X2019;a * &#X2019;a vlist];;
+</font><font color="maroon">type &#X2019;a vlist = [ &#X2018;Cons of &#X2019;a * &#X2019;a vlist | &#X2018;Nil ]
+ 
+<font color="black">#</font><font color="blue">let rec map f : &#X2019;a vlist -&gt; &#X2019;b vlist = function
+   | &#X2018;Nil -&gt; &#X2018;Nil
+   | &#X2018;Cons(a, l) -&gt; &#X2018;Cons(f a, map f l)
+ ;;
+</font>val map : (&#X2019;a -&gt; &#X2019;b) -&gt; &#X2019;a vlist -&gt; &#X2019;b vlist = &lt;fun&gt;
+</font></pre><h3 class="subsection">Advanced use</h3><p>Type-checking polymorphic variants is a subtle thing, and some
+expressions may result in more complex type information.</p><pre><font color="black">#</font><font color="blue">let f = function &#X2018;A -&gt; &#X2018;C | &#X2018;B -&gt; &#X2018;D | x -&gt; x;;
+</font><font color="maroon">val f : ([&gt; &#X2018;A | &#X2018;B | &#X2018;C | &#X2018;D ] as &#X2019;a) -&gt; &#X2019;a = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">f &#X2018;E;;
+</font>- : [&gt; &#X2018;A | &#X2018;B | &#X2018;C | &#X2018;D | &#X2018;E ] = &#X2018;E
+</font></pre><p>
+Here we are seeing two phenomena. First, since this matching is open
+(the last case catches any tag), we obtain the type <tt>[&gt; &#X2018;A | &#X2018;B]</tt>
+rather than <tt>[&lt; &#X2018;A | &#X2018;B]</tt> in a closed matching. Then, since <tt>x</tt> is
+returned as is, input and return types are identical. The notation <tt>as &#X2019;a</tt> denotes such type sharing. If we apply <tt>f</tt> to yet another tag
+<tt>&#X2018;E</tt>, it gets added to the list.</p><pre><font color="black">#</font><font color="blue">let f1 = function &#X2018;A x -&gt; x = 1 | &#X2018;B -&gt; true | &#X2018;C -&gt; false
+ let f2 = function &#X2018;A x -&gt; x = "a" | &#X2018;B -&gt; true ;;
+</font><font color="maroon">val f1 : [&lt; &#X2018;A of int | &#X2018;B | &#X2018;C ] -&gt; bool = &lt;fun&gt;
+val f2 : [&lt; &#X2018;A of string | &#X2018;B ] -&gt; bool = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">let f x = f1 x &amp;&amp; f2 x;;
+</font>val f : [&lt; &#X2018;A of string &amp; int | &#X2018;B ] -&gt; bool = &lt;fun&gt;
+</font></pre><p>
+Here <tt>f1</tt> and <tt>f2</tt> both accept the variant tags <tt>&#X2018;A</tt> and <tt>&#X2018;B</tt>, but the
+argument of <tt>&#X2018;A</tt> is <tt>int</tt> for <tt>f1</tt> and <tt>string</tt> for <tt>f2</tt>. In <tt>f</tt>&#X2019;s
+type <tt>&#X2018;C</tt>, only accepted by <tt>f1</tt>, disappears, but both argument types
+appear for <tt>&#X2018;A</tt> as <tt>int &amp; string</tt>. This means that if we
+pass the variant tag <tt>&#X2018;A</tt> to <tt>f</tt>, its argument should be <em>both</em>
+<tt>int</tt> and <tt>string</tt>. Since there is no such value, <tt>f</tt> cannot be
+applied to <tt>&#X2018;A</tt>, and <tt>&#X2018;B</tt> is the only accepted input.</p><p>Even if a value has a fixed variant type, one can still give it a
+larger type through coercions. Coercions are normally written with
+both the source type and the destination type, but in simple cases the
+source type may be omitted.
+</p><pre><font color="black">#</font><font color="blue">type &#X2019;a wlist = [&#X2018;Nil | &#X2018;Cons of &#X2019;a * &#X2019;a wlist | &#X2018;Snoc of &#X2019;a wlist * &#X2019;a];;
+</font><font color="maroon">type &#X2019;a wlist = [ &#X2018;Cons of &#X2019;a * &#X2019;a wlist | &#X2018;Nil | &#X2018;Snoc of &#X2019;a wlist * &#X2019;a ]
+ 
+<font color="black">#</font><font color="blue">let wlist_of_vlist  l = (l : &#X2019;a vlist :&gt; &#X2019;a wlist);;
+</font>val wlist_of_vlist : &#X2019;a vlist -&gt; &#X2019;a wlist = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">let open_vlist l = (l : &#X2019;a vlist :&gt; [&gt; &#X2019;a vlist]);;
+</font>val open_vlist : &#X2019;a vlist -&gt; [&gt; &#X2019;a vlist ] = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">fun x -&gt; (x :&gt; [&#X2018;A|&#X2018;B|&#X2018;C]);;
+</font>- : [&lt; &#X2018;A | &#X2018;B | &#X2018;C ] -&gt; [ &#X2018;A | &#X2018;B | &#X2018;C ] = &lt;fun&gt;
+</font></pre><p>You may also selectively coerce values through pattern matching.
+</p><pre><font color="black">#</font><font color="blue">let split_cases = function
+   | &#X2018;Nil | &#X2018;Cons _ as x -&gt; &#X2018;A x
+   | &#X2018;Snoc _ as x -&gt; &#X2018;B x
+ ;;
+</font><font color="maroon">val split_cases :
+  [&lt; &#X2018;Cons of &#X2019;a | &#X2018;Nil | &#X2018;Snoc of &#X2019;b ] -&gt;
+  [&gt; &#X2018;A of [&gt; &#X2018;Cons of &#X2019;a | &#X2018;Nil ] | &#X2018;B of [&gt; &#X2018;Snoc of &#X2019;b ] ] = &lt;fun&gt;
+</font></pre><p>
+When an or-pattern composed of variant tags is wrapped inside an
+alias-pattern, the alias is given a type containing only the tags
+enumerated in the or-pattern. This allows for many useful idioms, like
+incremental definition of functions.</p><pre><font color="black">#</font><font color="blue">let num x = &#X2018;Num x
+ let eval1 eval (&#X2018;Num x) = x
+ let rec eval x = eval1 eval x ;;
+</font><font color="maroon">val num : &#X2019;a -&gt; [&gt; &#X2018;Num of &#X2019;a ] = &lt;fun&gt;
+val eval1 : &#X2019;a -&gt; [&lt; &#X2018;Num of &#X2019;b ] -&gt; &#X2019;b = &lt;fun&gt;
+val eval : [&lt; &#X2018;Num of &#X2019;a ] -&gt; &#X2019;a = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">let plus x y = &#X2018;Plus(x,y)
+ let eval2 eval = function
+   | &#X2018;Plus(x,y) -&gt; eval x + eval y
+   | &#X2018;Num _ as x -&gt; eval1 eval x
+ let rec eval x = eval2 eval x ;;
+</font>val plus : &#X2019;a -&gt; &#X2019;b -&gt; [&gt; &#X2018;Plus of &#X2019;a * &#X2019;b ] = &lt;fun&gt;
+val eval2 : (&#X2019;a -&gt; int) -&gt; [&lt; &#X2018;Num of int | &#X2018;Plus of &#X2019;a * &#X2019;a ] -&gt; int = &lt;fun&gt;
+val eval : ([&lt; &#X2018;Num of int | &#X2018;Plus of &#X2019;a * &#X2019;a ] as &#X2019;a) -&gt; int = &lt;fun&gt;
+</font></pre><p>To make this even more comfortable, you may use type definitions as
+abbreviations for or-patterns. That is, if you have defined <tt>type myvariant = [&#X2018;Tag1 int | &#X2018;Tag2 bool]</tt>, then the pattern <tt>#myvariant</tt> is
+equivalent to writing <tt>(&#X2018;Tag1(_ : int) | &#X2018;Tag2(_ : bool))</tt>.</p><p>Such abbreviations may be used alone,
+</p><pre><font color="black">#</font><font color="blue">let f = function
+   | #myvariant -&gt; "myvariant"
+   | &#X2018;Tag3 -&gt; "Tag3";;
+</font><font color="maroon">val f : [&lt; &#X2018;Tag1 of int | &#X2018;Tag2 of bool | &#X2018;Tag3 ] -&gt; string = &lt;fun&gt;
+</font></pre><p>
+or combined with with aliases.
+</p><pre><font color="black">#</font><font color="blue">let g1 = function &#X2018;Tag1 _ -&gt; "Tag1" | &#X2018;Tag2 _ -&gt; "Tag2";;
+</font><font color="maroon">val g1 : [&lt; &#X2018;Tag1 of &#X2019;a | &#X2018;Tag2 of &#X2019;b ] -&gt; string = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">let g = function
+   | #myvariant as x -&gt; g1 x
+   | &#X2018;Tag3 -&gt; "Tag3";;
+</font>val g : [&lt; &#X2018;Tag1 of int | &#X2018;Tag2 of bool | &#X2018;Tag3 ] -&gt; string = &lt;fun&gt;
+</font></pre><h3 class="subsection"><a name="htoc42">4.2.1</a>  Weaknesses of polymorphic variants</h3><p>After seeing the power of polymorphic variants, one may wonder why
+they were added to core language variants, rather than replacing them.</p><p>The answer is twofold. One first aspect is that while being pretty
+efficient, the lack of static type information allows for less
+optimizations, and makes polymorphic variants slightly heavier than
+core language ones. However noticeable differences would only
+appear on huge data structures.</p><p>More important is the fact that polymorphic variants, while being
+type-safe, result in a weaker type discipline. That is, core language
+variants do actually much more than ensuring type-safety, they also
+check that you use only declared constructors, that all constructors
+present in a data-structure are compatible, and they enforce typing
+constraints to their parameters.</p><p>For this reason, you must be more careful about making types explicit
+when you use polymorphic variants. When you write a library, this is
+easy since you can describe exact types in interfaces, but for simple
+programs you are probably better off with core language variants.</p><p>Beware also that some idioms make trivial errors very hard to find.
+For instance, the following code is probably wrong but the compiler
+has no way to see it.
+</p><pre><font color="black">#</font><font color="blue">type abc = [&#X2018;A | &#X2018;B | &#X2018;C] ;;
+</font><font color="maroon">type abc = [ &#X2018;A | &#X2018;B | &#X2018;C ]
+ 
+<font color="black">#</font><font color="blue">let f = function
+   | &#X2018;As -&gt; "A"
+   | #abc -&gt; "other" ;;
+</font>val f : [&lt; &#X2018;A | &#X2018;As | &#X2018;B | &#X2018;C ] -&gt; string = &lt;fun&gt;
+ 
+<font color="black">#</font><font color="blue">let f : abc -&gt; string = f ;;
+</font>val f : abc -&gt; string = &lt;fun&gt;
+</font></pre><p>
+You can avoid such risks by annotating the definition itself.
+</p><pre><font color="black">#</font><font color="blue">let f : abc -&gt; string = function
+   | <u>&#X2018;As</u> -&gt; "A"
+   | #abc -&gt; "other" ;;
+</font><font color="maroon">Warning 11: this match case is unused.
+val f : abc -&gt; string = &lt;fun&gt;
+</font></pre><hr class="ffootnoterule"/><dl class="thefootnotes"><dt class="dt-thefootnotes">
+<a href="#text1" name="note1">1</a></dt><dd class="dd-thefootnotes">This correspond to the commuting label mode
+of Objective Caml 3.00 through 3.02, with some additional flexibility
+on total applications. The so-called classic mode (<tt>-nolabels</tt>
+options) is now deprecated for normal use.
+</dd></dl>
+<hr/>
+<a href="manual005.html"><img src="previous_motif.gif" alt="Previous"/></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual007.html"><img src="next_motif.gif" alt="Next"/></a>
+</body>
+</html>

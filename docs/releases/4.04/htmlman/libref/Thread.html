@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="Terminfo.html" rel="previous"/>
+<link href="ThreadUnix.html" rel="next"/>
+<link href="index.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg.html" title="Arg" rel="Chapter"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Arith_status.html" title="Arith_status" rel="Chapter"/>
+<link href="Array.html" title="Array" rel="Chapter"/>
+<link href="ArrayLabels.html" title="ArrayLabels" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Big_int.html" title="Big_int" rel="Chapter"/>
+<link href="Bigarray.html" title="Bigarray" rel="Chapter"/>
+<link href="Buffer.html" title="Buffer" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="Bytes.html" title="Bytes" rel="Chapter"/>
+<link href="BytesLabels.html" title="BytesLabels" rel="Chapter"/>
+<link href="Callback.html" title="Callback" rel="Chapter"/>
+<link href="CamlinternalFormat.html" title="CamlinternalFormat" rel="Chapter"/>
+<link href="CamlinternalFormatBasics.html" title="CamlinternalFormatBasics" rel="Chapter"/>
+<link href="CamlinternalLazy.html" title="CamlinternalLazy" rel="Chapter"/>
+<link href="CamlinternalMod.html" title="CamlinternalMod" rel="Chapter"/>
+<link href="CamlinternalOO.html" title="CamlinternalOO" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Char.html" title="Char" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Complex.html" title="Complex" rel="Chapter"/>
+<link href="Condition.html" title="Condition" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Depend.html" title="Depend" rel="Chapter"/>
+<link href="Digest.html" title="Digest" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Dynlink.html" title="Dynlink" rel="Chapter"/>
+<link href="Ephemeron.html" title="Ephemeron" rel="Chapter"/>
+<link href="Event.html" title="Event" rel="Chapter"/>
+<link href="Filename.html" title="Filename" rel="Chapter"/>
+<link href="Format.html" title="Format" rel="Chapter"/>
+<link href="Gc.html" title="Gc" rel="Chapter"/>
+<link href="Genlex.html" title="Genlex" rel="Chapter"/>
+<link href="Graphics.html" title="Graphics" rel="Chapter"/>
+<link href="GraphicsX11.html" title="GraphicsX11" rel="Chapter"/>
+<link href="Hashtbl.html" title="Hashtbl" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Int32.html" title="Int32" rel="Chapter"/>
+<link href="Int64.html" title="Int64" rel="Chapter"/>
+<link href="Lazy.html" title="Lazy" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Lexing.html" title="Lexing" rel="Chapter"/>
+<link href="List.html" title="List" rel="Chapter"/>
+<link href="ListLabels.html" title="ListLabels" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Map.html" title="Map" rel="Chapter"/>
+<link href="Marshal.html" title="Marshal" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="MoreLabels.html" title="MoreLabels" rel="Chapter"/>
+<link href="Mutex.html" title="Mutex" rel="Chapter"/>
+<link href="Nativeint.html" title="Nativeint" rel="Chapter"/>
+<link href="Num.html" title="Num" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Obj.html" title="Obj" rel="Chapter"/>
+<link href="Oo.html" title="Oo" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Parsing.html" title="Parsing" rel="Chapter"/>
+<link href="Pervasives.html" title="Pervasives" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Printexc.html" title="Printexc" rel="Chapter"/>
+<link href="Printf.html" title="Printf" rel="Chapter"/>
+<link href="Queue.html" title="Queue" rel="Chapter"/>
+<link href="Random.html" title="Random" rel="Chapter"/>
+<link href="Ratio.html" title="Ratio" rel="Chapter"/>
+<link href="Scanf.html" title="Scanf" rel="Chapter"/>
+<link href="Set.html" title="Set" rel="Chapter"/>
+<link href="Sort.html" title="Sort" rel="Chapter"/>
+<link href="Spacetime.html" title="Spacetime" rel="Chapter"/>
+<link href="Stack.html" title="Stack" rel="Chapter"/>
+<link href="StdLabels.html" title="StdLabels" rel="Chapter"/>
+<link href="Str.html" title="Str" rel="Chapter"/>
+<link href="Stream.html" title="Stream" rel="Chapter"/>
+<link href="String.html" title="String" rel="Chapter"/>
+<link href="StringLabels.html" title="StringLabels" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Sys.html" title="Sys" rel="Chapter"/>
+<link href="Tbl.html" title="Tbl" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Thread.html" title="Thread" rel="Chapter"/>
+<link href="ThreadUnix.html" title="ThreadUnix" rel="Chapter"/>
+<link href="Timings.html" title="Timings" rel="Chapter"/>
+<link href="Uchar.html" title="Uchar" rel="Chapter"/>
+<link href="Unix.html" title="Unix" rel="Chapter"/>
+<link href="UnixLabels.html" title="UnixLabels" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/>
+<link href="Weak.html" title="Weak" rel="Chapter"/><link href="#6_Threadcreationandtermination" title="Thread creation and termination" rel="Section"/>
+<link href="#6_Suspendingthreads" title="Suspending threads" rel="Section"/>
+<link href="#6_Managementofsignals" title="Management of signals" rel="Section"/>
+<title>Thread</title>
+</head>
+<body>
+<div class="navbar"><a href="Terminfo.html" class="pre" title="Terminfo">Previous</a>
+&nbsp;<a href="index.html" class="up" title="Index">Up</a>
+&nbsp;<a href="ThreadUnix.html" class="post" title="ThreadUnix">Next</a>
+</div>
+<h1>Module <a href="type_Thread.html">Thread</a></h1>
+
+<pre><span class="keyword">module</span> Thread: <code class="code"><span class="keyword">sig</span></code> <a href="Thread.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Lightweight threads for Posix <code class="code">1003.1c</code> and Win32.<br/>
+</div>
+<hr width="100%"/>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info ">
+The type of thread handles.<br/>
+</div>
+
+<br/>
+<h6 id="6_Threadcreationandtermination">Thread creation and termination</h6><br/>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('a -> 'b) -> 'a -> <a href="Thread.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code"><span class="constructor">Thread</span>.create&nbsp;funct&nbsp;arg</code> creates a new thread of control,
+   in which the function application <code class="code">funct&nbsp;arg</code>
+   is executed concurrently with the other threads of the program.
+   The application of <code class="code"><span class="constructor">Thread</span>.create</code>
+   returns the handle of the newly created thread.
+   The new thread terminates when the application <code class="code">funct&nbsp;arg</code>
+   returns, either normally or by raising an uncaught exception.
+   In the latter case, the exception is printed on standard error,
+   but not propagated back to the parent thread. Similarly, the
+   result of the application <code class="code">funct&nbsp;arg</code> is discarded and not
+   directly accessible to the parent thread.<br/>
+</div>
+
+<pre><span id="VALself"><span class="keyword">val</span> self</span> : <code class="type">unit -> <a href="Thread.html#TYPEt">t</a></code></pre><div class="info ">
+Return the thread currently executing.<br/>
+</div>
+
+<pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="Thread.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+Return the identifier of the given thread. A thread identifier
+   is an integer that identifies uniquely the thread.
+   It can be used to build data structures indexed by threads.<br/>
+</div>
+
+<pre><span id="VALexit"><span class="keyword">val</span> exit</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+Terminate prematurely the currently executing thread.<br/>
+</div>
+
+<pre><span id="VALkill"><span class="keyword">val</span> kill</span> : <code class="type"><a href="Thread.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+Terminate prematurely the thread whose handle is given.<br/>
+</div>
+<br/>
+<h6 id="6_Suspendingthreads">Suspending threads</h6><br/>
+
+<pre><span id="VALdelay"><span class="keyword">val</span> delay</span> : <code class="type">float -> unit</code></pre><div class="info ">
+<code class="code">delay&nbsp;d</code> suspends the execution of the calling thread for
+   <code class="code">d</code> seconds. The other program threads continue to run during
+   this time.<br/>
+</div>
+
+<pre><span id="VALjoin"><span class="keyword">val</span> join</span> : <code class="type"><a href="Thread.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">join&nbsp;th</code> suspends the execution of the calling thread
+   until the thread <code class="code">th</code> has terminated.<br/>
+</div>
+
+<pre><span id="VALwait_read"><span class="keyword">val</span> wait_read</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> -> unit</code></pre><div class="info ">
+See <a href="Thread.html#VALwait_write"><code class="code"><span class="constructor">Thread</span>.wait_write</code></a>.<br/>
+</div>
+
+<pre><span id="VALwait_write"><span class="keyword">val</span> wait_write</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> -> unit</code></pre><div class="info ">
+This function does nothing in this implementation.<br/>
+</div>
+
+<pre><span id="VALwait_timed_read"><span class="keyword">val</span> wait_timed_read</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> -> float -> bool</code></pre><div class="info ">
+See <a href="Thread.html#VALwait_timed_read"><code class="code"><span class="constructor">Thread</span>.wait_timed_read</code></a>.<br/>
+</div>
+
+<pre><span id="VALwait_timed_write"><span class="keyword">val</span> wait_timed_write</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> -> float -> bool</code></pre><div class="info ">
+Suspend the execution of the calling thread until at least
+   one character is available for reading (<code class="code">wait_read</code>) or
+   one character can be written without blocking (<code class="code">wait_write</code>)
+   on the given Unix file descriptor. Wait for at most
+   the amount of time given as second argument (in seconds).
+   Return <code class="code"><span class="keyword">true</span></code> if the file descriptor is ready for input/output
+   and <code class="code"><span class="keyword">false</span></code> if the timeout expired.
+<p>
+
+   These functions return immediately <code class="code"><span class="keyword">true</span></code> in the Win32
+   implementation.<br/>
+</p></div>
+
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> list -><br/>       <a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> list -><br/>       <a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> list -><br/>       float -> <a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> list * <a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> list * <a href="Unix.html#TYPEfile_descr">Unix.file_descr</a> list</code></pre><div class="info ">
+Suspend the execution of the calling thead until input/output
+   becomes possible on the given Unix file descriptors.
+   The arguments and results have the same meaning as for
+   <code class="code"><span class="constructor">Unix</span>.select</code>.
+   This function is not implemented yet under Win32.<br/>
+</div>
+
+<pre><span id="VALwait_pid"><span class="keyword">val</span> wait_pid</span> : <code class="type">int -> int * <a href="Unix.html#TYPEprocess_status">Unix.process_status</a></code></pre><div class="info ">
+<code class="code">wait_pid&nbsp;p</code> suspends the execution of the calling thread
+   until the process specified by the process identifier <code class="code">p</code>
+   terminates. Returns the pid of the child caught and
+   its termination status, as per <code class="code"><span class="constructor">Unix</span>.wait</code>.
+   This function is not implemented under MacOS.<br/>
+</div>
+
+<pre><span id="VALyield"><span class="keyword">val</span> yield</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+Re-schedule the calling thread without suspending it.
+   This function can be used to give scheduling hints,
+   telling the scheduler that now is a good time to
+   switch to other threads.<br/>
+</div>
+<br/>
+<h6 id="6_Managementofsignals">Management of signals</h6><br/>
+<br/>
+Signal handling follows the POSIX thread model: signals generated
+  by a thread are delivered to that thread; signals generated externally
+  are delivered to one of the threads that does not block it.
+  Each thread possesses a set of blocked signals, which can be modified
+  using <a href="Thread.html#VALsigmask"><code class="code"><span class="constructor">Thread</span>.sigmask</code></a>.  This set is inherited at thread creation time.
+  Per-thread signal masks are supported only by the system thread library
+  under Unix, but not under Win32, nor by the VM thread library.<br/>
+
+<pre><span id="VALsigmask"><span class="keyword">val</span> sigmask</span> : <code class="type"><a href="Unix.html#TYPEsigprocmask_command">Unix.sigprocmask_command</a> -> int list -> int list</code></pre><div class="info ">
+<code class="code">sigmask&nbsp;cmd&nbsp;sigs</code> changes the set of blocked signals for the
+   calling thread.
+   If <code class="code">cmd</code> is <code class="code"><span class="constructor">SIG_SETMASK</span></code>, blocked signals are set to those in
+   the list <code class="code">sigs</code>.
+   If <code class="code">cmd</code> is <code class="code"><span class="constructor">SIG_BLOCK</span></code>, the signals in <code class="code">sigs</code> are added to
+   the set of blocked signals.
+   If <code class="code">cmd</code> is <code class="code"><span class="constructor">SIG_UNBLOCK</span></code>, the signals in <code class="code">sigs</code> are removed
+   from the set of blocked signals.
+   <code class="code">sigmask</code> returns the set of previously blocked signals for the thread.<br/>
+</div>
+
+<pre><span id="VALwait_signal"><span class="keyword">val</span> wait_signal</span> : <code class="type">int list -> int</code></pre><div class="info ">
+<code class="code">wait_signal&nbsp;sigs</code> suspends the execution of the calling thread
+   until the process receives one of the signals specified in the
+   list <code class="code">sigs</code>.  It then returns the number of the signal received.
+   Signal handlers attached to the signals in <code class="code">sigs</code> will not
+   be invoked.  The signals <code class="code">sigs</code> are expected to be blocked before
+   calling <code class="code">wait_signal</code>.<br/>
+</div>
+</body></html>

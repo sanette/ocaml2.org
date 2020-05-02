@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="4.09.0.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>OCaml 4.09.0 &#8211; OCaml</title>
+    <link href="../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <script src="../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../" class="brand"><img src="../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../learn/">Learn</a></li>
+              <li><a href="../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../community/">Community</a></li>
+              <li><a href="../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/releases/4.09.0.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="../">Home</a><span class="divider"></span></li>
+<li><a href="../releases/">Releases</a><span class="divider"></span></li>
+<li class="active">OCaml 4.09.0</li>
+
+
+    </ol>
+    <ul class="translations">
+      <li class="active">en</li>
+
+    </ul>
+  </div>
+  
+</div>
+
+      <div id="main-contents" class="content">
+        
+
+<h1 id="OCaml-4-09-0">OCaml 4.09.0</h1><p>This page describes OCaml version <strong>4.09.0</strong>, released on
+2019-09-18.  Go <a href="./">here</a> for a list of all releases.</p>
+<p>This release is available as multiple
+<a href="https://opam.ocaml.org/doc/Usage.html">OPAM</a> switches:</p>
+<ul><li><p>4.09.0 — Official release 4.09.0</p>
+</li><li><p>4.09.0+flambda — Official release 4.09.0, with flambda activated</p>
+</li><li><p>4.09.0+afl — Official release 4.09.0, with afl-fuzz instrumentation</p>
+</li><li><p>4.09.0+spacetime - Official 4.09.0 release with spacetime activated</p>
+</li><li><p>4.09.0+force-safe-string — Official release 4.09.0, with safe string
+ forced globally</p>
+</li><li><p>4.09.0+default-unsafe-string — Official release 4.09.0, without
+ safe strings by default</p>
+</li><li><p>4.09.0+no-flat-float-array - Official release 4.09.0, with
+ --disable-flat-float-array</p>
+</li><li><p>4.09.0+flambda+no-flat-float-array — Official release 4.09.0, with
+ flambda activated and --disable-flat-float-array</p>
+</li><li><p>4.09.0+fp — Official release 4.09.0, with frame-pointers</p>
+</li><li><p>4.09.0+fp+flambda — Official release 4.09.0, with frame-pointers
+ and flambda activated</p>
+</li><li><p>4.09.0+musl+static+flambda - Official release 4.09.0, compiled with
+ musl-gcc -static and with flambda activated</p>
+</li><li><p>4.09.0+32bit - Official release 4.09.0, compiled in 32-bit mode
+ for 64-bit Linux and OS X hosts</p>
+</li><li><p>4.09.0+bytecode-only - Official release 4.09.0, without the
+ native-code compiler</p>
+</li></ul>
+
+<h2 id="What-39-s-new">What&#39;s new</h2>
+
+<p>Some of the highlights in release 4.09 are:</p>
+<ul><li><p>New optimisations, in particular for affine functions in matches, for instance</p>
+<pre class="ocaml"><code class="ocaml">      <span class="governing">type</span> <span class="lower">t</span> <span class="keywordsign">=</span> <span class="constructor module">A</span> <span class="keywordsign">|</span> <span class="constructor module">B</span> <span class="keywordsign">|</span> <span class="constructor module">C</span>
+      <span class="governing">let</span> <span class="lower">affine</span> <span class="keywordsign">=</span> <span class="keyword">function</span>
+        <span class="keywordsign">|</span> <span class="constructor module">A</span> <span class="keywordsign">-&#62;</span> <span class="number">4</span>
+        <span class="keywordsign">|</span> <span class="constructor module">B</span> <span class="keywordsign">-&#62;</span> <span class="number">3</span>
+        <span class="keywordsign">|</span> <span class="constructor module">C</span> <span class="keywordsign">-&#62;</span> <span class="number">2</span>
+    </code></pre></li><li><p>The <code>graphics</code> library was moved out of the compiler distribution.</p>
+</li><li><p>The <code>vmthread</code> library was removed.</p>
+</li><li><p>Support for compiler plugins was removed.</p>
+</li><li><p>Many bug fixes.</p>
+</li></ul>
+
+<p>For a comprehensive list of changes and details on all new features,
+bug fixes, optimizations, etc., please consult the
+<a href="#Changes">changelog</a>.</p>
+<h2 id="Source-distribution"><img src="../img/source.gif" alt=""/> Source distribution</h2>
+
+<ul><li><a href="https://github.com/ocaml/ocaml/archive/4.09.0.tar.gz">Source
+ tarball</a>
+ (.tar.gz) for compilation under Unix (including Linux and MacOS X)
+ and Microsoft Windows (including Cygwin).</li><li>Also available in
+ <a href="https://github.com/ocaml/ocaml/archive/4.09.0.zip">.zip</a>
+ format.</li><li><a href="https://opam.ocaml.org/">OPAM</a> is a source-based distribution of
+ OCaml and many companion libraries and tools. Compilation and
+ installation are automated by powerful package managers.</li><li>The official development repo is hosted on
+ <a href="https://github.com/ocaml/ocaml">GitHub</a>.</li></ul>
+
+<p>The
+<a href="4.09/notes/INSTALL.adoc">INSTALL</a> file
+of the distribution provides detailed compilation and installation
+instructions — see also the <a href="4.09/notes/README.win32.adoc">Windows release
+notes</a> for
+instructions on how to build under Windows.</p>
+<h2 id="Alternative-Compilers">Alternative Compilers</h2>
+
+<p>Additionally, the following projects allow you to compile OCaml code to
+targets traditionally associated with other languages:</p>
+<ul><li><a href="http://ocsigen.org/js_of_ocaml/">Js_of_ocaml</a> is a stable OCaml
+ to JavaScript compiler.</li><li><a href="http://bucklescript.github.io/bucklescript/">Bucklescript</a> is a
+ newer OCaml to JavaScript compiler. See its
+ <a href="https://github.com/bucklescript/bucklescript/wiki/Differences-from-js_of_ocaml">wiki</a> for
+ an explanation of how it differs from <code>js_of_ocaml</code>.</li><li><a href="http://www.ocamljava.org/">OCaml-java</a> is a stable OCaml to
+ Java compiler.</li></ul>
+
+<h2 id="User-39-s-manual"><img src="../img/doc.gif" alt=""/> User&#39;s manual</h2>
+
+<p>The user&#39;s manual for OCaml can be:</p>
+<ul><li><a href="4.09/htmlman/index.html">browsed
+ online</a>,</li><li>downloaded as a single
+ <a href="4.09/ocaml-4.09-refman.pdf">PDF</a>,
+ or <a href="4.09/ocaml-4.09-refman.txt">plain
+ text</a>
+ document,</li><li>downloaded as a single
+ <a href="4.09/ocaml-4.09-refman-html.tar.gz">TAR</a>
+ or
+ <a href="4.09/ocaml-4.09-refman-html.zip">ZIP</a>
+ archive of HTML files,</li><li>downloaded as a single
+ <a href="4.09/ocaml-4.09-refman.info.tar.gz">tarball</a>
+ of Emacs info files,</li></ul>
+
+<h2 id="Changes">Changes</h2>
+
+<p>This is the
+<a href="4.09/notes/Changes">changelog</a>.</p>
+<h3 id="Runtime-system">Runtime system:</h3>
+
+<ul><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/1725">#1725</a>, <a href="https://github.com/ocaml/ocaml/issues/2279">#2279</a>: Deprecate Obj.set_tag and Obj.truncate
+ (Stephen Dolan, review by Gabriel Scherer, Damien Doligez and Xavier Leroy)</p>
+</li><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/2240">#2240</a>: Constify &quot;identifier&quot; in struct custom_operations
+ (Cedric Cellier, review by Xavier Leroy)</p>
+</li><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/2293">#2293</a>: Constify &quot;caml_named_value&quot;
+ (Stephen Dolan, review by Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8787">#8787</a>, <a href="https://github.com/ocaml/ocaml/issues/8788">#8788</a>: avoid integer overflow in caml_output_value_to_bytes
+ (Jeremy Yallop, report by Marcello Seri)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2075">#2075</a>, <a href="https://github.com/ocaml/ocaml/issues/7729">#7729</a>: rename _T macro used to support Unicode in the (Windows) runtime
+ in order to avoid compiler warning
+ (Nicolás Ojeda Bär, review by Gabriel Scherer and David Allsopp)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2250">#2250</a>: Remove extra integer sign-extension in compare functions
+ (Stefan Muenzel, review by Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8607">#8607</a>: Remove obsolete macros for pre-2002 MSVC support
+ (Stephen Dolan, review by Nicolás Ojeda Bär and David Allsopp)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8656">#8656</a>: Fix a bug in [caml_modify_generational_global_root]
+ (Jacques-Henri Jourdan, review by Gabriel Scherer)</p>
+</li></ul>
+
+<h3 id="Standard-library">Standard library:</h3>
+
+<ul><li><p><a href="https://github.com/ocaml/ocaml/issues/2262">#2262</a>: take precision (.&lt;n&gt;) and flags (&#39;+&#39; and &#39; &#39;) into account
+ in printf %F
+ (Pierre Roux, review by Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/6148">#6148</a>, <a href="https://github.com/ocaml/ocaml/issues/8596">#8596</a>: optimize some buffer operations
+ (Damien Doligez, reports by John Whitington and Alain Frisch,
+ review by Jeremy Yallop and Gabriel Scherer)</p>
+</li></ul>
+
+<h3 id="Other-libraries">Other libraries:</h3>
+
+<ul><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/2318">#2318</a>: Delete the graphics library. This library is now available
+ as a separate &quot;graphics&quot; package in opam. Its new home is:
+ https://github.com/ocaml/graphics
+ (Jérémie Dimino, review by Nicolas Ojeda Bar, Xavier Leroy and
+ Sébastien Hinderer)</p>
+</li><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/2289">#2289</a>: Delete the vmthreads library. This library was deprecated in 4.08.0.
+ (Jérémie Dimino)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2112">#2112</a>: Fix Thread.yield unfairness with busy threads yielding to each
+ other.
+ (Andrew Hunter, review by Jacques-Henri Jourdan, Spiros Eliopoulos, Stephen
+ Weeks, &amp; Mark Shinwell)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/7903">#7903</a>, <a href="https://github.com/ocaml/ocaml/issues/2306">#2306</a>: Make Thread.delay interruptible by signals again
+ (Xavier Leroy, review by Jacques-Henri Jourdan and Edwin Török)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2248">#2248</a>: Unix alloc_sockaddr: Fix read of uninitialized memory for an
+ unbound Unix socket. Add support for receiving abstract (Linux) socket paths.
+ (Tim Cuthbertson, review by Sébastien Hinderer and Jérémie Dimino)</p>
+</li></ul>
+
+<h3 id="Compiler-user-interface-and-warnings">Compiler user-interface and warnings:</h3>
+
+<ul><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/2276">#2276</a>: Remove support for compiler plugins and hooks (also adds
+ [Dynlink.unsafe_get_global_value])
+ (Mark Shinwell, Xavier Clerc, review by Nicolás Ojeda Bär,
+ Florian Angeletti, David Allsopp and Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2301">#2301</a>: Hint on type error on int literal
+ (Jules Aguillon, review by Nicolás Ojeda Bär , Florian Angeletti,
+ Gabriel Scherer and Armaël Guéneau)</p>
+</li><li><p>(<em>breaking change</em>) <a href="https://github.com/ocaml/ocaml/issues/2314">#2314</a>: Remove support for gprof profiling.
+ (Mark Shinwell, review by Xavier Clerc and Stephen Dolan)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2190">#2190</a>: fix pretty printing (using Pprintast) of &quot;lazy ...&quot; patterns and
+ &quot;fun (type t) -&gt; ...&quot; expressions.
+ (Nicolás Ojeda Bär, review by Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2277">#2277</a>: Use newtype names as type variable names
+ The inferred type of (fun (type t) (x : t) -&gt; x)
+ is now printed as (&#39;t -&gt; &#39;t) rather than (&#39;a -&gt; &#39;a).
+ (Matthew Ryan)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2309">#2309</a>: New options -with-runtime and -without-runtime in ocamlopt/ocamlc
+ that control the inclusion of the runtime system in the generated program.
+ (Lucas Pluvinage, review by Daniel Bünzli, Damien Doligez, David Allsopp
+ and Florian Angeletti)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/3819">#3819</a>, <a href="https://github.com/ocaml/ocaml/issues/8546">#8546</a> more explanations and tests for illegal permutation
+ (Florian Angeletti, review by Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8537">#8537</a>: fix the -runtime-variant option for bytecode
+ (Damien Doligez, review by David Allsopp)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8541">#8541</a>: Correctly print multi-lines locations
+ (Louis Roché, review by Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8579">#8579</a>: Better error message for private constructors
+ of an extensible variant type
+ (Guillaume Bury, review by many fine eyes)</p>
+</li></ul>
+
+<h3 id="Code-generation-and-optimizations">Code generation and optimizations:</h3>
+
+<ul><li><p><a href="https://github.com/ocaml/ocaml/issues/2278">#2278</a>: Remove native code generation support for 32-bit Intel macOS,
+ iOS and other Darwin targets.
+ (Mark Shinwell, review by Nicolas Ojeda Bar and Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8547">#8547</a>: Optimize matches that are an affine function of the input.
+ (Stefan Muenzel, review by Alain Frisch, Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/1904">#1904</a>, <a href="https://github.com/ocaml/ocaml/issues/7931">#7931</a>: Add FreeBSD/aarch64 support
+ (Greg V, review by Sébastien Hinderer, Stephen Dolan, Damien Doligez
+ and Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8507">#8507</a>: Shorten symbol names of anonymous functions in Flambda mode
+ (the directory portions are now hidden)
+ (Mark Shinwell, review by Nicolás Ojeda Bär)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8681">#8681</a>, <a href="https://github.com/ocaml/ocaml/issues/8699">#8699</a>, <a href="https://github.com/ocaml/ocaml/issues/8712">#8712</a>: Fix code generation with nested let rec of functions.
+ (Stephen Dolan, Leo White, Gabriel Scherer and Pierre Chambart,
+ review by Gabriel Scherer, reports by Alexey Solovyev and Jonathan French)</p>
+</li></ul>
+
+<h3 id="Manual-and-documentation">Manual and documentation:</h3>
+
+<ul><li><p><a href="https://github.com/ocaml/ocaml/issues/7584">#7584</a>, <a href="https://github.com/ocaml/ocaml/issues/8538">#8538</a>: Document .cmt* files in the &quot;overview&quot; of ocaml{c,opt}
+ (Oxana Kostikova, rewiew by Florian Angeletti)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8757">#8757</a>: Rename Pervasives to Stdlib in core library documentation.
+ (Ian Zimmerman, review by David Allsopp)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8515">#8515</a>: manual, precise constraints on reexported types
+ (Florian Angeletti, review by Gabriel Scherer)</p>
+</li></ul>
+
+<h3 id="Tools">Tools:</h3>
+
+<ul><li><a href="https://github.com/ocaml/ocaml/issues/2221">#2221</a>: ocamldep will now correctly allow a .ml file in an include directory
+ that appears first in the search order to shadow a .mli appearing in a later
+ include directory.
+ (Nicolás Ojeda Bär, review by Florian Angeletti)</li></ul>
+
+<h3 id="Internal-compiler-libs-changes">Internal/compiler-libs changes:</h3>
+
+<ul><li><p><a href="https://github.com/ocaml/ocaml/issues/1579">#1579</a>: Add a separate types for clambda primitives
+ (Pierre Chambart, review by Vincent Laviron and Mark Shinwell)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/1965">#1965</a>: remove loop constructors in Cmm and Mach
+ (Vincent Laviron)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/1973">#1973</a>: fix compilation of catches with multiple handlers
+ (Vincent Laviron)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2228">#2228</a>, <a href="https://github.com/ocaml/ocaml/issues/8545">#8545</a>: refactoring the handling of .cmi files
+ by moving the logic from Env to a new module Persistent_env
+ (Gabriel Scherer, review by Jérémie Dimino and Thomas Refis)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2229">#2229</a>: Env: remove prefix_idents cache
+ (Thomas Refis, review by Frédéric Bour and Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2237">#2237</a>, <a href="https://github.com/ocaml/ocaml/issues/8582">#8582</a>: Reorder linearisation of Trywith to avoid a call instruction
+ (Vincent Laviron and Greta Yorsh, additional review by Mark Shinwell;
+ fix in <a href="https://github.com/ocaml/ocaml/issues/8582">#8582</a> by Mark Shinwell, Xavier Leroy and Anil Madhavapeddy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2265">#2265</a>: Add bytecomp/opcodes.mli
+ (Mark Shinwell, review by Nicolas Ojeda Bar)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2268">#2268</a>: Improve packing mechanism used for building compilerlibs modules
+ into the Dynlink libraries
+ (Mark Shinwell, Stephen Dolan, review by David Allsopp)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2280">#2280</a>: Don&#39;t make more Clambda constants after starting Cmmgen
+ (Mark Shinwell, review by Vincent Laviron)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2281">#2281</a>: Move some middle-end files around
+ (Mark Shinwell, review by Pierre Chambart and Vincent Laviron)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2283">#2283</a>: Add [is_prefix] and [find_and_chop_longest_common_prefix] to
+ [Misc.Stdlib.List]
+ (Mark Shinwell, review by Alain Frisch and Stephen Dolan)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2284">#2284</a>: Add various utility functions to [Misc] and remove functions
+ from [Misc.Stdlib.Option] that are now in [Stdlib.Option]
+ (Mark Shinwell, review by Thomas Refis)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2286">#2286</a>: Functorise [Consistbl]
+ (Mark Shinwell, review by Gabriel Radanne)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2291">#2291</a>: Add [Compute_ranges] pass
+ (Mark Shinwell, review by Vincent Laviron)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2292">#2292</a>: Add [Proc.frame_required] and [Proc.prologue_required].
+ Move tail recursion label creation to [Linearize].  Correctly position
+ [Lprologue] relative to [Iname_for_debugger] operations.
+ (Mark Shinwell, review by Vincent Laviron)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2308">#2308</a>: More debugging information on [Cmm] terms
+ (Mark Shinwell, review by Stephen Dolan)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/7878">#7878</a>, <a href="https://github.com/ocaml/ocaml/issues/8542">#8542</a>: Replaced TypedtreeIter with tast_iterator
+ (Isaac &quot;Izzy&quot; Avram, review by Gabriel Scherer and Nicolás Ojeda Bär)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8598">#8598</a>: Replace &quot;not is_nonexpansive&quot; by &quot;maybe_expansive&quot;.
+ (Thomas Refis, review by David Allsopp, Florian Angeletti, Gabriel Radanne,
+ Gabriel Scherer and Xavier Leroy)</p>
+</li></ul>
+
+<h3 id="Compiler-distribution-build-system">Compiler distribution build system:</h3>
+
+<ul><li><p><a href="https://github.com/ocaml/ocaml/issues/2267">#2267</a>: merge generation of header programs, also fixing parallel build on
+ Cygwin.
+ (David Allsopp, review by Sébastien Hinderer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8514">#8514</a>: Use boot/ocamlc.opt for building, if available.
+ (Stephen Dolan, review by Gabriel Scherer)</p>
+</li></ul>
+
+<h3 id="Bug-fixes">Bug fixes:</h3>
+
+<ul><li><p><a href="https://github.com/ocaml/ocaml/issues/8864">#8864</a>, <a href="https://github.com/ocaml/ocaml/issues/8865">#8865</a>: Fix native compilation of left shift by (word_size - 1)
+ (Vincent Laviron, report by Murilo Giacometti Rocha, review by Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/2296">#2296</a>: Fix parsing of hexadecimal floats with underscores in the exponent.
+ (Hugo Heuzard and Xavier Leroy, review by Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8800">#8800</a>: Fix soundness bug in extension constructor inclusion
+ (Leo White, review by Jacques Garrigue)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8848">#8848</a>: Fix x86 stack probe CFI information in caml_c_call and
+ caml_call_gc
+ (Tom Kelly, review by Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/7156">#7156</a>, <a href="https://github.com/ocaml/ocaml/issues/8594">#8594</a>: make top level use custom printers if they are available
+ (Andrew Litteken, report by Martin Jambon, review by Nicolás Ojeda Bär,
+ Thomas Refis, Armaël Guéneau, Gabriel Scherer, David Allsopp)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/3249">#3249</a>: ocamlmklib should reject .cmxa files
+ (Xavier Leroy)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/7937">#7937</a>, <a href="https://github.com/ocaml/ocaml/issues/2287">#2287</a>: fix uncaught Unify exception when looking for type
+ declaration
+ (Florian Angeletti, review by Jacques Garrigue)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8610">#8610</a>, <a href="https://github.com/ocaml/ocaml/issues/8613">#8613</a>: toplevel printing, consistent deduplicated name for types
+ (Florian Angeletti, review by Thomas Refis and Gabriel Scherer,
+ reported by Xavier Clerc)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8635">#8635</a>, <a href="https://github.com/ocaml/ocaml/issues/8636">#8636</a>: Fix a bad side-effect of the -allow-approx option of
+ ocamldep. It used to turn some errors into successes
+ (Jérémie Dimino)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8701">#8701</a>, <a href="https://github.com/ocaml/ocaml/issues/8725">#8725</a>: Variance of constrained parameters causes principality issues
+ (Jacques Garrigue, report by Leo White, review by Gabriel Scherer)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8777">#8777</a>(partial): fix position information in some polymorphic variant
+ error messages about missing tags
+ (Florian Angeletti, review by Thomas Refis)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8779">#8779</a>, more cautious variance computation to avoid missing cmis
+ (Florian Angeletti, report by Antonio Nuno Monteiro, review by Leo White)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8810">#8810</a>: Env.lookup_module: don&#39;t allow creating loops
+ (Thomas Refis, report by Leo White, review by Jacques Garrigue)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8862">#8862</a>, <a href="https://github.com/ocaml/ocaml/issues/8871">#8871</a>: subst: preserve scopes
+ (Thomas Refis, report by Leo White, review by Jacques Garrigue)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8921">#8921</a>, <a href="https://github.com/ocaml/ocaml/issues/8924">#8924</a>: Fix stack overflow with Flambda
+ (Vincent Laviron, review by Pierre Chambart and Leo White,
+ report by Aleksandr Kuzmenko)</p>
+</li><li><p><a href="https://github.com/ocaml/ocaml/issues/8944">#8944</a>: Fix &quot;open struct .. end&quot; on clambda backend
+ (Thomas Refis, review by Leo White, report by Damon Wang and Mark Shinwell)</p>
+</li></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../learn/taste.html">Code Examples</a></li>
+      <li><a href="../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../learn/books.html">Books</a></li>
+      <li><a href="../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../community/">Community</a></h1>
+    <ul>
+      <li><a href="../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../meetings/">Meetings</a></li>
+      <li><a href="../community/planet/">News</a></li>
+      <li><a href="../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/releases/4.09.0.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

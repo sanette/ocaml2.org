@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="Scanf.Scanning.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.09/Scanf.Scanning.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.09</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="#top">Scanf.Scanning</a></div><ul></ul></nav></header>
+
+<h1>Module <a href="type_Scanf.Scanning.html">Scanf.Scanning</a></h1>
+
+<pre><span id="MODULEScanning"><span class="keyword">module</span> Scanning</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Scanf.Scanning.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%"/>
+
+<pre><span id="TYPEin_channel"><span class="keyword">type</span> <code class="type"></code>in_channel</span> </pre>
+<div class="info ">
+<div class="info-desc">
+<p>The notion of input channel for the <a href="Scanf.html"><code class="code"><span class="constructor">Scanf</span></code></a> module:
+   those channels provide all the machinery necessary to read from any source
+   of characters, including a <a href="Stdlib.html#TYPEin_channel"><code class="code">in_channel</code></a> value.
+   A Scanf.Scanning.in_channel value is also called a <i>formatted input
+   channel</i> or equivalently a <i>scanning buffer</i>.
+   The type <a href="Scanf.Scanning.html#TYPEscanbuf"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.scanbuf</code></a> below is an alias for <code class="code"><span class="constructor">Scanning</span>.in_channel</code>.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.12.0</li>
+</ul>
+</div>
+
+
+<pre><span id="TYPEscanbuf"><span class="keyword">type</span> <code class="type"></code>scanbuf</span> = <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code> </pre>
+<div class="info ">
+<div class="info-desc">
+<p>The type of scanning buffers. A scanning buffer is the source from which a
+    formatted input function gets characters. The scanning buffer holds the
+    current state of the scan, plus a function to get the next char from the
+    input, and a token buffer to store the string matched so far.</p>
+
+<p>Note: a scanning action may often require to examine one character in
+    advance; when this 'lookahead' character does not belong to the token
+    read, it is stored back in the scanning buffer and becomes the next
+    character yet to be read.</p>
+</div>
+</div>
+
+
+<pre><span id="VALstdin"><span class="keyword">val</span> stdin</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>The standard input notion for the <a href="Scanf.html"><code class="code"><span class="constructor">Scanf</span></code></a> module.
+    <code class="code"><span class="constructor">Scanning</span>.stdin</code> is the <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted input channel
+    attached to <a href="Stdlib.html#VALstdin"><code class="code">stdin</code></a>.</p>
+
+<p>Note: in the interactive system, when input is read from
+    <a href="Stdlib.html#VALstdin"><code class="code">stdin</code></a>, the newline character that triggers evaluation is
+    part of the input; thus, the scanning specifications must properly skip
+    this additional newline character (for instance, simply add a <code class="code"><span class="string">'\n'</span></code> as
+    the last character of the format string).</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.12.0</li>
+</ul>
+</div>
+
+<pre><span id="TYPEfile_name"><span class="keyword">type</span> <code class="type"></code>file_name</span> = <code class="type">string</code> </pre>
+<div class="info ">
+<div class="info-desc">
+<p>A convenient alias to designate a file name.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 4.00.0</li>
+</ul>
+</div>
+
+
+<pre><span id="VALopen_in"><span class="keyword">val</span> open_in</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.open_in&nbsp;fname</code> returns a <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted input
+    channel for bufferized reading in text mode from file <code class="code">fname</code>.</p>
+
+<p>Note:
+    <code class="code">open_in</code> returns a formatted input channel that efficiently reads
+    characters in large chunks; in contrast, <code class="code">from_channel</code> below returns
+    formatted input channels that must read one character at a time, leading
+    to a much slower scanning rate.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.12.0</li>
+</ul>
+</div>
+
+<pre><span id="VALopen_in_bin"><span class="keyword">val</span> open_in_bin</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.open_in_bin&nbsp;fname</code> returns a <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted
+    input channel for bufferized reading in binary mode from file <code class="code">fname</code>.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.12.0</li>
+</ul>
+</div>
+
+<pre><span id="VALclose_in"><span class="keyword">val</span> close_in</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Closes the <a href="Stdlib.html#TYPEin_channel"><code class="code">in_channel</code></a> associated with the given
+  <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted input channel.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.12.0</li>
+</ul>
+</div>
+
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>An alias for <a href="Scanf.Scanning.html#VALopen_in"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.open_in</code></a> above.</p>
+</div>
+</div>
+
+<pre><span id="VALfrom_file_bin"><span class="keyword">val</span> from_file_bin</span> : <code class="type">string -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>An alias for <a href="Scanf.Scanning.html#VALopen_in_bin"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.open_in_bin</code></a> above.</p>
+</div>
+</div>
+
+<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">string -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.from_string&nbsp;s</code> returns a <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted
+    input channel which reads from the given string.
+    Reading starts from the first character in the string.
+    The end-of-input condition is set when the end of the string is reached.</p>
+</div>
+</div>
+
+<pre><span id="VALfrom_function"><span class="keyword">val</span> from_function</span> : <code class="type">(unit -&gt; char) -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.from_function&nbsp;f</code> returns a <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted
+    input channel with the given function as its reading method.</p>
+
+<p>When scanning needs one more character, the given function is called.</p>
+
+<p>When the function has no more character to provide, it <em>must</em> signal an
+    end-of-input condition by raising the exception <code class="code"><span class="constructor">End_of_file</span></code>.</p>
+</div>
+</div>
+
+<pre><span id="VALfrom_channel"><span class="keyword">val</span> from_channel</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">in_channel</a> -&gt; <a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.from_channel&nbsp;ic</code> returns a <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted
+    input channel which reads from the regular <a href="Stdlib.html#TYPEin_channel"><code class="code">in_channel</code></a> input
+    channel <code class="code">ic</code> argument.
+    Reading starts at current reading position of <code class="code">ic</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALend_of_input"><span class="keyword">val</span> end_of_input</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.end_of_input&nbsp;ic</code> tests the end-of-input condition of the given
+    <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted input channel.</p>
+</div>
+</div>
+
+<pre><span id="VALbeginning_of_input"><span class="keyword">val</span> beginning_of_input</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.beginning_of_input&nbsp;ic</code> tests the beginning of input condition
+    of the given <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted input channel.</p>
+</div>
+</div>
+
+<pre><span id="VALname_of_input"><span class="keyword">val</span> name_of_input</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> -&gt; string</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Scanning</span>.name_of_input&nbsp;ic</code> returns the name of the character source
+    for the given <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.in_channel</code></a> formatted input channel.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.09.0</li>
+</ul>
+</div>
+
+<pre><span id="VALstdib"><span class="keyword">val</span> stdib</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>A deprecated alias for <a href="Scanf.Scanning.html#VALstdin"><code class="code"><span class="constructor">Scanf</span>.<span class="constructor">Scanning</span>.stdin</code></a>, the scanning buffer reading from
+    <a href="Stdlib.html#VALstdin"><code class="code">stdin</code></a>.</p>
+</div>
+</div>
+
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.09/Scanf.Scanning.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

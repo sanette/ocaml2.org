@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="names.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>Manual &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    <link href="../../css/manual_ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/manual/4.10/names.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="manual content"><ul class="part_menu"><li class="active"><a href="language.html">The OCaml language</a></li><li><a href="extn.html">Language extensions</a></li></ul>
+
+
+
+
+<h1 class="chapter" id="sec73"><span>Chapter 7</span>&nbsp;&nbsp;The OCaml language</h1>
+<p> <a id="c:refman"></a>
+</p><h3 class="subsection" id="ss:foreword"><a href="#ss:foreword" class="section-anchor" aria-hidden="true"></a>Foreword</h3>
+<p>This document is intended as a reference manual for the OCaml
+language. It lists the language constructs, and gives their precise
+syntax and informal semantics. It is by no means a tutorial
+introduction to the language: there is not a single example. A good
+working knowledge of OCaml is assumed.</p><p>No attempt has been made at mathematical rigor: words are employed
+with their intuitive meaning, without further definition. As a
+consequence, the typing rules have been left out, by lack of the
+mathematical framework required to express them, while they are
+definitely part of a full formal definition of the language.</p><h3 class="subsection" id="ss:notations"><a href="#ss:notations" class="section-anchor" aria-hidden="true"></a>Notations</h3>
+<p>The syntax of the language is given in BNF-like notation. Terminal
+symbols are set in typewriter font (<span class="c002"><span class="c003">like</span> <span class="c003">this</span></span>).
+Non-terminal symbols are set in italic font (<span class="c010">like</span> &nbsp;<span class="c010">that</span>).
+Square brackets […] denote optional components. Curly brackets
+{…} denotes zero, one or several repetitions of the enclosed
+components. Curly brackets with a trailing plus sign {…}<sup>+</sup>
+denote one or several repetitions of the enclosed components.
+Parentheses (…) denote grouping.</p><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">Version 4.10</a></div><div class="toc_title"><a href="#">The OCaml language</a></div><ul><li class="top"><a href="#">Top</a></li>
+<li><a href="lex.html#start-section">1&nbsp;&nbsp;Lexical conventions</a>
+</li><li><a href="values.html#start-section">2&nbsp;&nbsp;Values</a>
+</li><li><a href="names.html#start-section">3&nbsp;&nbsp;Names</a>
+</li><li><a href="types.html#start-section">4&nbsp;&nbsp;Type expressions</a>
+</li><li><a href="const.html#start-section">5&nbsp;&nbsp;Constants</a>
+</li><li><a href="patterns.html#start-section">6&nbsp;&nbsp;Patterns</a>
+</li><li><a href="expr.html#start-section">7&nbsp;&nbsp;Expressions</a>
+</li><li><a href="typedecl.html#start-section">8&nbsp;&nbsp;Type and exception definitions</a>
+</li><li><a href="classes.html#start-section">9&nbsp;&nbsp;Classes</a>
+</li><li><a href="modtypes.html#start-section">10&nbsp;&nbsp;Module types (module specifications)</a>
+</li><li><a href="modules.html#start-section">11&nbsp;&nbsp;Module expressions (module implementations)</a>
+</li><li><a href="compunit.html#start-section">12&nbsp;&nbsp;Compilation units</a>
+</li></ul></nav></header><a id="start-section"></a><section id="section">
+
+
+
+
+<h2 class="section" id="s:names"><a href="#s:names" class="section-anchor" aria-hidden="true"></a>3&nbsp;&nbsp;Names</h2>
+<p>Identifiers are used to give names to several classes of language
+objects and refer to these objects by name later:
+</p><ul class="itemize"><li class="li-itemize">
+value names (syntactic class <a href="#value-name" class="syntax"><span class="c010">value-name</span></a>),
+</li><li class="li-itemize">value constructors and exception constructors (class <a href="#constr-name" class="syntax"><span class="c010">constr-name</span></a>),
+</li><li class="li-itemize">labels (<a href="lex.html#label-name" class="syntax"><span class="c010">label-name</span></a>, defined in section&nbsp;<a href="lex.html#sss%3Alabelname">7.1</a>),
+</li><li class="li-itemize">polymorphic variant tags (<a href="#tag-name" class="syntax"><span class="c010">tag-name</span></a>),
+</li><li class="li-itemize">type constructors (<a href="#typeconstr-name" class="syntax"><span class="c010">typeconstr-name</span></a>),
+</li><li class="li-itemize">record fields (<a href="#field-name" class="syntax"><span class="c010">field-name</span></a>),
+</li><li class="li-itemize">class names (<a href="#class-name" class="syntax"><span class="c010">class-name</span></a>),
+</li><li class="li-itemize">method names (<a href="#method-name" class="syntax"><span class="c010">method-name</span></a>),
+</li><li class="li-itemize">instance variable names (<a href="#inst-var-name" class="syntax"><span class="c010">inst-var-name</span></a>),
+</li><li class="li-itemize">module names (<a href="#module-name" class="syntax"><span class="c010">module-name</span></a>),
+</li><li class="li-itemize">module type names (<a href="#modtype-name" class="syntax"><span class="c010">modtype-name</span></a>).
+</li></ul><p>
+These eleven name spaces are distinguished both by the context and by the
+capitalization of the identifier: whether the first letter of the
+identifier is in lowercase (written <a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a> below) or in
+uppercase (written <a href="lex.html#capitalized-ident" class="syntax"><span class="c010">capitalized-ident</span></a>). Underscore is considered a
+lowercase letter for this purpose.</p><h4 class="subsubsection" id="sss:naming-objects"><a href="#sss:naming-objects" class="section-anchor" aria-hidden="true">﻿</a>Naming objects</h4>
+<p>
+<a id="hevea_manual.kwd0"></a>
+<a id="hevea_manual.kwd1"></a>
+<a id="hevea_manual.kwd2"></a>
+<a id="hevea_manual.kwd3"></a>
+<a id="hevea_manual.kwd4"></a>
+<a id="hevea_manual.kwd5"></a>
+<a id="hevea_manual.kwd6"></a></p><div class="syntax"><table class="display dcenter"><tbody><tr class="c019"><td class="dcell"><table class="c001 cellpading0"><tbody><tr><td class="c018">
+<a class="syntax" id="value-name"><span class="c010">value-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td><td class="c015">∣</td><td class="c017">&nbsp;<span class="c004">(</span>&nbsp;<a href="#operator-name" class="syntax"><span class="c010">operator-name</span></a>&nbsp;<span class="c004">)</span>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="operator-name"><span class="c010">operator-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#prefix-symbol" class="syntax"><span class="c010">prefix-symbol</span></a>&nbsp;∣&nbsp;&nbsp;<a href="#infix-op" class="syntax"><span class="c010">infix-op</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="infix-op"><span class="c010">infix-op</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#infix-symbol" class="syntax"><span class="c010">infix-symbol</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td><td class="c015">∣</td><td class="c017">&nbsp;<span class="c004">*</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">+</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">-</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">-.</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">=</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">!=</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">&lt;</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">&gt;</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">or</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">||</span>
+∣&nbsp;&nbsp;<span class="c004">&amp;</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">&amp;&amp;</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">:=</span>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td><td class="c015">∣</td><td class="c017">&nbsp;<span class="c004">mod</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">land</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">lor</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">lxor</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">lsl</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">lsr</span>&nbsp;∣&nbsp;&nbsp;<span class="c004">asr</span>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="constr-name"><span class="c010">constr-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#capitalized-ident" class="syntax"><span class="c010">capitalized-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="tag-name"><span class="c010">tag-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#capitalized-ident" class="syntax"><span class="c010">capitalized-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="typeconstr-name"><span class="c010">typeconstr-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="field-name"><span class="c010">field-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="module-name"><span class="c010">module-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#capitalized-ident" class="syntax"><span class="c010">capitalized-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="modtype-name"><span class="c010">modtype-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#ident" class="syntax"><span class="c010">ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="class-name"><span class="c010">class-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="inst-var-name"><span class="c010">inst-var-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="method-name"><span class="c010">method-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="lex.html#lowercase-ident" class="syntax"><span class="c010">lowercase-ident</span></a>
+</td></tr>
+</tbody></table></td></tr>
+</tbody></table></div><p>
+See also the following language extension:
+<a href="indexops.html#s%3Aindex-operators">extended indexing operators</a>.</p><p>As shown above, prefix and infix symbols as well as some keywords can
+be used as value names, provided they are written between parentheses.
+The capitalization rules are summarized in the table below.</p><div class="tableau">
+<div class="center"><table class="c000 cellpadding1" border="1"><tbody><tr><td class="c014"><span class="c013">Name space</span></td><td class="c014"><span class="c013">Case of first letter</span> </td></tr>
+<tr><td class="c016">
+Values</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Constructors</td><td class="c016">uppercase </td></tr>
+<tr><td class="c016">Labels</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Polymorphic variant tags</td><td class="c016">uppercase </td></tr>
+<tr><td class="c016">Exceptions</td><td class="c016">uppercase </td></tr>
+<tr><td class="c016">Type constructors</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Record fields</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Classes</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Instance variables</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Methods</td><td class="c016">lowercase </td></tr>
+<tr><td class="c016">Modules</td><td class="c016">uppercase </td></tr>
+<tr><td class="c016">Module types</td><td class="c016">any </td></tr>
+</tbody></table></div></div><p><span class="c009">Note on polymorphic variant tags:</span> the current implementation accepts
+lowercase variant tags in addition to capitalized variant tags, but we
+suggest you avoid lowercase variant tags for portability and
+compatibility with future OCaml versions.</p><h4 class="subsubsection" id="sss:refer-named"><a href="#sss:refer-named" class="section-anchor" aria-hidden="true">﻿</a>Referring to named objects</h4>
+<div class="syntax"><table class="display dcenter"><tbody><tr class="c019"><td class="dcell"><table class="c001 cellpading0"><tbody><tr><td class="c018">
+<a class="syntax" id="value-path"><span class="c010">value-path</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#module-path" class="syntax"><span class="c010">module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#value-name" class="syntax"><span class="c010">value-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="constr"><span class="c010">constr</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#module-path" class="syntax"><span class="c010">module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#constr-name" class="syntax"><span class="c010">constr-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="typeconstr"><span class="c010">typeconstr</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#extended-module-path" class="syntax"><span class="c010">extended-module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#typeconstr-name" class="syntax"><span class="c010">typeconstr-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="field"><span class="c010">field</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#module-path" class="syntax"><span class="c010">module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#field-name" class="syntax"><span class="c010">field-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="modtype-path"><span class="c010">modtype-path</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#extended-module-path" class="syntax"><span class="c010">extended-module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#modtype-name" class="syntax"><span class="c010">modtype-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="class-path"><span class="c010">class-path</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#module-path" class="syntax"><span class="c010">module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#class-name" class="syntax"><span class="c010">class-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="classtype-path"><span class="c010">classtype-path</span></a></td><td class="c015">::=</td><td class="c017">
+[&nbsp;<a href="#extended-module-path" class="syntax"><span class="c010">extended-module-path</span></a>&nbsp;<span class="c004">.</span>&nbsp;]&nbsp;&nbsp;<a href="#class-name" class="syntax"><span class="c010">class-name</span></a>
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="module-path"><span class="c010">module-path</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="#module-name" class="syntax"><span class="c010">module-name</span></a>&nbsp;&nbsp;{&nbsp;<span class="c004">.</span>&nbsp;<a href="#module-name" class="syntax"><span class="c010">module-name</span></a>&nbsp;}
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="extended-module-path"><span class="c010">extended-module-path</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="#extended-module-name" class="syntax"><span class="c010">extended-module-name</span></a>&nbsp;&nbsp;{&nbsp;<span class="c004">.</span>&nbsp;<a href="#extended-module-name" class="syntax"><span class="c010">extended-module-name</span></a>&nbsp;}
+&nbsp;</td></tr>
+<tr><td class="c018">&nbsp;</td></tr>
+<tr><td class="c018">
+<a class="syntax" id="extended-module-name"><span class="c010">extended-module-name</span></a></td><td class="c015">::=</td><td class="c017">
+<a href="#module-name" class="syntax"><span class="c010">module-name</span></a>&nbsp;&nbsp;{&nbsp;<span class="c004">(</span>&nbsp;<a href="#extended-module-path" class="syntax"><span class="c010">extended-module-path</span></a>&nbsp;<span class="c004">)</span>&nbsp;}
+</td></tr>
+</tbody></table></td></tr>
+</tbody></table></div><p>A named object can be referred to either by its name (following the
+usual static scoping rules for names) or by an access path <span class="c010">prefix</span> <span class="c004">.</span> &nbsp;<span class="c010">name</span>,
+where <span class="c010">prefix</span> designates a module and <span class="c010">name</span> is the name of an object
+defined in that module. The first component of the path, <span class="c010">prefix</span>, is
+either a simple module name or an access path <span class="c010">name</span><sub>1</sub> <span class="c004">.</span> &nbsp;<span class="c010">name</span><sub>2</sub> …,
+in case the defining module is itself nested inside other modules.
+For referring to type constructors, module types, or class types,
+the <span class="c010">prefix</span> can
+also contain simple functor applications (as in the syntactic class
+<a href="#extended-module-path" class="syntax"><span class="c010">extended-module-path</span></a> above) in case the defining module is the
+result of a functor application.</p><p>Label names, tag names, method names and instance variable names need
+not be qualified: the former three are global labels, while the latter
+are local to a class.
+
+</p>
+
+
+
+
+
+
+</section><div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/manual/4.10/names.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

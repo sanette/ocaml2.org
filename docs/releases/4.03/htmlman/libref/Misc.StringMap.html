@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link href="index.html" rel="Start"/>
+<link href="Misc.StringSet.html" rel="previous"/>
+<link href="Misc.Color.html" rel="next"/>
+<link href="Misc.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_attributes.html" title="Index of class attributes" rel="Appendix"/>
+<link href="index_methods.html" title="Index of class methods" rel="Appendix"/>
+<link href="index_classes.html" title="Index of classes" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg.html" title="Arg" rel="Chapter"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Arith_status.html" title="Arith_status" rel="Chapter"/>
+<link href="Array.html" title="Array" rel="Chapter"/>
+<link href="ArrayLabels.html" title="ArrayLabels" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Big_int.html" title="Big_int" rel="Chapter"/>
+<link href="Bigarray.html" title="Bigarray" rel="Chapter"/>
+<link href="Buffer.html" title="Buffer" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="Bytes.html" title="Bytes" rel="Chapter"/>
+<link href="BytesLabels.html" title="BytesLabels" rel="Chapter"/>
+<link href="Callback.html" title="Callback" rel="Chapter"/>
+<link href="CamlinternalFormat.html" title="CamlinternalFormat" rel="Chapter"/>
+<link href="CamlinternalFormatBasics.html" title="CamlinternalFormatBasics" rel="Chapter"/>
+<link href="CamlinternalLazy.html" title="CamlinternalLazy" rel="Chapter"/>
+<link href="CamlinternalMod.html" title="CamlinternalMod" rel="Chapter"/>
+<link href="CamlinternalOO.html" title="CamlinternalOO" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Char.html" title="Char" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Complex.html" title="Complex" rel="Chapter"/>
+<link href="Condition.html" title="Condition" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Digest.html" title="Digest" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Dynlink.html" title="Dynlink" rel="Chapter"/>
+<link href="Ephemeron.html" title="Ephemeron" rel="Chapter"/>
+<link href="Event.html" title="Event" rel="Chapter"/>
+<link href="Filename.html" title="Filename" rel="Chapter"/>
+<link href="Format.html" title="Format" rel="Chapter"/>
+<link href="Gc.html" title="Gc" rel="Chapter"/>
+<link href="Genlex.html" title="Genlex" rel="Chapter"/>
+<link href="Graphics.html" title="Graphics" rel="Chapter"/>
+<link href="GraphicsX11.html" title="GraphicsX11" rel="Chapter"/>
+<link href="Hashtbl.html" title="Hashtbl" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Int32.html" title="Int32" rel="Chapter"/>
+<link href="Int64.html" title="Int64" rel="Chapter"/>
+<link href="Lazy.html" title="Lazy" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Lexing.html" title="Lexing" rel="Chapter"/>
+<link href="List.html" title="List" rel="Chapter"/>
+<link href="ListLabels.html" title="ListLabels" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Map.html" title="Map" rel="Chapter"/>
+<link href="Marshal.html" title="Marshal" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="MoreLabels.html" title="MoreLabels" rel="Chapter"/>
+<link href="Mutex.html" title="Mutex" rel="Chapter"/>
+<link href="Nativeint.html" title="Nativeint" rel="Chapter"/>
+<link href="Num.html" title="Num" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Obj.html" title="Obj" rel="Chapter"/>
+<link href="Oo.html" title="Oo" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Parsing.html" title="Parsing" rel="Chapter"/>
+<link href="Pervasives.html" title="Pervasives" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Printexc.html" title="Printexc" rel="Chapter"/>
+<link href="Printf.html" title="Printf" rel="Chapter"/>
+<link href="Queue.html" title="Queue" rel="Chapter"/>
+<link href="Random.html" title="Random" rel="Chapter"/>
+<link href="Ratio.html" title="Ratio" rel="Chapter"/>
+<link href="Scanf.html" title="Scanf" rel="Chapter"/>
+<link href="Set.html" title="Set" rel="Chapter"/>
+<link href="Sort.html" title="Sort" rel="Chapter"/>
+<link href="Stack.html" title="Stack" rel="Chapter"/>
+<link href="StdLabels.html" title="StdLabels" rel="Chapter"/>
+<link href="Str.html" title="Str" rel="Chapter"/>
+<link href="Stream.html" title="Stream" rel="Chapter"/>
+<link href="String.html" title="String" rel="Chapter"/>
+<link href="StringLabels.html" title="StringLabels" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Sys.html" title="Sys" rel="Chapter"/>
+<link href="Tbl.html" title="Tbl" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Thread.html" title="Thread" rel="Chapter"/>
+<link href="ThreadUnix.html" title="ThreadUnix" rel="Chapter"/>
+<link href="Timings.html" title="Timings" rel="Chapter"/>
+<link href="Uchar.html" title="Uchar" rel="Chapter"/>
+<link href="Unix.html" title="Unix" rel="Chapter"/>
+<link href="UnixLabels.html" title="UnixLabels" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/>
+<link href="Weak.html" title="Weak" rel="Chapter"/><title>Misc.StringMap</title>
+</head>
+<body>
+<div class="navbar"><a href="Misc.StringSet.html" class="pre" title="Misc.StringSet">Previous</a>
+&nbsp;<a href="Misc.html" class="up" title="Misc">Up</a>
+&nbsp;<a href="Misc.Color.html" class="post" title="Misc.Color">Next</a>
+</div>
+<h1>Module <a href="type_Misc.StringMap.html">Misc.StringMap</a></h1>
+
+<pre><span class="keyword">module</span> StringMap: <code class="type"><a href="Map.S.html">Map.S</a></code><code class="type">  with type key = string</code></pre><hr width="100%"/>
+
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type"></code>key</span> </pre>
+<div class="info ">
+The type of the map keys.<br/>
+</div>
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a</code> t</span> </pre>
+<div class="info ">
+The type of maps from type <code class="code">key</code> to type <code class="code"><span class="keywordsign">'</span>a</code>.<br/>
+</div>
+
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+The empty map.<br/>
+</div>
+
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+Test whether a map is empty or not.<br/>
+</div>
+
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">mem x m</code> returns <code class="code"><span class="keyword">true</span></code> if <code class="code">m</code> contains a binding for <code class="code">x</code>,
+       and <code class="code"><span class="keyword">false</span></code> otherwise.<br/>
+</div>
+
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -> 'a -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">add x y m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, plus a binding of <code class="code">x</code> to <code class="code">y</code>. If <code class="code">x</code> was already bound
+       in <code class="code">m</code> to a value that is physically equal to <code class="code">y</code>,
+       <code class="code">m</code> is returned unchanged (the result of the function is
+       then physically equal to <code class="code">m</code>). Otherwise, the previous binding
+       of <code class="code">x</code> in <code class="code">m</code> disappears.<br/>
+<b>Before 4.03 </b> Physical equality was not ensured.<br/>
+</div>
+
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -> 'a -> 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">singleton x y</code> returns the one-element map that contains a binding <code class="code">y</code>
+        for <code class="code">x</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">remove x m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, except for <code class="code">x</code> which is unbound in the returned map.
+       If <code class="code">x</code> was not in <code class="code">m</code>, <code class="code">m</code> is returned unchanged
+       (the result of the function is then physically equal to <code class="code">m</code>).<br/>
+<b>Before 4.03 </b> Physical equality was not ensured.<br/>
+</div>
+
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a option -> 'b option -> 'c option) -><br/>       'a <a href="Map.S.html#TYPEt">t</a> -> 'b <a href="Map.S.html#TYPEt">t</a> -> 'c <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">merge f m1 m2</code> computes a map whose keys is a subset of keys of <code class="code">m1</code>
+        and of <code class="code">m2</code>. The presence of each such binding, and the corresponding
+        value, is determined with the function <code class="code">f</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALunion"><span class="keyword">val</span> union</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> 'a -> 'a option) -><br/>       'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">union f m1 m2</code> computes a map whose keys is the union of keys
+        of <code class="code">m1</code> and of <code class="code">m2</code>.  When the same binding is defined in both
+        arguments, the function <code class="code">f</code> is used to combine them.<br/>
+<b>Since</b> 4.03.0<br/>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+Total ordering between maps.  The first argument is a total ordering
+        used to compare data associated with equal keys in the two maps.<br/>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a -> 'a -> bool) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">equal cmp m1 m2</code> tests whether the maps <code class="code">m1</code> and <code class="code">m2</code> are
+       equal, that is, contain equal keys and associate them with
+       equal data.  <code class="code">cmp</code> is the equality predicate used to compare
+       the data associated with the keys.<br/>
+</div>
+
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> unit) -> 'a <a href="Map.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">iter f m</code> applies <code class="code">f</code> to all bindings in map <code class="code">m</code>.
+       <code class="code">f</code> receives the key as first argument, and the associated value
+       as second argument.  The bindings are passed to <code class="code">f</code> in increasing
+       order with respect to the ordering over the type of the keys.<br/>
+</div>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'b) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info ">
+<code class="code">fold f m a</code> computes <code class="code">(f kN dN ... (f k1 d1 a)...)</code>,
+       where <code class="code">k1 ... kN</code> are the keys of all bindings in <code class="code">m</code>
+       (in increasing order), and <code class="code">d1 ... dN</code> are the associated data.<br/>
+</div>
+
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Map.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">for_all p m</code> checks if all the bindings of the map
+        satisfy the predicate <code class="code">p</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Map.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">exists p m</code> checks if at least one binding of the map
+        satisfy the predicate <code class="code">p</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">filter p m</code> returns the map with all the bindings in <code class="code">m</code>
+        that satisfy predicate <code class="code">p</code>. If <code class="code">p</code> satisfies every binding in <code class="code">m</code>,
+        <code class="code">m</code> is returned unchanged (the result of the function is then
+        physically equal to <code class="code">m</code>)<br/>
+<b>Before 4.03 </b> Physical equality was not ensured.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALpartition"><span class="keyword">val</span> partition</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a> * 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">partition p m</code> returns a pair of maps <code class="code">(m1, m2)</code>, where
+        <code class="code">m1</code> contains all the bindings of <code class="code">s</code> that satisfy the
+        predicate <code class="code">p</code>, and <code class="code">m2</code> is the map with all the bindings of
+        <code class="code">s</code> that do not satisfy <code class="code">p</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALcardinal"><span class="keyword">val</span> cardinal</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+Return the number of bindings of a map.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALbindings"><span class="keyword">val</span> bindings</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -> (<a href="Map.S.html#TYPEkey">key</a> * 'a) list</code></pre><div class="info ">
+Return the list of all bindings of the given map.
+       The returned list is sorted in increasing order with respect
+       to the ordering <code class="code"><span class="constructor">Ord</span>.compare</code>, where <code class="code"><span class="constructor">Ord</span></code> is the argument
+       given to <a href="Map.Make.html"><code class="code"><span class="constructor">Map</span>.<span class="constructor">Make</span></code></a>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALmin_binding"><span class="keyword">val</span> min_binding</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -> <a href="Map.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Return the smallest binding of the given map
+       (with respect to the <code class="code"><span class="constructor">Ord</span>.compare</code> ordering), or raise
+       <code class="code"><span class="constructor">Not_found</span></code> if the map is empty.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALmax_binding"><span class="keyword">val</span> max_binding</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -> <a href="Map.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Same as <a href="Map.S.html#VALmin_binding"><code class="code"><span class="constructor">Map</span>.<span class="constructor">S</span>.min_binding</code></a>, but returns the largest binding
+        of the given map.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -> <a href="Map.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Return one binding of the given map, or raise <code class="code"><span class="constructor">Not_found</span></code> if
+       the map is empty. Which binding is chosen is unspecified,
+       but equal bindings will be chosen for equal maps.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a <a href="Map.S.html#TYPEt">t</a> * 'a option * 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">split x m</code> returns a triple <code class="code">(l, data, r)</code>, where
+          <code class="code">l</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly less than <code class="code">x</code>;
+          <code class="code">r</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly greater than <code class="code">x</code>;
+          <code class="code">data</code> is <code class="code"><span class="constructor">None</span></code> if <code class="code">m</code> contains no binding for <code class="code">x</code>,
+          or <code class="code"><span class="constructor">Some</span> v</code> if <code class="code">m</code> binds <code class="code">v</code> to <code class="code">x</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<code class="code">find x m</code> returns the current binding of <code class="code">x</code> in <code class="code">m</code>,
+       or raises <code class="code"><span class="constructor">Not_found</span></code> if no such binding exists.<br/>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'b <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map f m</code> returns a map with same domain as <code class="code">m</code>, where the
+       associated value <code class="code">a</code> of all bindings of <code class="code">m</code> has been
+       replaced by the result of the application of <code class="code">f</code> to <code class="code">a</code>.
+       The bindings are passed to <code class="code">f</code> in increasing order
+       with respect to the ordering over the type of the keys.<br/>
+</div>
+
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -> 'a -> 'b) -> 'a <a href="Map.S.html#TYPEt">t</a> -> 'b <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+Same as <a href="Map.S.html#VALmap"><code class="code"><span class="constructor">Map</span>.<span class="constructor">S</span>.map</code></a>, but the function receives as arguments both the
+       key and the associated value for each binding of the map.<br/>
+</div>
+</body></html>

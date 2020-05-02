@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="Stdlib.Queue.html" rel="previous"/>
+<link href="Stdlib.Result.html" rel="next"/>
+<link href="Stdlib.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_extensions.html" title="Index of extensions" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg.html" title="Arg" rel="Chapter"/>
+<link href="Array.html" title="Array" rel="Chapter"/>
+<link href="ArrayLabels.html" title="ArrayLabels" rel="Chapter"/>
+<link href="Bigarray.html" title="Bigarray" rel="Chapter"/>
+<link href="Bool.html" title="Bool" rel="Chapter"/>
+<link href="Buffer.html" title="Buffer" rel="Chapter"/>
+<link href="Bytes.html" title="Bytes" rel="Chapter"/>
+<link href="BytesLabels.html" title="BytesLabels" rel="Chapter"/>
+<link href="Callback.html" title="Callback" rel="Chapter"/>
+<link href="CamlinternalFormat.html" title="CamlinternalFormat" rel="Chapter"/>
+<link href="CamlinternalFormatBasics.html" title="CamlinternalFormatBasics" rel="Chapter"/>
+<link href="CamlinternalLazy.html" title="CamlinternalLazy" rel="Chapter"/>
+<link href="CamlinternalMod.html" title="CamlinternalMod" rel="Chapter"/>
+<link href="CamlinternalOO.html" title="CamlinternalOO" rel="Chapter"/>
+<link href="Char.html" title="Char" rel="Chapter"/>
+<link href="Complex.html" title="Complex" rel="Chapter"/>
+<link href="Condition.html" title="Condition" rel="Chapter"/>
+<link href="Digest.html" title="Digest" rel="Chapter"/>
+<link href="Dynlink.html" title="Dynlink" rel="Chapter"/>
+<link href="Ephemeron.html" title="Ephemeron" rel="Chapter"/>
+<link href="Event.html" title="Event" rel="Chapter"/>
+<link href="Filename.html" title="Filename" rel="Chapter"/>
+<link href="Float.html" title="Float" rel="Chapter"/>
+<link href="Format.html" title="Format" rel="Chapter"/>
+<link href="Fun.html" title="Fun" rel="Chapter"/>
+<link href="Gc.html" title="Gc" rel="Chapter"/>
+<link href="Genlex.html" title="Genlex" rel="Chapter"/>
+<link href="Graphics.html" title="Graphics" rel="Chapter"/>
+<link href="GraphicsX11.html" title="GraphicsX11" rel="Chapter"/>
+<link href="Hashtbl.html" title="Hashtbl" rel="Chapter"/>
+<link href="Int.html" title="Int" rel="Chapter"/>
+<link href="Int32.html" title="Int32" rel="Chapter"/>
+<link href="Int64.html" title="Int64" rel="Chapter"/>
+<link href="Lazy.html" title="Lazy" rel="Chapter"/>
+<link href="Lexing.html" title="Lexing" rel="Chapter"/>
+<link href="List.html" title="List" rel="Chapter"/>
+<link href="ListLabels.html" title="ListLabels" rel="Chapter"/>
+<link href="Map.html" title="Map" rel="Chapter"/>
+<link href="Marshal.html" title="Marshal" rel="Chapter"/>
+<link href="MoreLabels.html" title="MoreLabels" rel="Chapter"/>
+<link href="Mutex.html" title="Mutex" rel="Chapter"/>
+<link href="Nativeint.html" title="Nativeint" rel="Chapter"/>
+<link href="Obj.html" title="Obj" rel="Chapter"/>
+<link href="Ocaml_operators.html" title="Ocaml_operators" rel="Chapter"/>
+<link href="Oo.html" title="Oo" rel="Chapter"/>
+<link href="Option.html" title="Option" rel="Chapter"/>
+<link href="Parsing.html" title="Parsing" rel="Chapter"/>
+<link href="Pervasives.html" title="Pervasives" rel="Chapter"/>
+<link href="Printexc.html" title="Printexc" rel="Chapter"/>
+<link href="Printf.html" title="Printf" rel="Chapter"/>
+<link href="Queue.html" title="Queue" rel="Chapter"/>
+<link href="Random.html" title="Random" rel="Chapter"/>
+<link href="Result.html" title="Result" rel="Chapter"/>
+<link href="Scanf.html" title="Scanf" rel="Chapter"/>
+<link href="Seq.html" title="Seq" rel="Chapter"/>
+<link href="Set.html" title="Set" rel="Chapter"/>
+<link href="Spacetime.html" title="Spacetime" rel="Chapter"/>
+<link href="Stack.html" title="Stack" rel="Chapter"/>
+<link href="StdLabels.html" title="StdLabels" rel="Chapter"/>
+<link href="Stdlib.html" title="Stdlib" rel="Chapter"/>
+<link href="Str.html" title="Str" rel="Chapter"/>
+<link href="Stream.html" title="Stream" rel="Chapter"/>
+<link href="String.html" title="String" rel="Chapter"/>
+<link href="StringLabels.html" title="StringLabels" rel="Chapter"/>
+<link href="Sys.html" title="Sys" rel="Chapter"/>
+<link href="Thread.html" title="Thread" rel="Chapter"/>
+<link href="ThreadUnix.html" title="ThreadUnix" rel="Chapter"/>
+<link href="Uchar.html" title="Uchar" rel="Chapter"/>
+<link href="Unit.html" title="Unit" rel="Chapter"/>
+<link href="Unix.html" title="Unix" rel="Chapter"/>
+<link href="UnixLabels.html" title="UnixLabels" rel="Chapter"/>
+<link href="Weak.html" title="Weak" rel="Chapter"/><link href="#1_Basicfunctions" title="Basic functions" rel="Section"/>
+<link href="#1_Advancedfunctions" title="Advanced functions" rel="Section"/>
+<title>Stdlib.Random</title>
+</head>
+<body>
+<div class="navbar"><a href="Stdlib.Queue.html" class="pre" title="Stdlib.Queue">Previous</a>
+&nbsp;<a href="Stdlib.html" class="up" title="Stdlib">Up</a>
+&nbsp;<a href="Stdlib.Result.html" class="post" title="Stdlib.Result">Next</a>
+</div>
+<h1>Module <a href="type_Stdlib.Random.html">Stdlib.Random</a></h1>
+
+<pre><span id="MODULERandom"><span class="keyword">module</span> Random</span>: <code class="type"><a href="Random.html">Random</a></code></pre><hr width="100%"/>
+<h2 id="1_Basicfunctions">Basic functions</h2>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Initialize the generator, using the argument as a seed.
+     The same seed will always yield the same sequence of numbers.</p>
+</div>
+</div>
+
+<pre><span id="VALfull_init"><span class="keyword">val</span> full_init</span> : <code class="type">int array -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Random.html#VALinit"><code class="code"><span class="constructor">Random</span>.init</code></a> but takes more data as seed.</p>
+</div>
+</div>
+
+<pre><span id="VALself_init"><span class="keyword">val</span> self_init</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Initialize the generator with a random seed chosen
+   in a system-dependent way.  If <code class="code">/dev/urandom</code> is available on
+   the host machine, it is used to provide a highly random initial
+   seed.  Otherwise, a less random seed is computed from system
+   parameters (current time, process IDs).</p>
+</div>
+</div>
+
+<pre><span id="VALbits"><span class="keyword">val</span> bits</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p>Return 30 random bits in a nonnegative integer.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Before 3.12.0 </b> used a different algorithm (affects all the following
+                   functions)</li>
+</ul>
+</div>
+
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type">int -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Random</span>.int&nbsp;bound</code> returns a random integer between 0 (inclusive)
+     and <code class="code">bound</code> (exclusive).  <code class="code">bound</code> must be greater than 0 and less
+     than 2<sup class="superscript">30</sup>.</p>
+</div>
+</div>
+
+<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Int32.html#TYPEt">Int32.t</a> -> <a href="Int32.html#TYPEt">Int32.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Random</span>.int32&nbsp;bound</code> returns a random integer between 0 (inclusive)
+     and <code class="code">bound</code> (exclusive).  <code class="code">bound</code> must be greater than 0.</p>
+</div>
+</div>
+
+<pre><span id="VALnativeint"><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="Nativeint.html#TYPEt">Nativeint.t</a> -> <a href="Nativeint.html#TYPEt">Nativeint.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Random</span>.nativeint&nbsp;bound</code> returns a random integer between 0 (inclusive)
+     and <code class="code">bound</code> (exclusive).  <code class="code">bound</code> must be greater than 0.</p>
+</div>
+</div>
+
+<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Int64.html#TYPEt">Int64.t</a> -> <a href="Int64.html#TYPEt">Int64.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Random</span>.int64&nbsp;bound</code> returns a random integer between 0 (inclusive)
+     and <code class="code">bound</code> (exclusive).  <code class="code">bound</code> must be greater than 0.</p>
+</div>
+</div>
+
+<pre><span id="VALfloat"><span class="keyword">val</span> float</span> : <code class="type">float -> float</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Random</span>.float&nbsp;bound</code> returns a random floating-point number
+   between 0 and <code class="code">bound</code> (inclusive).  If <code class="code">bound</code> is
+   negative, the result is negative or zero.  If <code class="code">bound</code> is 0,
+   the result is 0.</p>
+</div>
+</div>
+
+<pre><span id="VALbool"><span class="keyword">val</span> bool</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Random</span>.bool&nbsp;()</code> returns <code class="code"><span class="keyword">true</span></code> or <code class="code"><span class="keyword">false</span></code> with probability 0.5 each.</p>
+</div>
+</div>
+<h2 id="1_Advancedfunctions">Advanced functions</h2><p>The functions from module <a href="Random.State.html"><code class="code"><span class="constructor">Random</span>.<span class="constructor">State</span></code></a> manipulate the current state
+    of the random generator explicitly.
+    This allows using one or several deterministic PRNGs,
+    even in a multi-threaded program, without interference from
+    other parts of the program.</p>
+
+<pre><span id="MODULEState"><span class="keyword">module</span> <a href="Random.State.html">State</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Random.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="VALget_state"><span class="keyword">val</span> get_state</span> : <code class="type">unit -> <a href="Random.State.html#TYPEt">State.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Return the current state of the generator used by the basic functions.</p>
+</div>
+</div>
+
+<pre><span id="VALset_state"><span class="keyword">val</span> set_state</span> : <code class="type"><a href="Random.State.html#TYPEt">State.t</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Set the state of the generator used by the basic functions.</p>
+</div>
+</div>
+</body></html>

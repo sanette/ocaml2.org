@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="Build_path_prefix_map.html" rel="previous"/>
+<link href="CamlinternalMenhirLib.html" rel="next"/>
+<link href="index.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Build_path_prefix_map.html" title="Build_path_prefix_map" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="CamlinternalMenhirLib.html" title="CamlinternalMenhirLib" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Compiler_libs.html" title="Compiler_libs" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Depend.html" title="Depend" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Int_replace_polymorphic_compare.html" title="Int_replace_polymorphic_compare" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Load_path.html" title="Load_path" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Pparse.html" title="Pparse" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Profile.html" title="Profile" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Targetint.html" title="Targetint" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/><title>Builtin_attributes</title>
+</head>
+<body>
+<div class="navbar"><a href="Build_path_prefix_map.html" class="pre" title="Build_path_prefix_map">Previous</a>
+&nbsp;<a href="index.html" class="up" title="Index">Up</a>
+&nbsp;<a href="CamlinternalMenhirLib.html" class="post" title="CamlinternalMenhirLib">Next</a>
+</div>
+<h1>Module <a href="type_Builtin_attributes.html">Builtin_attributes</a></h1>
+
+<pre><span id="MODULEBuiltin_attributes"><span class="keyword">module</span> Builtin_attributes</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Builtin_attributes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Support for some of the builtin attributes</p>
+
+<ul>
+<li>ocaml.deprecated</li>
+<li>ocaml.alert</li>
+<li>ocaml.error</li>
+<li>ocaml.ppwarning</li>
+<li>ocaml.warning</li>
+<li>ocaml.warnerror</li>
+<li>ocaml.explicit_arity (for camlp4/camlp5)</li>
+<li>ocaml.warn_on_literal_pattern</li>
+<li>ocaml.deprecated_mutable</li>
+<li>ocaml.immediate</li>
+<li>ocaml.boxed / ocaml.unboxed</li>
+</ul>
+<p><b>Warning:</b> this module is unstable and part of
+  <a href="Compiler_libs.html">compiler-libs</a>.</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="VALcheck_alerts"><span class="keyword">val</span> check_alerts</span> : <code class="type"><a href="Location.html#TYPEt">Location.t</a> -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> string -> unit</code></pre>
+<pre><span id="VALcheck_alerts_inclusion"><span class="keyword">val</span> check_alerts_inclusion</span> : <code class="type">def:<a href="Location.html#TYPEt">Location.t</a> -><br/>       use:<a href="Location.html#TYPEt">Location.t</a> -><br/>       <a href="Location.html#TYPEt">Location.t</a> -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> string -> unit</code></pre>
+<pre><span id="VALalerts_of_attrs"><span class="keyword">val</span> alerts_of_attrs</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> <a href="Misc.html#TYPEalerts">Misc.alerts</a></code></pre>
+<pre><span id="VALalerts_of_sig"><span class="keyword">val</span> alerts_of_sig</span> : <code class="type"><a href="Parsetree.html#TYPEsignature">Parsetree.signature</a> -> <a href="Misc.html#TYPEalerts">Misc.alerts</a></code></pre>
+<pre><span id="VALalerts_of_str"><span class="keyword">val</span> alerts_of_str</span> : <code class="type"><a href="Parsetree.html#TYPEstructure">Parsetree.structure</a> -> <a href="Misc.html#TYPEalerts">Misc.alerts</a></code></pre>
+<pre><span id="VALcheck_deprecated_mutable"><span class="keyword">val</span> check_deprecated_mutable</span> : <code class="type"><a href="Location.html#TYPEt">Location.t</a> -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> string -> unit</code></pre>
+<pre><span id="VALcheck_deprecated_mutable_inclusion"><span class="keyword">val</span> check_deprecated_mutable_inclusion</span> : <code class="type">def:<a href="Location.html#TYPEt">Location.t</a> -><br/>       use:<a href="Location.html#TYPEt">Location.t</a> -><br/>       <a href="Location.html#TYPEt">Location.t</a> -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> string -> unit</code></pre>
+<pre><span id="VALcheck_no_alert"><span class="keyword">val</span> check_no_alert</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> unit</code></pre>
+<pre><span id="VALerror_of_extension"><span class="keyword">val</span> error_of_extension</span> : <code class="type"><a href="Parsetree.html#TYPEextension">Parsetree.extension</a> -> <a href="Location.html#TYPEerror">Location.error</a></code></pre>
+<pre><span id="VALwarning_attribute"><span class="keyword">val</span> warning_attribute</span> : <code class="type">?ppwarning:bool -> <a href="Parsetree.html#TYPEattribute">Parsetree.attribute</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Apply warning settings from the specified attribute.
+      "ocaml.warning"/"ocaml.warnerror" (and variants without the prefix)
+      are processed and other attributes are ignored.</p>
+
+<p>Also implement ocaml.ppwarning (unless ~ppwarning:false is
+      passed).</p>
+</div>
+</div>
+
+<pre><span id="VALwarning_scope"><span class="keyword">val</span> warning_scope</span> : <code class="type">?ppwarning:bool -> <a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> (unit -> 'a) -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Execute a function in a new scope for warning settings.  This
+      means that the effect of any call to <code class="code">warning_attribute</code> during
+      the execution of this function will be discarded after
+      execution.</p>
+
+<p>The function also takes a list of attributes which are processed
+      with <code class="code">warning_attribute</code> in the fresh scope before the function
+      is executed.</p>
+</div>
+</div>
+
+<pre><span id="VALwarn_on_literal_pattern"><span class="keyword">val</span> warn_on_literal_pattern</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> bool</code></pre>
+<pre><span id="VALexplicit_arity"><span class="keyword">val</span> explicit_arity</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> bool</code></pre>
+<pre><span id="VALimmediate"><span class="keyword">val</span> immediate</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> bool</code></pre>
+<pre><span id="VALhas_unboxed"><span class="keyword">val</span> has_unboxed</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> bool</code></pre>
+<pre><span id="VALhas_boxed"><span class="keyword">val</span> has_boxed</span> : <code class="type"><a href="Parsetree.html#TYPEattributes">Parsetree.attributes</a> -> bool</code></pre></body></html>

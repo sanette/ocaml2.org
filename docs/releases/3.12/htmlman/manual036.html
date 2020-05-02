@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<meta name="GENERATOR" content="hevea 1.10"/>
+<link href="manual.css" rel="stylesheet" type="text/css"/>
+<title>The num library: arbitrary-precision rational arithmetic</title>
+</head>
+<body>
+<a href="manual035.html"><img src="previous_motif.gif" alt="Previous"/></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual037.html"><img src="next_motif.gif" alt="Next"/></a>
+<hr/>
+<h1 class="chapter"><a name="htoc268">Chapter 22</a>  The num library: arbitrary-precision rational arithmetic</h1><p>The <tt>num</tt> library implements integer arithmetic and rational
+arithmetic in arbitrary precision.</p><p>More documentation on the functions provided in this library can be found
+in <em>The CAML Numbers Reference Manual</em> by 
+Valérie Ménissier-Morain, technical report 141, INRIA, july 1992
+(available electronically,
+<tt>ftp://ftp.inria.fr/INRIA/publication/RT/RT-0141.ps.gz</tt>).</p><p>Programs that use the <tt>num</tt> library must be linked as follows:
+</p><pre>
+        ocamlc <i>other options</i> nums.cma <i>other files</i>
+        ocamlopt <i>other options</i> nums.cmxa <i>other files</i>
+</pre><p>
+For interactive use of the <tt>nums</tt> library, do:
+</p><pre>
+        ocamlmktop -o mytop nums.cma
+        ./mytop
+</pre><p>
+or (if dynamic linking of C libraries is supported on your platform),
+start <tt>ocaml</tt> and type <tt>#load "nums.cma";;</tt>.</p><ul class="ftoc2"><li class="li-links">
+<a href="libref/Num.html">Module <tt>Num</tt>: operation on arbitrary-precision numbers</a>
+</li><li class="li-links"><a href="libref/Big_int.html">Module <tt>Big_int</tt>: operations on arbitrary-precision integers</a>
+</li><li class="li-links"><a href="libref/Arith_status.html">Module <tt>Arith_status</tt>: flags that control rational arithmetic</a>
+</li></ul><hr/>
+<a href="manual035.html"><img src="previous_motif.gif" alt="Previous"/></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"/></a>
+<a href="manual037.html"><img src="next_motif.gif" alt="Next"/></a>
+</body>
+</html>

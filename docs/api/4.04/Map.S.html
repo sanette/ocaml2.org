@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="Map.S.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.04/Map.S.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.04</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="#top">Map.S</a></div><ul></ul></nav></header>
+
+<h1>Module type <a href="type_Map.S.html">Map.S</a></h1>
+
+<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Map.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Output signature of the functor <a href="Map.Make.html"><code class="code"><span class="constructor">Map</span>.<span class="constructor">Make</span></code></a>.<br/>
+</div>
+<hr width="100%"/>
+
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type"></code>key</span> </pre>
+<div class="info ">
+The type of the map keys.<br/>
+</div>
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a</code> t</span> </pre>
+<div class="info ">
+The type of maps from type <code class="code">key</code> to type <code class="code"><span class="keywordsign">'</span>a</code>.<br/>
+</div>
+
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+The empty map.<br/>
+</div>
+
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
+Test whether a map is empty or not.<br/>
+</div>
+
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
+<code class="code">mem&nbsp;x&nbsp;m</code> returns <code class="code"><span class="keyword">true</span></code> if <code class="code">m</code> contains a binding for <code class="code">x</code>,
+       and <code class="code"><span class="keyword">false</span></code> otherwise.<br/>
+</div>
+
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">add&nbsp;x&nbsp;y&nbsp;m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, plus a binding of <code class="code">x</code> to <code class="code">y</code>. If <code class="code">x</code> was already bound
+       in <code class="code">m</code> to a value that is physically equal to <code class="code">y</code>,
+       <code class="code">m</code> is returned unchanged (the result of the function is
+       then physically equal to <code class="code">m</code>). Otherwise, the previous binding
+       of <code class="code">x</code> in <code class="code">m</code> disappears.<br/>
+<b>Before 4.03 </b> Physical equality was not ensured.<br/>
+</div>
+
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">singleton&nbsp;x&nbsp;y</code> returns the one-element map that contains a binding <code class="code">y</code>
+        for <code class="code">x</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">remove&nbsp;x&nbsp;m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, except for <code class="code">x</code> which is unbound in the returned map.
+       If <code class="code">x</code> was not in <code class="code">m</code>, <code class="code">m</code> is returned unchanged
+       (the result of the function is then physically equal to <code class="code">m</code>).<br/>
+<b>Before 4.03 </b> Physical equality was not ensured.<br/>
+</div>
+
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a option -&gt; 'b option -&gt; 'c option) -&gt;<br/>       'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'b <a href="Map.S.html#TYPEt">t</a> -&gt; 'c <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">merge&nbsp;f&nbsp;m1&nbsp;m2</code> computes a map whose keys is a subset of keys of <code class="code">m1</code>
+        and of <code class="code">m2</code>. The presence of each such binding, and the corresponding
+        value, is determined with the function <code class="code">f</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALunion"><span class="keyword">val</span> union</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'a -&gt; 'a option) -&gt;<br/>       'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">union&nbsp;f&nbsp;m1&nbsp;m2</code> computes a map whose keys is the union of keys
+        of <code class="code">m1</code> and of <code class="code">m2</code>.  When the same binding is defined in both
+        arguments, the function <code class="code">f</code> is used to combine them.<br/>
+<b>Since</b> 4.03.0<br/>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -&gt; 'a -&gt; int) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
+Total ordering between maps.  The first argument is a total ordering
+        used to compare data associated with equal keys in the two maps.<br/>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a -&gt; 'a -&gt; bool) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
+<code class="code">equal&nbsp;cmp&nbsp;m1&nbsp;m2</code> tests whether the maps <code class="code">m1</code> and <code class="code">m2</code> are
+       equal, that is, contain equal keys and associate them with
+       equal data.  <code class="code">cmp</code> is the equality predicate used to compare
+       the data associated with the keys.<br/>
+</div>
+
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; unit) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
+<code class="code">iter&nbsp;f&nbsp;m</code> applies <code class="code">f</code> to all bindings in map <code class="code">m</code>.
+       <code class="code">f</code> receives the key as first argument, and the associated value
+       as second argument.  The bindings are passed to <code class="code">f</code> in increasing
+       order with respect to the ordering over the type of the keys.<br/>
+</div>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'b -&gt; 'b) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'b -&gt; 'b</code></pre><div class="info ">
+<code class="code">fold&nbsp;f&nbsp;m&nbsp;a</code> computes <code class="code">(f&nbsp;kN&nbsp;dN&nbsp;...&nbsp;(f&nbsp;k1&nbsp;d1&nbsp;a)...)</code>,
+       where <code class="code">k1&nbsp;...&nbsp;kN</code> are the keys of all bindings in <code class="code">m</code>
+       (in increasing order), and <code class="code">d1&nbsp;...&nbsp;dN</code> are the associated data.<br/>
+</div>
+
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
+<code class="code">for_all&nbsp;p&nbsp;m</code> checks if all the bindings of the map
+        satisfy the predicate <code class="code">p</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
+<code class="code">exists&nbsp;p&nbsp;m</code> checks if at least one binding of the map
+        satisfy the predicate <code class="code">p</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">filter&nbsp;p&nbsp;m</code> returns the map with all the bindings in <code class="code">m</code>
+        that satisfy predicate <code class="code">p</code>. If <code class="code">p</code> satisfies every binding in <code class="code">m</code>,
+        <code class="code">m</code> is returned unchanged (the result of the function is then
+        physically equal to <code class="code">m</code>)<br/>
+<b>Before 4.03 </b> Physical equality was not ensured.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALpartition"><span class="keyword">val</span> partition</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; bool) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> * 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">partition&nbsp;p&nbsp;m</code> returns a pair of maps <code class="code">(m1,&nbsp;m2)</code>, where
+        <code class="code">m1</code> contains all the bindings of <code class="code">s</code> that satisfy the
+        predicate <code class="code">p</code>, and <code class="code">m2</code> is the map with all the bindings of
+        <code class="code">s</code> that do not satisfy <code class="code">p</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALcardinal"><span class="keyword">val</span> cardinal</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
+Return the number of bindings of a map.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALbindings"><span class="keyword">val</span> bindings</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -&gt; (<a href="Map.S.html#TYPEkey">key</a> * 'a) list</code></pre><div class="info ">
+Return the list of all bindings of the given map.
+       The returned list is sorted in increasing order with respect
+       to the ordering <code class="code"><span class="constructor">Ord</span>.compare</code>, where <code class="code"><span class="constructor">Ord</span></code> is the argument
+       given to <a href="Map.Make.html"><code class="code"><span class="constructor">Map</span>.<span class="constructor">Make</span></code></a>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALmin_binding"><span class="keyword">val</span> min_binding</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -&gt; <a href="Map.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Return the smallest binding of the given map
+       (with respect to the <code class="code"><span class="constructor">Ord</span>.compare</code> ordering), or raise
+       <code class="code"><span class="constructor">Not_found</span></code> if the map is empty.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALmax_binding"><span class="keyword">val</span> max_binding</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -&gt; <a href="Map.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Same as <a href="Map.S.html#VALmin_binding"><code class="code"><span class="constructor">Map</span>.<span class="constructor">S</span>.min_binding</code></a>, but returns the largest binding
+        of the given map.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Map.S.html#TYPEt">t</a> -&gt; <a href="Map.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Return one binding of the given map, or raise <code class="code"><span class="constructor">Not_found</span></code> if
+       the map is empty. Which binding is chosen is unspecified,
+       but equal bindings will be chosen for equal maps.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> * 'a option * 'a <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">split&nbsp;x&nbsp;m</code> returns a triple <code class="code">(l,&nbsp;data,&nbsp;r)</code>, where
+          <code class="code">l</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly less than <code class="code">x</code>;
+          <code class="code">r</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly greater than <code class="code">x</code>;
+          <code class="code">data</code> is <code class="code"><span class="constructor">None</span></code> if <code class="code">m</code> contains no binding for <code class="code">x</code>,
+          or <code class="code"><span class="constructor">Some</span>&nbsp;v</code> if <code class="code">m</code> binds <code class="code">v</code> to <code class="code">x</code>.<br/>
+<b>Since</b> 3.12.0<br/>
+</div>
+
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="Map.S.html#TYPEkey">key</a> -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
+<code class="code">find&nbsp;x&nbsp;m</code> returns the current binding of <code class="code">x</code> in <code class="code">m</code>,
+       or raises <code class="code"><span class="constructor">Not_found</span></code> if no such binding exists.<br/>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -&gt; 'b) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'b <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map&nbsp;f&nbsp;m</code> returns a map with same domain as <code class="code">m</code>, where the
+       associated value <code class="code">a</code> of all bindings of <code class="code">m</code> has been
+       replaced by the result of the application of <code class="code">f</code> to <code class="code">a</code>.
+       The bindings are passed to <code class="code">f</code> in increasing order
+       with respect to the ordering over the type of the keys.<br/>
+</div>
+
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">(<a href="Map.S.html#TYPEkey">key</a> -&gt; 'a -&gt; 'b) -&gt; 'a <a href="Map.S.html#TYPEt">t</a> -&gt; 'b <a href="Map.S.html#TYPEt">t</a></code></pre><div class="info ">
+Same as <a href="Map.S.html#VALmap"><code class="code"><span class="constructor">Map</span>.<span class="constructor">S</span>.map</code></a>, but the function receives as arguments both the
+       key and the associated value for each binding of the map.<br/>
+</div>
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.04/Map.S.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

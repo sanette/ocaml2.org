@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="type_Stdlib.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.10/type_Stdlib.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.10</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="Stdlib.html">Stdlib</a></div><ul></ul></nav></header>
+<code class="code"><span class="keyword">sig</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;raise&nbsp;:&nbsp;exn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%raise"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;raise_notrace&nbsp;:&nbsp;exn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%raise_notrace"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;invalid_arg&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;failwith&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Exit</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Match_failure</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;int&nbsp;*&nbsp;int)<br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Assert_failure</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;int&nbsp;*&nbsp;int)<br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Invalid_argument</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Failure</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Not_found</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Out_of_memory</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Stack_overflow</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Sys_error</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">End_of_file</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Division_by_zero</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Sys_blocked_io</span><br/>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Undefined_recursive_module</span>&nbsp;<span class="keyword">of</span>&nbsp;(string&nbsp;*&nbsp;int&nbsp;*&nbsp;int)<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%equal"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;&lt;&gt;&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%notequal"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;&lt;&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%lessthan"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;&gt;&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%greaterthan"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;&lt;=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%lessequal"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;&gt;=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%greaterequal"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;compare&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%compare"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;min&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;max&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;==&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%eq"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;!=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%noteq"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;not&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%boolnot"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">&amp;&amp;</span>&nbsp;)&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%sequand"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">&amp;</span>&nbsp;)&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%sequand"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">||</span>&nbsp;)&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%sequor"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">or</span>&nbsp;)&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;=&nbsp;<span class="string">"%sequor"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__LOC__&nbsp;:&nbsp;string&nbsp;=&nbsp;<span class="string">"%loc_LOC"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__FILE__&nbsp;:&nbsp;string&nbsp;=&nbsp;<span class="string">"%loc_FILE"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__LINE__&nbsp;:&nbsp;int&nbsp;=&nbsp;<span class="string">"%loc_LINE"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__MODULE__&nbsp;:&nbsp;string&nbsp;=&nbsp;<span class="string">"%loc_MODULE"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__POS__&nbsp;:&nbsp;string&nbsp;*&nbsp;int&nbsp;*&nbsp;int&nbsp;*&nbsp;int&nbsp;=&nbsp;<span class="string">"%loc_POS"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__LOC_OF__&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%loc_LOC"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__LINE_OF__&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%loc_LINE"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;__POS_OF__&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(string&nbsp;*&nbsp;int&nbsp;*&nbsp;int&nbsp;*&nbsp;int)&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%loc_POS"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;|&gt;&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;=&nbsp;<span class="string">"%revapply"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;@@&nbsp;)&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;=&nbsp;<span class="string">"%apply"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">~-</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%negint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">~+</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%identity"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;succ&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%succint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;pred&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%predint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;+&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%addint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;-&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%subint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;*&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%mulint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;/&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%divint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">mod</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%modint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;abs&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;max_int&nbsp;:&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;min_int&nbsp;:&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">land</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%andint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">lor</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%orint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">lxor</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%xorint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;lnot&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">lsl</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%lslint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">lsr</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%lsrint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keyword">asr</span>&nbsp;)&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%asrint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">~-.</span>&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%negfloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;<span class="keywordsign">~+.</span>&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%identity"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;+.&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%addfloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;-.&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%subfloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;*.&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%mulfloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;/.&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%divfloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;**&nbsp;)&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_power_float"</span>&nbsp;<span class="string">"pow"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;sqrt&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_sqrt_float"</span>&nbsp;<span class="string">"sqrt"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;exp&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_exp_float"</span>&nbsp;<span class="string">"exp"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;log&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_log_float"</span>&nbsp;<span class="string">"log"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;log10&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_log10_float"</span>&nbsp;<span class="string">"log10"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;expm1&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_expm1_float"</span>&nbsp;<span class="string">"caml_expm1"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;log1p&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_log1p_float"</span>&nbsp;<span class="string">"caml_log1p"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cos&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_cos_float"</span>&nbsp;<span class="string">"cos"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;sin&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_sin_float"</span>&nbsp;<span class="string">"sin"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;tan&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_tan_float"</span>&nbsp;<span class="string">"tan"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;acos&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_acos_float"</span>&nbsp;<span class="string">"acos"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;asin&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_asin_float"</span>&nbsp;<span class="string">"asin"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;atan&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_atan_float"</span>&nbsp;<span class="string">"atan"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;atan2&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_atan2_float"</span>&nbsp;<span class="string">"atan2"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hypot&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_hypot_float"</span>&nbsp;<span class="string">"caml_hypot"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cosh&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_cosh_float"</span>&nbsp;<span class="string">"cosh"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;sinh&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_sinh_float"</span>&nbsp;<span class="string">"sinh"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;tanh&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_tanh_float"</span>&nbsp;<span class="string">"tanh"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;ceil&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_ceil_float"</span>&nbsp;<span class="string">"ceil"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;floor&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_floor_float"</span>&nbsp;<span class="string">"floor"</span>&nbsp;[@@unboxed]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;abs_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%absfloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;copysign&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_copysign_float"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"caml_copysign"</span>&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;mod_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_fmod_float"</span>&nbsp;<span class="string">"fmod"</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@unboxed]&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;frexp&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_frexp_float"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;ldexp&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(float&nbsp;[@unboxed])&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(int&nbsp;[@untagged])&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(float&nbsp;[@unboxed])<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_ldexp_float"</span>&nbsp;<span class="string">"caml_ldexp_float_unboxed"</span>&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;modf&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;*&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_modf_float"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;float&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%floatofint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;float_of_int&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"%floatofint"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;truncate&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%intoffloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;int_of_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%intoffloat"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;infinity&nbsp;:&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;neg_infinity&nbsp;:&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;nan&nbsp;:&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;max_float&nbsp;:&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;min_float&nbsp;:&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;epsilon_float&nbsp;:&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;fpclass&nbsp;=&nbsp;<span class="constructor">FP_normal</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FP_subnormal</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FP_zero</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FP_infinite</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FP_nan</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;classify_float&nbsp;:&nbsp;(float&nbsp;[@unboxed])&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.fpclass<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"caml_classify_float"</span>&nbsp;<span class="string">"caml_classify_float_unboxed"</span>&nbsp;[@@noalloc]<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;^&nbsp;)&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;int_of_char&nbsp;:&nbsp;char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"%identity"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;char_of_int&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;char<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;ignore&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"%ignore"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;string_of_bool&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bool_of_string_opt&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;option<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bool_of_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;string_of_int&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;int_of_string_opt&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;option<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;int_of_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"caml_int_of_string"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;string_of_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;float_of_string_opt&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;option<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;float_of_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"caml_float_of_string"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;fst&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%field0"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;snd&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;*&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;=&nbsp;<span class="string">"%field1"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;@&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;list<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;in_channel<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;out_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stdin&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stdout&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stderr&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_char&nbsp;:&nbsp;char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_bytes&nbsp;:&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_int&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_endline&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print_newline&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_char&nbsp;:&nbsp;char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_bytes&nbsp;:&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_int&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_endline&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;prerr_newline&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_line&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_int_opt&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;option<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_int&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_float_opt&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;option<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_float&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;open_flag&nbsp;=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Open_rdonly</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_wronly</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_append</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_creat</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_trunc</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_excl</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_binary</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_text</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Open_nonblock</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_out&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.out_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_out_bin&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.out_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_out_gen&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Stdlib</span>.open_flag&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.out_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;flush&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;flush_all&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_char&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_string&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_bytes&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_substring&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_byte&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_binary_int&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_value&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;seek_out&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pos_out&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;out_channel_length&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close_out&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close_out_noerr&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;set_binary_mode_out&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_in&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.in_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_in_bin&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.in_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;open_in_gen&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Stdlib</span>.open_flag&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Stdlib</span>.in_channel<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_char&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;char<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_line&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;really_input&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;really_input_string&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_byte&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_binary_int&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_value&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;seek_in&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pos_in&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;in_channel_length&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close_in&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close_in_noerr&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;set_binary_mode_in&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">LargeFile</span>&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;seek_out&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pos_out&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;out_channel_length&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;seek_in&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pos_in&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;in_channel_length&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;ref&nbsp;=&nbsp;{&nbsp;<span class="keyword">mutable</span>&nbsp;contents&nbsp;:&nbsp;<span class="keywordsign">'</span>a;&nbsp;}<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;ref&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Stdlib</span>.ref&nbsp;=&nbsp;<span class="string">"%makemutable"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;!&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Stdlib</span>.ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="string">"%field0"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;(&nbsp;:=&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Stdlib</span>.ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"%setfield0"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;incr&nbsp;:&nbsp;int&nbsp;<span class="constructor">Stdlib</span>.ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"%incr"</span><br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;decr&nbsp;:&nbsp;int&nbsp;<span class="constructor">Stdlib</span>.ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"%decr"</span><br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b)&nbsp;result&nbsp;=&nbsp;<span class="constructor">Ok</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Error</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>b<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>f)&nbsp;format6&nbsp;=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>f)&nbsp;<span class="constructor">CamlinternalFormatBasics</span>.format6<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;format4&nbsp;=&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;<span class="constructor">Stdlib</span>.format6<br/>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c)&nbsp;format&nbsp;=&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="constructor">Stdlib</span>.format4<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;string_of_format&nbsp;:&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>f)&nbsp;<span class="constructor">Stdlib</span>.format6&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;format_of_string&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>f)&nbsp;<span class="constructor">Stdlib</span>.format6&nbsp;<span class="keywordsign">-&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>f)&nbsp;<span class="constructor">Stdlib</span>.format6&nbsp;=&nbsp;<span class="string">"%identity"</span><br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;^^&nbsp;)&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>f)&nbsp;<span class="constructor">Stdlib</span>.format6&nbsp;<span class="keywordsign">-&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>f,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>e,&nbsp;<span class="keywordsign">'</span>g,&nbsp;<span class="keywordsign">'</span>h)&nbsp;<span class="constructor">Stdlib</span>.format6&nbsp;<span class="keywordsign">-&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d,&nbsp;<span class="keywordsign">'</span>g,&nbsp;<span class="keywordsign">'</span>h)&nbsp;<span class="constructor">Stdlib</span>.format6<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;exit&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;at_exit&nbsp;:&nbsp;(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;valid_float_lexem&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;unsafe_really_input&nbsp;:&nbsp;<span class="constructor">Stdlib</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bytes&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;do_at_exit&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Arg</span>&nbsp;=&nbsp;<span class="constructor">Arg</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Array</span>&nbsp;=&nbsp;<span class="constructor">Array</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">ArrayLabels</span>&nbsp;=&nbsp;<span class="constructor">ArrayLabels</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Bigarray</span>&nbsp;=&nbsp;<span class="constructor">Bigarray</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Bool</span>&nbsp;=&nbsp;<span class="constructor">Bool</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Buffer</span>&nbsp;=&nbsp;<span class="constructor">Buffer</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Bytes</span>&nbsp;=&nbsp;<span class="constructor">Bytes</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">BytesLabels</span>&nbsp;=&nbsp;<span class="constructor">BytesLabels</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Callback</span>&nbsp;=&nbsp;<span class="constructor">Callback</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Char</span>&nbsp;=&nbsp;<span class="constructor">Char</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Complex</span>&nbsp;=&nbsp;<span class="constructor">Complex</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Digest</span>&nbsp;=&nbsp;<span class="constructor">Digest</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Ephemeron</span>&nbsp;=&nbsp;<span class="constructor">Ephemeron</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Filename</span>&nbsp;=&nbsp;<span class="constructor">Filename</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Float</span>&nbsp;=&nbsp;<span class="constructor">Float</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Format</span>&nbsp;=&nbsp;<span class="constructor">Format</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Fun</span>&nbsp;=&nbsp;<span class="constructor">Fun</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Gc</span>&nbsp;=&nbsp;<span class="constructor">Gc</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Genlex</span>&nbsp;=&nbsp;<span class="constructor">Genlex</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Hashtbl</span>&nbsp;=&nbsp;<span class="constructor">Hashtbl</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Int</span>&nbsp;=&nbsp;<span class="constructor">Int</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Int32</span>&nbsp;=&nbsp;<span class="constructor">Int32</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Int64</span>&nbsp;=&nbsp;<span class="constructor">Int64</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Lazy</span>&nbsp;=&nbsp;<span class="constructor">Lazy</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Lexing</span>&nbsp;=&nbsp;<span class="constructor">Lexing</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">List</span>&nbsp;=&nbsp;<span class="constructor">List</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">ListLabels</span>&nbsp;=&nbsp;<span class="constructor">ListLabels</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Map</span>&nbsp;=&nbsp;<span class="constructor">Map</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Marshal</span>&nbsp;=&nbsp;<span class="constructor">Marshal</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">MoreLabels</span>&nbsp;=&nbsp;<span class="constructor">MoreLabels</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Nativeint</span>&nbsp;=&nbsp;<span class="constructor">Nativeint</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Obj</span>&nbsp;=&nbsp;<span class="constructor">Obj</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Oo</span>&nbsp;=&nbsp;<span class="constructor">Oo</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Option</span>&nbsp;=&nbsp;<span class="constructor">Option</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Parsing</span>&nbsp;=&nbsp;<span class="constructor">Parsing</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Pervasives</span>&nbsp;=&nbsp;<span class="constructor">Pervasives</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Printexc</span>&nbsp;=&nbsp;<span class="constructor">Printexc</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Printf</span>&nbsp;=&nbsp;<span class="constructor">Printf</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Queue</span>&nbsp;=&nbsp;<span class="constructor">Queue</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Random</span>&nbsp;=&nbsp;<span class="constructor">Random</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Result</span>&nbsp;=&nbsp;<span class="constructor">Result</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Scanf</span>&nbsp;=&nbsp;<span class="constructor">Scanf</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Seq</span>&nbsp;=&nbsp;<span class="constructor">Seq</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Set</span>&nbsp;=&nbsp;<span class="constructor">Set</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Spacetime</span>&nbsp;=&nbsp;<span class="constructor">Spacetime</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Stack</span>&nbsp;=&nbsp;<span class="constructor">Stack</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">StdLabels</span>&nbsp;=&nbsp;<span class="constructor">StdLabels</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Stream</span>&nbsp;=&nbsp;<span class="constructor">Stream</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">String</span>&nbsp;=&nbsp;<span class="constructor">String</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">StringLabels</span>&nbsp;=&nbsp;<span class="constructor">StringLabels</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Sys</span>&nbsp;=&nbsp;<span class="constructor">Sys</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Uchar</span>&nbsp;=&nbsp;<span class="constructor">Uchar</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Unit</span>&nbsp;=&nbsp;<span class="constructor">Unit</span><br/>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Weak</span>&nbsp;=&nbsp;<span class="constructor">Weak</span><br/>
+<span class="keyword">end</span></code>
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.10/type_Stdlib.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

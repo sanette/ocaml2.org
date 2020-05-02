@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="Dynlink.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.07/Dynlink.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.07</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="#top">Dynlink</a></div><ul><li><a href="#1_Dynamicloadingofcompiledfiles">Dynamic loading of compiled files</a></li><li><a href="#1_Accesscontrol">Access control</a></li><li><a href="#1_DeprecatedlowlevelAPIforaccesscontrol">Deprecated, low-level API for access control</a></li><li><a href="#1_Deprecatedinitialization">Deprecated, initialization</a></li><li><a href="#1_Errorreporting">Error reporting</a></li></ul></nav></header>
+
+<h1>Module <a href="type_Dynlink.html">Dynlink</a></h1>
+
+<pre><span id="MODULEDynlink"><span class="keyword">module</span> Dynlink</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Dynlink.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Dynamic loading of object files.</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="VALis_native"><span class="keyword">val</span> is_native</span> : <code class="type">bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code"><span class="keyword">true</span></code> if the program is native,
+    <code class="code"><span class="keyword">false</span></code> if the program is bytecode.</p>
+</div>
+</div>
+<h2 id="1_Dynamicloadingofcompiledfiles">Dynamic loading of compiled files</h2>
+<pre><span id="VALloadfile"><span class="keyword">val</span> loadfile</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>In bytecode: load the given bytecode object file (<code class="code">.cmo</code> file) or
+    bytecode library file (<code class="code">.cma</code> file), and link it with the running
+    program. In native code: load the given OCaml plugin file (usually
+    <code class="code">.cmxs</code>), and link it with the running
+    program.
+    All toplevel expressions in the loaded compilation units
+    are evaluated. No facilities are provided to
+    access value names defined by the unit. Therefore, the unit
+    must register itself its entry points with the main program,
+    e.g. by modifying tables of functions.</p>
+</div>
+</div>
+
+<pre><span id="VALloadfile_private"><span class="keyword">val</span> loadfile_private</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <code class="code">loadfile</code>, except that the compilation units just loaded
+    are hidden (cannot be referenced) from other modules dynamically
+    loaded afterwards.</p>
+</div>
+</div>
+
+<pre><span id="VALadapt_filename"><span class="keyword">val</span> adapt_filename</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
+<div class="info-desc">
+<p>In bytecode, the identity function. In native code, replace the last
+    extension with <code class="code">.cmxs</code>.</p>
+</div>
+</div>
+<h2 id="1_Accesscontrol">Access control</h2>
+<pre><span id="VALallow_only"><span class="keyword">val</span> allow_only</span> : <code class="type">string list -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">allow_only&nbsp;units</code> restricts the compilation units that
+    dynamically-linked units can reference: it forbids all references
+    to units other than those named in the list <code class="code">units</code>. References
+    to any other compilation unit will cause a <code class="code"><span class="constructor">Unavailable_unit</span></code>
+    error during <code class="code">loadfile</code> or <code class="code">loadfile_private</code>.</p>
+
+<p>Initially (or after calling <code class="code">default_available_units</code>) all
+    compilation units composing the program currently running are
+    available for reference from dynamically-linked units.
+    <code class="code">allow_only</code> can be used to restrict access to a subset of these
+    units, e.g. to the units that compose the API for
+    dynamically-linked code, and prevent access to all other units,
+    e.g. private, internal modules of the running program. If
+    <code class="code">allow_only</code> is called several times, access will be restricted to
+    the intersection of the given lists (i.e. a call to <code class="code">allow_only</code>
+    can never increase the set of available units).</p>
+</div>
+</div>
+
+<pre><span id="VALprohibit"><span class="keyword">val</span> prohibit</span> : <code class="type">string list -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">prohibit&nbsp;units</code> prohibits dynamically-linked units from referencing
+    the units named in list <code class="code">units</code>.  This can be used to prevent
+    access to selected units, e.g. private, internal modules of
+    the running program.</p>
+</div>
+</div>
+
+<pre><span id="VALdefault_available_units"><span class="keyword">val</span> default_available_units</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Reset the set of units that can be referenced from dynamically-linked
+    code to its default value, that is, all units composing the currently
+    running program.</p>
+</div>
+</div>
+
+<pre><span id="VALallow_unsafe_modules"><span class="keyword">val</span> allow_unsafe_modules</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Govern whether unsafe object files are allowed to be
+    dynamically linked. A compilation unit is 'unsafe' if it contains
+    declarations of external functions, which can break type safety.
+    By default, dynamic linking of unsafe object files is
+    not allowed. In native code, this function does nothing; object files
+    with external functions are always allowed to be dynamically linked.</p>
+</div>
+</div>
+<h2 id="1_DeprecatedlowlevelAPIforaccesscontrol">Deprecated, low-level API for access control</h2>
+<pre><span id="VALadd_interfaces"><span class="keyword">val</span> add_interfaces</span> : <code class="type">string list -&gt; string list -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">add_interfaces&nbsp;units&nbsp;path</code> grants dynamically-linked object
+    files access to the compilation  units named in list <code class="code">units</code>.
+    The interfaces (<code class="code">.cmi</code> files) for these units are searched in
+    <code class="code">path</code> (a list of directory names).</p>
+</div>
+</div>
+
+<pre><span id="VALadd_available_units"><span class="keyword">val</span> add_available_units</span> : <code class="type">(string * <a href="Digest.html#TYPEt">Digest.t</a>) list -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Dynlink.html#VALadd_interfaces"><code class="code"><span class="constructor">Dynlink</span>.add_interfaces</code></a>, but instead of searching <code class="code">.cmi</code> files
+    to find the unit interfaces, uses the interface digests given
+    for each unit. This way, the <code class="code">.cmi</code> interface files need not be
+    available at run-time. The digests can be extracted from <code class="code">.cmi</code>
+    files using the <code class="code">extract_crc</code> program installed in the
+    OCaml standard library directory.</p>
+</div>
+</div>
+
+<pre><span id="VALclear_available_units"><span class="keyword">val</span> clear_available_units</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Empty the list of compilation units accessible to dynamically-linked
+    programs.</p>
+</div>
+</div>
+<h2 id="1_Deprecatedinitialization">Deprecated, initialization</h2>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
+<div class="info-deprecated">
+<span class="warning">Deprecated.</span>Initialize the <code class="code"><span class="constructor">Dynlink</span></code> library. This function is called
+    automatically when needed.</div>
+</div>
+<h2 id="1_Errorreporting">Error reporting</h2>
+<pre><code><span id="TYPElinking_error"><span class="keyword">type</span> <code class="type"></code>linking_error</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTlinking_error.Undefined_global"><span class="constructor">Undefined_global</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTlinking_error.Unavailable_primitive"><span class="constructor">Unavailable_primitive</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTlinking_error.Uninitialized_global"><span class="constructor">Uninitialized_global</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><code><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Not_a_bytecode_file"><span class="constructor">Not_a_bytecode_file</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Inconsistent_import"><span class="constructor">Inconsistent_import</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Unavailable_unit"><span class="constructor">Unavailable_unit</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Unsafe_file"><span class="constructor">Unsafe_file</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Linking_error"><span class="constructor">Linking_error</span></span> <span class="keyword">of</span> <code class="type">string * <a href="Dynlink.html#TYPElinking_error">linking_error</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Corrupted_interface"><span class="constructor">Corrupted_interface</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.File_not_found"><span class="constructor">File_not_found</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Cannot_open_dll"><span class="constructor">Cannot_open_dll</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTerror.Inconsistent_implementation"><span class="constructor">Inconsistent_implementation</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><span id="EXCEPTIONError"><span class="keyword">exception</span> Error</span> <span class="keyword">of</span> <code class="type"><a href="Dynlink.html#TYPEerror">error</a></code></pre>
+<div class="info ">
+<div class="info-desc">
+<p>Errors in dynamic linking are reported by raising the <code class="code"><span class="constructor">Error</span></code>
+    exception with a description of the error.</p>
+</div>
+</div>
+
+<pre><span id="VALerror_message"><span class="keyword">val</span> error_message</span> : <code class="type"><a href="Dynlink.html#TYPEerror">error</a> -&gt; string</code></pre><div class="info ">
+<div class="info-desc">
+<p>Convert an error description to a printable message.</p>
+</div>
+</div>
+
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.07/Dynlink.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

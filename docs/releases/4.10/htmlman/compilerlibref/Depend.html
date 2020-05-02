@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="Consistbl.html" rel="previous"/>
+<link href="Docstrings.html" rel="next"/>
+<link href="index.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Build_path_prefix_map.html" title="Build_path_prefix_map" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="CamlinternalMenhirLib.html" title="CamlinternalMenhirLib" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Compiler_libs.html" title="Compiler_libs" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Depend.html" title="Depend" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Domainstate.html" title="Domainstate" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Int_replace_polymorphic_compare.html" title="Int_replace_polymorphic_compare" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Load_path.html" title="Load_path" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Pparse.html" title="Pparse" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Profile.html" title="Profile" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Targetint.html" title="Targetint" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/><title>Depend</title>
+</head>
+<body>
+<div class="navbar"><a href="Consistbl.html" class="pre" title="Consistbl">Previous</a>
+&nbsp;<a href="index.html" class="up" title="Index">Up</a>
+&nbsp;<a href="Docstrings.html" class="post" title="Docstrings">Next</a>
+</div>
+<h1>Module <a href="type_Depend.html">Depend</a></h1>
+
+<pre><span id="MODULEDepend"><span class="keyword">module</span> Depend</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Depend.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Module dependencies.</p>
+
+<p><b>Warning:</b> this module is unstable and part of
+  <a href="Compiler_libs.html">compiler-libs</a>.</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="MODULEString"><span class="keyword">module</span> <a href="Depend.String.html">String</a></span>: <code class="type"><a href="Misc.Stdlib.String.html">Misc.Stdlib.String</a></code></pre>
+<pre><code><span id="TYPEmap_tree"><span class="keyword">type</span> <code class="type"></code>map_tree</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTmap_tree.Node"><span class="constructor">Node</span></span> <span class="keyword">of</span> <code class="type">String.Set.t * <a href="Depend.html#TYPEbound_map">bound_map</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEbound_map"><span class="keyword">type</span> <code class="type"></code>bound_map</span> = <code class="type"><a href="Depend.html#TYPEmap_tree">map_tree</a> String.Map.t</code> </pre>
+
+
+<pre><span id="VALmake_leaf"><span class="keyword">val</span> make_leaf</span> : <code class="type">string -> <a href="Depend.html#TYPEmap_tree">map_tree</a></code></pre>
+<pre><span id="VALmake_node"><span class="keyword">val</span> make_node</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Depend.html#TYPEmap_tree">map_tree</a></code></pre>
+<pre><span id="VALweaken_map"><span class="keyword">val</span> weaken_map</span> : <code class="type">String.Set.t -> <a href="Depend.html#TYPEmap_tree">map_tree</a> -> <a href="Depend.html#TYPEmap_tree">map_tree</a></code></pre>
+<pre><span id="VALfree_structure_names"><span class="keyword">val</span> free_structure_names</span> : <code class="type">String.Set.t ref</code></pre>
+<pre><span id="VALpp_deps"><span class="keyword">val</span> pp_deps</span> : <code class="type">string list ref</code></pre><div class="info ">
+<div class="info-desc">
+<p>dependencies found by preprocessing tools</p>
+</div>
+</div>
+
+<pre><span id="VALopen_module"><span class="keyword">val</span> open_module</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Longident.html#TYPEt">Longident.t</a> -> <a href="Depend.html#TYPEbound_map">bound_map</a></code></pre>
+<pre><span id="VALadd_use_file"><span class="keyword">val</span> add_use_file</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Parsetree.html#TYPEtoplevel_phrase">Parsetree.toplevel_phrase</a> list -> unit</code></pre>
+<pre><span id="VALadd_signature"><span class="keyword">val</span> add_signature</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Parsetree.html#TYPEsignature">Parsetree.signature</a> -> unit</code></pre>
+<pre><span id="VALadd_implementation"><span class="keyword">val</span> add_implementation</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Parsetree.html#TYPEstructure">Parsetree.structure</a> -> unit</code></pre>
+<pre><span id="VALadd_implementation_binding"><span class="keyword">val</span> add_implementation_binding</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Parsetree.html#TYPEstructure">Parsetree.structure</a> -> <a href="Depend.html#TYPEbound_map">bound_map</a></code></pre>
+<pre><span id="VALadd_signature_binding"><span class="keyword">val</span> add_signature_binding</span> : <code class="type"><a href="Depend.html#TYPEbound_map">bound_map</a> -> <a href="Parsetree.html#TYPEsignature">Parsetree.signature</a> -> <a href="Depend.html#TYPEbound_map">bound_map</a></code></pre></body></html>

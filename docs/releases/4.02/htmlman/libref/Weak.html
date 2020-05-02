@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<link href="index.html" rel="Start"/>
+<link href="UnixLabels.html" rel="previous"/>
+<link href="index.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg.html" title="Arg" rel="Chapter"/>
+<link href="Arith_status.html" title="Arith_status" rel="Chapter"/>
+<link href="Array.html" title="Array" rel="Chapter"/>
+<link href="ArrayLabels.html" title="ArrayLabels" rel="Chapter"/>
+<link href="Big_int.html" title="Big_int" rel="Chapter"/>
+<link href="Bigarray.html" title="Bigarray" rel="Chapter"/>
+<link href="Buffer.html" title="Buffer" rel="Chapter"/>
+<link href="Bytes.html" title="Bytes" rel="Chapter"/>
+<link href="BytesLabels.html" title="BytesLabels" rel="Chapter"/>
+<link href="Callback.html" title="Callback" rel="Chapter"/>
+<link href="CamlinternalFormat.html" title="CamlinternalFormat" rel="Chapter"/>
+<link href="CamlinternalFormatBasics.html" title="CamlinternalFormatBasics" rel="Chapter"/>
+<link href="CamlinternalLazy.html" title="CamlinternalLazy" rel="Chapter"/>
+<link href="CamlinternalMod.html" title="CamlinternalMod" rel="Chapter"/>
+<link href="CamlinternalOO.html" title="CamlinternalOO" rel="Chapter"/>
+<link href="Char.html" title="Char" rel="Chapter"/>
+<link href="Complex.html" title="Complex" rel="Chapter"/>
+<link href="Condition.html" title="Condition" rel="Chapter"/>
+<link href="Digest.html" title="Digest" rel="Chapter"/>
+<link href="Dynlink.html" title="Dynlink" rel="Chapter"/>
+<link href="Event.html" title="Event" rel="Chapter"/>
+<link href="Filename.html" title="Filename" rel="Chapter"/>
+<link href="Format.html" title="Format" rel="Chapter"/>
+<link href="Gc.html" title="Gc" rel="Chapter"/>
+<link href="Genlex.html" title="Genlex" rel="Chapter"/>
+<link href="Graphics.html" title="Graphics" rel="Chapter"/>
+<link href="GraphicsX11.html" title="GraphicsX11" rel="Chapter"/>
+<link href="Hashtbl.html" title="Hashtbl" rel="Chapter"/>
+<link href="Int32.html" title="Int32" rel="Chapter"/>
+<link href="Int64.html" title="Int64" rel="Chapter"/>
+<link href="Lazy.html" title="Lazy" rel="Chapter"/>
+<link href="Lexing.html" title="Lexing" rel="Chapter"/>
+<link href="List.html" title="List" rel="Chapter"/>
+<link href="ListLabels.html" title="ListLabels" rel="Chapter"/>
+<link href="Map.html" title="Map" rel="Chapter"/>
+<link href="Marshal.html" title="Marshal" rel="Chapter"/>
+<link href="MoreLabels.html" title="MoreLabels" rel="Chapter"/>
+<link href="Mutex.html" title="Mutex" rel="Chapter"/>
+<link href="Nativeint.html" title="Nativeint" rel="Chapter"/>
+<link href="Num.html" title="Num" rel="Chapter"/>
+<link href="Obj.html" title="Obj" rel="Chapter"/>
+<link href="Oo.html" title="Oo" rel="Chapter"/>
+<link href="Parsing.html" title="Parsing" rel="Chapter"/>
+<link href="Pervasives.html" title="Pervasives" rel="Chapter"/>
+<link href="Printexc.html" title="Printexc" rel="Chapter"/>
+<link href="Printf.html" title="Printf" rel="Chapter"/>
+<link href="Queue.html" title="Queue" rel="Chapter"/>
+<link href="Random.html" title="Random" rel="Chapter"/>
+<link href="Ratio.html" title="Ratio" rel="Chapter"/>
+<link href="Scanf.html" title="Scanf" rel="Chapter"/>
+<link href="Set.html" title="Set" rel="Chapter"/>
+<link href="Sort.html" title="Sort" rel="Chapter"/>
+<link href="Stack.html" title="Stack" rel="Chapter"/>
+<link href="StdLabels.html" title="StdLabels" rel="Chapter"/>
+<link href="Str.html" title="Str" rel="Chapter"/>
+<link href="Stream.html" title="Stream" rel="Chapter"/>
+<link href="String.html" title="String" rel="Chapter"/>
+<link href="StringLabels.html" title="StringLabels" rel="Chapter"/>
+<link href="Sys.html" title="Sys" rel="Chapter"/>
+<link href="Thread.html" title="Thread" rel="Chapter"/>
+<link href="ThreadUnix.html" title="ThreadUnix" rel="Chapter"/>
+<link href="Unix.html" title="Unix" rel="Chapter"/>
+<link href="UnixLabels.html" title="UnixLabels" rel="Chapter"/>
+<link href="Weak.html" title="Weak" rel="Chapter"/><link href="#6_Lowlevelfunctions" title="Low-level functions" rel="Section"/>
+<link href="#6_Weakhashtables" title="Weak hash tables" rel="Section"/>
+<title>Weak</title>
+</head>
+<body>
+<div class="navbar"><a href="UnixLabels.html" class="pre" title="UnixLabels">Previous</a>
+&nbsp;<a href="index.html" class="up" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Weak.html">Weak</a></h1>
+
+<pre><span class="keyword">module</span> Weak: <code class="code"><span class="keyword">sig</span></code> <a href="Weak.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Arrays of weak pointers and hash tables of weak pointers.<br/>
+</div>
+<hr width="100%"/>
+<br/>
+<h6 id="6_Lowlevelfunctions">Low-level functions</h6><br/>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+The type of arrays of weak pointers (weak arrays).  A weak
+   pointer is a value that the garbage collector may erase whenever
+   the value is not used any more (through normal pointers) by the
+   program.  Note that finalisation functions are run after the
+   weak pointers are erased.
+<p>
+
+   A weak pointer is said to be full if it points to a value,
+   empty if the value was erased by the GC.
+</p><p>
+
+   Notes:</p><ul>
+<li>Integers are not allocated and cannot be stored in weak arrays.</li>
+<li>Weak arrays cannot be marshaled using <a href="Pervasives.html#VALoutput_value"><code class="code">output_value</code></a>
+     nor the functions of the <a href="Marshal.html"><code class="code"><span class="constructor">Marshal</span></code></a> module.</li>
+</ul>
+<br/>
+</div>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> 'a <a href="Weak.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.create n</code> returns a new weak array of length <code class="code">n</code>.
+   All the pointers are initially empty.  Raise <code class="code"><span class="constructor">Invalid_argument</span></code>
+   if <code class="code">n</code> is negative or greater than <a href="Sys.html#VALmax_array_length"><code class="code"><span class="constructor">Sys</span>.max_array_length</code></a><code class="code">-1</code>.<br/>
+</div>
+
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.length ar</code> returns the length (number of elements) of
+   <code class="code">ar</code>.<br/>
+</div>
+
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a option -> unit</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.set ar n (<span class="constructor">Some</span> el)</code> sets the <code class="code">n</code>th cell of <code class="code">ar</code> to be a
+   (full) pointer to <code class="code">el</code>; <code class="code"><span class="constructor">Weak</span>.set ar n <span class="constructor">None</span></code> sets the <code class="code">n</code>th
+   cell of <code class="code">ar</code> to empty.
+   Raise <code class="code"><span class="constructor">Invalid_argument</span> <span class="string">"Weak.set"</span></code> if <code class="code">n</code> is not in the range
+   0 to <a href="Weak.html#VALlength"><code class="code"><span class="constructor">Weak</span>.length</code></a><code class="code"> a - 1</code>.<br/>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a option</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.get ar n</code> returns None if the <code class="code">n</code>th cell of <code class="code">ar</code> is
+   empty, <code class="code"><span class="constructor">Some</span> x</code> (where <code class="code">x</code> is the value) if it is full.
+   Raise <code class="code"><span class="constructor">Invalid_argument</span> <span class="string">"Weak.get"</span></code> if <code class="code">n</code> is not in the range
+   0 to <a href="Weak.html#VALlength"><code class="code"><span class="constructor">Weak</span>.length</code></a><code class="code"> a - 1</code>.<br/>
+</div>
+
+<pre><span id="VALget_copy"><span class="keyword">val</span> get_copy</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a option</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.get_copy ar n</code> returns None if the <code class="code">n</code>th cell of <code class="code">ar</code> is
+   empty, <code class="code"><span class="constructor">Some</span> x</code> (where <code class="code">x</code> is a (shallow) copy of the value) if
+   it is full.
+   In addition to pitfalls with mutable values, the interesting
+   difference with <code class="code">get</code> is that <code class="code">get_copy</code> does not prevent
+   the incremental GC from erasing the value in its current cycle
+   (<code class="code">get</code> may delay the erasure to the next GC cycle).
+   Raise <code class="code"><span class="constructor">Invalid_argument</span> <span class="string">"Weak.get"</span></code> if <code class="code">n</code> is not in the range
+   0 to <a href="Weak.html#VALlength"><code class="code"><span class="constructor">Weak</span>.length</code></a><code class="code"> a - 1</code>.<br/>
+</div>
+
+<pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> bool</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.check ar n</code> returns <code class="code"><span class="keyword">true</span></code> if the <code class="code">n</code>th cell of <code class="code">ar</code> is
+   full, <code class="code"><span class="keyword">false</span></code> if it is empty.  Note that even if <code class="code"><span class="constructor">Weak</span>.check ar n</code>
+   returns <code class="code"><span class="keyword">true</span></code>, a subsequent <a href="Weak.html#VALget"><code class="code"><span class="constructor">Weak</span>.get</code></a><code class="code"> ar n</code> can return <code class="code"><span class="constructor">None</span></code>.<br/>
+</div>
+
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> int -> 'a option -> unit</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.fill ar ofs len el</code> sets to <code class="code">el</code> all pointers of <code class="code">ar</code> from
+   <code class="code">ofs</code> to <code class="code">ofs + len - 1</code>.  Raise <code class="code"><span class="constructor">Invalid_argument</span> <span class="string">"Weak.fill"</span></code>
+   if <code class="code">ofs</code> and <code class="code">len</code> do not designate a valid subarray of <code class="code">a</code>.<br/>
+</div>
+
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a <a href="Weak.html#TYPEt">t</a> -> int -> int -> unit</code></pre><div class="info ">
+<code class="code"><span class="constructor">Weak</span>.blit ar1 off1 ar2 off2 len</code> copies <code class="code">len</code> weak pointers
+   from <code class="code">ar1</code> (starting at <code class="code">off1</code>) to <code class="code">ar2</code> (starting at <code class="code">off2</code>).
+   It works correctly even if <code class="code">ar1</code> and <code class="code">ar2</code> are the same.
+   Raise <code class="code"><span class="constructor">Invalid_argument</span> <span class="string">"Weak.blit"</span></code> if <code class="code">off1</code> and <code class="code">len</code> do
+   not designate a valid subarray of <code class="code">ar1</code>, or if <code class="code">off2</code> and <code class="code">len</code>
+   do not designate a valid subarray of <code class="code">ar2</code>.<br/>
+</div>
+<br/>
+<h6 id="6_Weakhashtables">Weak hash tables</h6><br/>
+<br/>
+A weak hash table is a hashed set of values.  Each value may
+    magically disappear from the set when it is not used by the
+    rest of the program any more.  This is normally used to share
+    data structures without inducing memory leaks.
+    Weak hash tables are defined on values from a <a href="Hashtbl.HashedType.html"><code class="code"><span class="constructor">Hashtbl</span>.<span class="constructor">HashedType</span></code></a>
+    module; the <code class="code">equal</code> relation and <code class="code">hash</code> function are taken from that
+    module.  We will say that <code class="code">v</code> is an instance of <code class="code">x</code> if <code class="code">equal x v</code>
+    is <code class="code"><span class="keyword">true</span></code>.
+<p>
+
+    The <code class="code">equal</code> relation must be able to work on a shallow copy of
+    the values and give the same result as with the values themselves.<br/>
+
+</p><pre><span class="keyword">module type</span> <a href="Weak.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Weak.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The output signature of the functor <a href="Weak.Make.html"><code class="code"><span class="constructor">Weak</span>.<span class="constructor">Make</span></code></a>.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Weak.Make.html">Make</a>: </pre><div class="sig_block"><code class="code"><span class="keyword">functor</span> (</code><code class="code"><span class="constructor">H</span></code><code class="code"> : </code><code class="type"><a href="Hashtbl.HashedType.html">Hashtbl.HashedType</a></code><code class="code">) <span class="keywordsign">-&gt;</span> </code><code class="type"><a href="Weak.S.html">S</a></code><code class="type">  with type data = H.t</code></div><div class="info">
+Functor building an implementation of the weak hash table structure.
+</div>
+</body></html>

@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="Stdlib.Option.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.09/Stdlib.Option.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.09</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="#top">Stdlib.Option</a></div><ul><li><a href="#options">Options</a></li><li><a href="#preds">Predicates and comparisons</a></li><li><a href="#convert">Converting</a></li></ul></nav></header>
+
+<h1>Module <a href="type_Stdlib.Option.html">Stdlib.Option</a></h1>
+
+<pre><span id="MODULEOption"><span class="keyword">module</span> Option</span>: <code class="type"><a href="Option.html">Option</a></code></pre><hr width="100%"/>
+<h2 id="options">Options</h2>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a option</code> = </pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTt.None"><span class="constructor">None</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTt.Some"><span class="constructor">Some</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+
+</tr></tbody></table>
+
+<div class="info ">
+<div class="info-desc">
+<p>The type for option values. Either <code class="code"><span class="constructor">None</span></code> or a value <code class="code"><span class="constructor">Some</span>&nbsp;v</code>.</p>
+</div>
+</div>
+
+
+<pre><span id="VALnone"><span class="keyword">val</span> none</span> : <code class="type">'a option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">none</code> is <code class="code"><span class="constructor">None</span></code>.</p>
+</div>
+</div>
+
+<pre><span id="VALsome"><span class="keyword">val</span> some</span> : <code class="type">'a -&gt; 'a option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">some&nbsp;v</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type">'a option -&gt; default:'a -&gt; 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">value&nbsp;o&nbsp;~default</code> is <code class="code">v</code> if <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code> and <code class="code">default</code> otherwise.</p>
+</div>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a option -&gt; 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">get&nbsp;o</code> is <code class="code">v</code> if <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code> and</p>
+</div>
+<ul class="info-attributes">
+<li><b>Raises</b> <code>Invalid_argument</code> otherwise.</li>
+</ul>
+</div>
+
+<pre><span id="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">'a option -&gt; ('a -&gt; 'b option) -&gt; 'b option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">bind&nbsp;o&nbsp;f</code> is <code class="code">f&nbsp;v</code> if <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code> and <code class="code"><span class="constructor">None</span></code> if <code class="code">o</code> is <code class="code"><span class="constructor">None</span></code>.</p>
+</div>
+</div>
+
+<pre><span id="VALjoin"><span class="keyword">val</span> join</span> : <code class="type">'a option option -&gt; 'a option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">join&nbsp;oo</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code> if <code class="code">oo</code> is <code class="code"><span class="constructor">Some</span>&nbsp;(<span class="constructor">Some</span>&nbsp;v)</code> and <code class="code"><span class="constructor">None</span></code> otherwise.</p>
+</div>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -&gt; 'b) -&gt; 'a option -&gt; 'b option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">map&nbsp;f&nbsp;o</code> is <code class="code"><span class="constructor">None</span></code> if <code class="code">o</code> is <code class="code"><span class="constructor">None</span></code> and <code class="code"><span class="constructor">Some</span>&nbsp;(f&nbsp;v)</code> is <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">none:'a -&gt; some:('b -&gt; 'a) -&gt; 'b option -&gt; 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">fold&nbsp;~none&nbsp;~some&nbsp;o</code> is <code class="code">none</code> if <code class="code">o</code> is <code class="code"><span class="constructor">None</span></code> and <code class="code">some&nbsp;v</code> if <code class="code">o</code> is
+    <code class="code"><span class="constructor">Some</span>&nbsp;v</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; unit) -&gt; 'a option -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">iter&nbsp;f&nbsp;o</code> is <code class="code">f&nbsp;v</code> if <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code> and <code class="code">()</code> otherwise.</p>
+</div>
+</div>
+<h2 id="preds">Predicates and comparisons</h2>
+<pre><span id="VALis_none"><span class="keyword">val</span> is_none</span> : <code class="type">'a option -&gt; bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">is_none&nbsp;o</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">o</code> is <code class="code"><span class="constructor">None</span></code>.</p>
+</div>
+</div>
+
+<pre><span id="VALis_some"><span class="keyword">val</span> is_some</span> : <code class="type">'a option -&gt; bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">is_some&nbsp;o</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;o</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a -&gt; 'a -&gt; bool) -&gt; 'a option -&gt; 'a option -&gt; bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">equal&nbsp;eq&nbsp;o0&nbsp;o1</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">o0</code> and <code class="code">o1</code> are both <code class="code"><span class="constructor">None</span></code> or if
+    they are <code class="code"><span class="constructor">Some</span>&nbsp;v0</code> and <code class="code"><span class="constructor">Some</span>&nbsp;v1</code> and <code class="code">eq&nbsp;v0&nbsp;v1</code> is <code class="code"><span class="keyword">true</span></code>.</p>
+</div>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -&gt; 'a -&gt; int) -&gt; 'a option -&gt; 'a option -&gt; int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">compare&nbsp;cmp&nbsp;o0&nbsp;o1</code> is a total order on options using <code class="code">cmp</code> to compare
+    values wrapped by <code class="code"><span class="constructor">Some</span>&nbsp;_</code>. <code class="code"><span class="constructor">None</span></code> is smaller than <code class="code"><span class="constructor">Some</span>&nbsp;_</code> values.</p>
+</div>
+</div>
+<h2 id="convert">Converting</h2>
+<pre><span id="VALto_result"><span class="keyword">val</span> to_result</span> : <code class="type">none:'e -&gt; 'a option -&gt; ('a, 'e) <a href="Stdlib.html#TYPEresult">result</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">to_result&nbsp;~none&nbsp;o</code> is <code class="code"><span class="constructor">Ok</span>&nbsp;v</code> if <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code> and <code class="code"><span class="constructor">Error</span>&nbsp;none</code>
+    otherwise.</p>
+</div>
+</div>
+
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a option -&gt; 'a list</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">to_list&nbsp;o</code> is <code class="code">[]</code> if <code class="code">o</code> is <code class="code"><span class="constructor">None</span></code> and <code class="code">[v]</code> if <code class="code">o</code> is <code class="code"><span class="constructor">Some</span>&nbsp;v</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a option -&gt; 'a <a href="Seq.html#TYPEt">Seq.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">to_seq&nbsp;o</code> is <code class="code">o</code> as a sequence. <code class="code"><span class="constructor">None</span></code> is the empty sequence and
+    <code class="code"><span class="constructor">Some</span>&nbsp;v</code> is the singleton sequence containing <code class="code">v</code>.</p>
+</div>
+</div>
+
+<div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.09/Stdlib.Option.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

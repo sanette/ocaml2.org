@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    
+    <link href="CamlinternalFormat.html" rel="alternate" hreflang="en"/>
+
+    
+    <title>API &#8211; OCaml</title>
+    <link href="../../img/favicon32x32.ico?" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    
+    <link href="../../css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/bootstrap_mod.css" rel="stylesheet" media="screen"/>
+    <link href="../../css/ocamlorg.css" rel="stylesheet" media="screen"/>
+    
+    
+    <link href="style.css" rel="stylesheet"/>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <script src="../../js/search.js" type="text/javascript"></script>
+    <script src="../../js/collapsed-menu.js" type="text/javascript"></script>
+    
+    
+    <script>
+      if (document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1')) {
+      document.documentElement.className = 'svg';
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" onclick="toggleVisibilityMenu('menu-items')">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../../" class="brand"><img src="../../img/colour-logo-white.svg" class="svg" alt="OCaml"/><img src="../../img/colour-logo-white.png" class="png" alt="OCaml"/></a>
+          <div id="menu-items" class="nav-collapse collapse">
+                        <ul class="nav">
+              <li><a href="../../learn/">Learn</a></li>
+              <li class="active"><a href="../../docs/">Documentation</a></li>
+              <li><a href="https://opam.ocaml.org/">Packages</a></li>
+              <li><a href="../../community/">Community</a></li>
+              <li><a href="../../community/planet/">News</a></li>
+            </ul>
+
+            
+            <a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.06/CamlinternalFormat.md" title="Edit this page" class="edit-this-page pull-right"><span>Edit this page</span></a>
+	    <script language="JavaScript">
+	      // Preload the hover image
+	      Image1= new Image(33,33);
+	      Image1.src = '/img/edit-hover.svg';
+	      Image2= new Image(33,33);
+	      Image2.src = '/img/edit-hover.png';
+	    </script>
+            
+            <form id="searchform" class="navbar-search pull-right" method="get" action="//www.google.com/search">
+              <input type="hidden" name="as_sitesearch" value="ocaml.org"/>
+              <input placeholder="Search" class="search-query" name="q" type="text"/>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    
+    
+<div class="container">
+  <div class="row">
+    
+    
+    
+    
+    <div id="content-primary" class="span12">
+            <div id="tryocaml" class="content" style="display:none;">
+        <div class="container">
+          <div class="row">
+            <div id="lesson-message"></div>
+            <div id="languages" style="display:none;"></div>
+            <div id="menu-lessons" style="display:none">
+              <table class="zebra-striped">
+                <tr><td id="text-x"><code></code></td> <td></td></tr>
+              </table>
+            </div>
+            <div class="span9 ocaml">
+              <div id="toplevel-container">
+                <pre id="output"></pre>
+                <div id="sharp">#</div>
+                <div id="toplevel"></div>
+              </div>
+              <div id="buttons"></div>
+              <div id="graphics-title"></div>
+              <div id="graphics"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+<div class="running-header">
+  
+  
+  <ul class="translations">
+    <li class="active">en</li>
+
+  </ul>
+</div>
+
+      <div id="main-contents" class="content">
+        
+<div class="api"><header><nav class="toc brand"><a href="https://ocaml.org/" class="brand"><img src="colour-logo-gray.svg" class="svg" alt="OCaml"/></a></nav><nav class="toc"><div class="toc_version"><a href="../../docs" id="version-select">API Version 4.06</a></div><a href="index.html">&lt; General Index</a><div class="api_search"><input type="text" name="apisearch" id="api_search" oninput="mySearch(false);" onkeypress="this.oninput();" onclick="this.oninput();" onpaste="this.oninput();"/>
+<img src="search_icon.svg" alt="Search" class="svg" onclick="mySearch(false)"/></div>
+<div id="search_results"></div><div class="toc_title"><a href="#top">CamlinternalFormat</a></div><ul></ul></nav></header>
+
+<h1>Module <a href="type_CamlinternalFormat.html">CamlinternalFormat</a></h1>
+
+<pre><span id="MODULECamlinternalFormat"><span class="keyword">module</span> CamlinternalFormat</span>: <code class="code"><span class="keyword">sig</span></code> <a href="CamlinternalFormat.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%"/>
+
+<pre><span id="VALis_in_char_set"><span class="keyword">val</span> is_in_char_set</span> : <code class="type"><a href="CamlinternalFormatBasics.html#TYPEchar_set">CamlinternalFormatBasics.char_set</a> -&gt; char -&gt; bool</code></pre>
+<pre><span id="VALrev_char_set"><span class="keyword">val</span> rev_char_set</span> : <code class="type"><a href="CamlinternalFormatBasics.html#TYPEchar_set">CamlinternalFormatBasics.char_set</a> -&gt; <a href="CamlinternalFormatBasics.html#TYPEchar_set">CamlinternalFormatBasics.char_set</a></code></pre>
+<pre><span id="TYPEmutable_char_set"><span class="keyword">type</span> <code class="type"></code>mutable_char_set</span> = <code class="type">bytes</code> </pre>
+
+
+<pre><span id="VALcreate_char_set"><span class="keyword">val</span> create_char_set</span> : <code class="type">unit -&gt; <a href="CamlinternalFormat.html#TYPEmutable_char_set">mutable_char_set</a></code></pre>
+<pre><span id="VALadd_in_char_set"><span class="keyword">val</span> add_in_char_set</span> : <code class="type"><a href="CamlinternalFormat.html#TYPEmutable_char_set">mutable_char_set</a> -&gt; char -&gt; unit</code></pre>
+<pre><span id="VALfreeze_char_set"><span class="keyword">val</span> freeze_char_set</span> : <code class="type"><a href="CamlinternalFormat.html#TYPEmutable_char_set">mutable_char_set</a> -&gt; <a href="CamlinternalFormatBasics.html#TYPEchar_set">CamlinternalFormatBasics.char_set</a></code></pre>
+<pre><code><span id="TYPEparam_format_ebb"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd, 'e, 'f)</code> param_format_ebb</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTparam_format_ebb.Param_format_EBB"><span class="constructor">Param_format_EBB</span></span> <span class="keyword">:</span> <code class="type">('x -&gt; 'a0, 'b0, 'c0, 'd0, 'e0, 'f0) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a></code> <span class="keyword">-&gt;</span> <code class="type">('a0, 'b0, 'c0, 'd0, 'e0, 'f0) <a href="CamlinternalFormat.html#TYPEparam_format_ebb">param_format_ebb</a></code></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><span id="VALparam_format_of_ignored_format"><span class="keyword">val</span> param_format_of_ignored_format</span> : <code class="type">('a, 'b, 'c, 'd, 'y, 'x) <a href="CamlinternalFormatBasics.html#TYPEignored">CamlinternalFormatBasics.ignored</a> -&gt;<br/>       ('x, 'b, 'c, 'y, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a> -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormat.html#TYPEparam_format_ebb">param_format_ebb</a></code></pre>
+<pre><code><span id="TYPEacc_formatting_gen"><span class="keyword">type</span> <code class="type">('b, 'c)</code> acc_formatting_gen</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc_formatting_gen.Acc_open_tag"><span class="constructor">Acc_open_tag</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc_formatting_gen.Acc_open_box"><span class="constructor">Acc_open_box</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a></code></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><code><span id="TYPEacc"><span class="keyword">type</span> <code class="type">('b, 'c)</code> acc</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_formatting_lit"><span class="constructor">Acc_formatting_lit</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * <a href="CamlinternalFormatBasics.html#TYPEformatting_lit">CamlinternalFormatBasics.formatting_lit</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_formatting_gen"><span class="constructor">Acc_formatting_gen</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a><br/>        * ('b, 'c) <a href="CamlinternalFormat.html#TYPEacc_formatting_gen">acc_formatting_gen</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_string_literal"><span class="constructor">Acc_string_literal</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_char_literal"><span class="constructor">Acc_char_literal</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * char</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_data_string"><span class="constructor">Acc_data_string</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_data_char"><span class="constructor">Acc_data_char</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * char</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_delay"><span class="constructor">Acc_delay</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * ('b -&gt; 'c)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_flush"><span class="constructor">Acc_flush</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.Acc_invalid_arg"><span class="constructor">Acc_invalid_arg</span></span> <span class="keyword">of</span> <code class="type">('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> * string</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTacc.End_of_acc"><span class="constructor">End_of_acc</span></span></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><code><span id="TYPEheter_list"><span class="keyword">type</span> <code class="type">('a, 'b)</code> heter_list</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTheter_list.Cons"><span class="constructor">Cons</span></span> <span class="keyword">:</span> <code class="type">'c * ('a0, 'b0) <a href="CamlinternalFormat.html#TYPEheter_list">heter_list</a></code> <span class="keyword">-&gt;</span> <code class="type">('c -&gt; 'a0, 'b0) <a href="CamlinternalFormat.html#TYPEheter_list">heter_list</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTheter_list.Nil"><span class="constructor">Nil</span></span> <span class="keyword">:</span> <code class="type">('b1, 'b1) <a href="CamlinternalFormat.html#TYPEheter_list">heter_list</a></code></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><code><span id="TYPEfmt_ebb"><span class="keyword">type</span> <code class="type">('b, 'c, 'e, 'f)</code> fmt_ebb</span> = </code></pre><table class="typetable">
+<tbody><tr>
+<td align="left" valign="top">
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top">
+<code><span id="TYPEELTfmt_ebb.Fmt_EBB"><span class="constructor">Fmt_EBB</span></span> <span class="keyword">:</span> <code class="type">('a, 'b0, 'c0, 'd, 'e0, 'f0) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a></code> <span class="keyword">-&gt;</span> <code class="type">('b0, 'c0, 'e0, 'f0) <a href="CamlinternalFormat.html#TYPEfmt_ebb">fmt_ebb</a></code></code></td>
+
+</tr></tbody></table>
+
+
+
+<pre><span id="VALmake_printf"><span class="keyword">val</span> make_printf</span> : <code class="type">('b -&gt; ('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> -&gt; 'd) -&gt;<br/>       'b -&gt;<br/>       ('b, 'c) <a href="CamlinternalFormat.html#TYPEacc">acc</a> -&gt;<br/>       ('a, 'b, 'c, 'c, 'c, 'd) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a> -&gt; 'a</code></pre>
+<pre><span id="VALmake_iprintf"><span class="keyword">val</span> make_iprintf</span> : <code class="type">('b -&gt; 'f) -&gt;<br/>       'b -&gt; ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a> -&gt; 'a</code></pre>
+<pre><span id="VALoutput_acc"><span class="keyword">val</span> output_acc</span> : <code class="type"><a href="Pervasives.html#TYPEout_channel">out_channel</a> -&gt;<br/>       (<a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="CamlinternalFormat.html#TYPEacc">acc</a> -&gt; unit</code></pre>
+<pre><span id="VALbufput_acc"><span class="keyword">val</span> bufput_acc</span> : <code class="type"><a href="Buffer.html#TYPEt">Buffer.t</a> -&gt; (<a href="Buffer.html#TYPEt">Buffer.t</a>, unit) <a href="CamlinternalFormat.html#TYPEacc">acc</a> -&gt; unit</code></pre>
+<pre><span id="VALstrput_acc"><span class="keyword">val</span> strput_acc</span> : <code class="type"><a href="Buffer.html#TYPEt">Buffer.t</a> -&gt; (unit, string) <a href="CamlinternalFormat.html#TYPEacc">acc</a> -&gt; unit</code></pre>
+<pre><span id="VALtype_format"><span class="keyword">val</span> type_format</span> : <code class="type">('x, 'b, 'c, 't, 'u, 'v) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a> -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmtty">CamlinternalFormatBasics.fmtty</a> -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a></code></pre>
+<pre><span id="VALfmt_ebb_of_string"><span class="keyword">val</span> fmt_ebb_of_string</span> : <code class="type">?legacy_behavior:bool -&gt;<br/>       string -&gt; ('b, 'c, 'e, 'f) <a href="CamlinternalFormat.html#TYPEfmt_ebb">fmt_ebb</a></code></pre>
+<pre><span id="VALformat_of_string_fmtty"><span class="keyword">val</span> format_of_string_fmtty</span> : <code class="type">string -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmtty">CamlinternalFormatBasics.fmtty</a> -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEformat6">CamlinternalFormatBasics.format6</a></code></pre>
+<pre><span id="VALformat_of_string_format"><span class="keyword">val</span> format_of_string_format</span> : <code class="type">string -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEformat6">CamlinternalFormatBasics.format6</a> -&gt;<br/>       ('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEformat6">CamlinternalFormatBasics.format6</a></code></pre>
+<pre><span id="VALchar_of_iconv"><span class="keyword">val</span> char_of_iconv</span> : <code class="type"><a href="CamlinternalFormatBasics.html#TYPEint_conv">CamlinternalFormatBasics.int_conv</a> -&gt; char</code></pre>
+<pre><span id="VALstring_of_formatting_lit"><span class="keyword">val</span> string_of_formatting_lit</span> : <code class="type"><a href="CamlinternalFormatBasics.html#TYPEformatting_lit">CamlinternalFormatBasics.formatting_lit</a> -&gt; string</code></pre>
+<pre><span id="VALstring_of_formatting_gen"><span class="keyword">val</span> string_of_formatting_gen</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEformatting_gen">CamlinternalFormatBasics.formatting_gen</a> -&gt; string</code></pre>
+<pre><span id="VALstring_of_fmtty"><span class="keyword">val</span> string_of_fmtty</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmtty">CamlinternalFormatBasics.fmtty</a> -&gt; string</code></pre>
+<pre><span id="VALstring_of_fmt"><span class="keyword">val</span> string_of_fmt</span> : <code class="type">('a, 'b, 'c, 'd, 'e, 'f) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a> -&gt; string</code></pre>
+<pre><span id="VALopen_box_of_string"><span class="keyword">val</span> open_box_of_string</span> : <code class="type">string -&gt; int * <a href="CamlinternalFormatBasics.html#TYPEblock_type">CamlinternalFormatBasics.block_type</a></code></pre>
+<pre><span id="VALsymm"><span class="keyword">val</span> symm</span> : <code class="type">('a1, 'b1, 'c1, 'd1, 'e1, 'f1, 'a2, 'b2, 'c2, 'd2, 'e2, 'f2)<br/>       <a href="CamlinternalFormatBasics.html#TYPEfmtty_rel">CamlinternalFormatBasics.fmtty_rel</a> -&gt;<br/>       ('a2, 'b2, 'c2, 'd2, 'e2, 'f2, 'a1, 'b1, 'c1, 'd1, 'e1, 'f1)<br/>       <a href="CamlinternalFormatBasics.html#TYPEfmtty_rel">CamlinternalFormatBasics.fmtty_rel</a></code></pre>
+<pre><span id="VALtrans"><span class="keyword">val</span> trans</span> : <code class="type">('a1, 'b1, 'c1, 'd1, 'e1, 'f1, 'a2, 'b2, 'c2, 'd2, 'e2, 'f2)<br/>       <a href="CamlinternalFormatBasics.html#TYPEfmtty_rel">CamlinternalFormatBasics.fmtty_rel</a> -&gt;<br/>       ('a2, 'b2, 'c2, 'd2, 'e2, 'f2, 'a3, 'b3, 'c3, 'd3, 'e3, 'f3)<br/>       <a href="CamlinternalFormatBasics.html#TYPEfmtty_rel">CamlinternalFormatBasics.fmtty_rel</a> -&gt;<br/>       ('a1, 'b1, 'c1, 'd1, 'e1, 'f1, 'a3, 'b3, 'c3, 'd3, 'e3, 'f3)<br/>       <a href="CamlinternalFormatBasics.html#TYPEfmtty_rel">CamlinternalFormatBasics.fmtty_rel</a></code></pre>
+<pre><span id="VALrecast"><span class="keyword">val</span> recast</span> : <code class="type">('a1, 'b1, 'c1, 'd1, 'e1, 'f1) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a> -&gt;<br/>       ('a1, 'b1, 'c1, 'd1, 'e1, 'f1, 'a2, 'b2, 'c2, 'd2, 'e2, 'f2)<br/>       <a href="CamlinternalFormatBasics.html#TYPEfmtty_rel">CamlinternalFormatBasics.fmtty_rel</a> -&gt;<br/>       ('a2, 'b2, 'c2, 'd2, 'e2, 'f2) <a href="CamlinternalFormatBasics.html#TYPEfmt">CamlinternalFormatBasics.fmt</a></code></pre><div class="copyright">The present documentation is copyright Institut National de Recherche en Informatique et en Automatique (INRIA). A complete version can be obtained from <a href="http://caml.inria.fr/pub/docs/manual-ocaml/">this page</a>.</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer id="footer" class="navbar navbar-inverse">
+      <div class="navbar-inner">
+	
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../learn/">Learn</a></h1>
+    <ul>
+      <li><a href="../../learn/taste.html">Code Examples</a></li>
+      <li><a href="../../learn/tutorials/">Tutorials</a></li>
+      <li><a href="../../learn/books.html">Books</a></li>
+      <li><a href="../../learn/success.html">Success Stories</a></li>
+      <li><a href="."></a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../docs/">Documentation</a></h1>
+    <ul>
+      <li><a href="../../docs/install.html">Install</a></li>
+      <li><a href="http://caml.inria.fr/pub/docs/manual-ocaml/">Manual</a></li>
+      <li><a href="https://opam.ocaml.org/packages/">Packages</a></li>
+      <li><a href="../../releases/index.html">Compiler Releases</a></li>
+      <li><a href="../../docs/logos.html">Logos</a></li>
+    </ul>
+  </div>
+</div>
+<div class="column">
+  <div class="entry">
+    <h1><a href="../../community/">Community</a></h1>
+    <ul>
+      <li><a href="../../community/mailing_lists.html">Mailing Lists</a></li>
+      <li><a href="../../meetings/">Meetings</a></li>
+      <li><a href="../../community/planet/">News</a></li>
+      <li><a href="../../community/support.html">Support</a></li>
+      <li><a href="http://caml.inria.fr/mantis/my_view_page.php" target="_blank">Bug Tracker</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column">
+  <div class="entry">
+    <h1>Website</h1>
+    <ul>
+      <li><a href="https://github.com/ocaml/ocaml.org/tree/master/site/api/4.06/CamlinternalFormat.md" target="_blank">Edit this page</a></li>
+      <li><a href="https://github.com/ocaml/ocaml.org/issues" target="_blank">Website Issues</a></li>
+      <li><a href="../../about.html">About This Site</a></li>
+    <li><a href="https://github.com/ocaml/ocaml.org/" target="_blank">Find Us on GitHub</a></li>
+      <li><a href="../../contributors.html">Credits</a></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </footer>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+     
+
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="index.html" rel="Start"/>
+<link href="Printexc.html" rel="previous"/>
+<link href="Profile.html" rel="next"/>
+<link href="index.html" rel="Up"/>
+<link href="index_types.html" title="Index of types" rel="Appendix"/>
+<link href="index_exceptions.html" title="Index of exceptions" rel="Appendix"/>
+<link href="index_values.html" title="Index of values" rel="Appendix"/>
+<link href="index_modules.html" title="Index of modules" rel="Appendix"/>
+<link href="index_module_types.html" title="Index of module types" rel="Appendix"/>
+<link href="Arg.html" title="Arg" rel="Chapter"/>
+<link href="Arg_helper.html" title="Arg_helper" rel="Chapter"/>
+<link href="Array.html" title="Array" rel="Chapter"/>
+<link href="ArrayLabels.html" title="ArrayLabels" rel="Chapter"/>
+<link href="Ast_helper.html" title="Ast_helper" rel="Chapter"/>
+<link href="Ast_invariants.html" title="Ast_invariants" rel="Chapter"/>
+<link href="Ast_iterator.html" title="Ast_iterator" rel="Chapter"/>
+<link href="Ast_mapper.html" title="Ast_mapper" rel="Chapter"/>
+<link href="Asttypes.html" title="Asttypes" rel="Chapter"/>
+<link href="Attr_helper.html" title="Attr_helper" rel="Chapter"/>
+<link href="Bigarray.html" title="Bigarray" rel="Chapter"/>
+<link href="Buffer.html" title="Buffer" rel="Chapter"/>
+<link href="Build_path_prefix_map.html" title="Build_path_prefix_map" rel="Chapter"/>
+<link href="Builtin_attributes.html" title="Builtin_attributes" rel="Chapter"/>
+<link href="Bytes.html" title="Bytes" rel="Chapter"/>
+<link href="BytesLabels.html" title="BytesLabels" rel="Chapter"/>
+<link href="Callback.html" title="Callback" rel="Chapter"/>
+<link href="CamlinternalFormat.html" title="CamlinternalFormat" rel="Chapter"/>
+<link href="CamlinternalFormatBasics.html" title="CamlinternalFormatBasics" rel="Chapter"/>
+<link href="CamlinternalLazy.html" title="CamlinternalLazy" rel="Chapter"/>
+<link href="CamlinternalMod.html" title="CamlinternalMod" rel="Chapter"/>
+<link href="CamlinternalOO.html" title="CamlinternalOO" rel="Chapter"/>
+<link href="Ccomp.html" title="Ccomp" rel="Chapter"/>
+<link href="Char.html" title="Char" rel="Chapter"/>
+<link href="Clflags.html" title="Clflags" rel="Chapter"/>
+<link href="Complex.html" title="Complex" rel="Chapter"/>
+<link href="Condition.html" title="Condition" rel="Chapter"/>
+<link href="Config.html" title="Config" rel="Chapter"/>
+<link href="Consistbl.html" title="Consistbl" rel="Chapter"/>
+<link href="Depend.html" title="Depend" rel="Chapter"/>
+<link href="Digest.html" title="Digest" rel="Chapter"/>
+<link href="Docstrings.html" title="Docstrings" rel="Chapter"/>
+<link href="Dynlink.html" title="Dynlink" rel="Chapter"/>
+<link href="Ephemeron.html" title="Ephemeron" rel="Chapter"/>
+<link href="Event.html" title="Event" rel="Chapter"/>
+<link href="Filename.html" title="Filename" rel="Chapter"/>
+<link href="Float.html" title="Float" rel="Chapter"/>
+<link href="Format.html" title="Format" rel="Chapter"/>
+<link href="Gc.html" title="Gc" rel="Chapter"/>
+<link href="Genlex.html" title="Genlex" rel="Chapter"/>
+<link href="Graphics.html" title="Graphics" rel="Chapter"/>
+<link href="GraphicsX11.html" title="GraphicsX11" rel="Chapter"/>
+<link href="Hashtbl.html" title="Hashtbl" rel="Chapter"/>
+<link href="Identifiable.html" title="Identifiable" rel="Chapter"/>
+<link href="Int32.html" title="Int32" rel="Chapter"/>
+<link href="Int64.html" title="Int64" rel="Chapter"/>
+<link href="Lazy.html" title="Lazy" rel="Chapter"/>
+<link href="Lexer.html" title="Lexer" rel="Chapter"/>
+<link href="Lexing.html" title="Lexing" rel="Chapter"/>
+<link href="List.html" title="List" rel="Chapter"/>
+<link href="ListLabels.html" title="ListLabels" rel="Chapter"/>
+<link href="Location.html" title="Location" rel="Chapter"/>
+<link href="Longident.html" title="Longident" rel="Chapter"/>
+<link href="Map.html" title="Map" rel="Chapter"/>
+<link href="Marshal.html" title="Marshal" rel="Chapter"/>
+<link href="Misc.html" title="Misc" rel="Chapter"/>
+<link href="MoreLabels.html" title="MoreLabels" rel="Chapter"/>
+<link href="Mutex.html" title="Mutex" rel="Chapter"/>
+<link href="Nativeint.html" title="Nativeint" rel="Chapter"/>
+<link href="Numbers.html" title="Numbers" rel="Chapter"/>
+<link href="Obj.html" title="Obj" rel="Chapter"/>
+<link href="Oo.html" title="Oo" rel="Chapter"/>
+<link href="Parse.html" title="Parse" rel="Chapter"/>
+<link href="Parser.html" title="Parser" rel="Chapter"/>
+<link href="Parsetree.html" title="Parsetree" rel="Chapter"/>
+<link href="Parsing.html" title="Parsing" rel="Chapter"/>
+<link href="Pervasives.html" title="Pervasives" rel="Chapter"/>
+<link href="Pparse.html" title="Pparse" rel="Chapter"/>
+<link href="Pprintast.html" title="Pprintast" rel="Chapter"/>
+<link href="Printast.html" title="Printast" rel="Chapter"/>
+<link href="Printexc.html" title="Printexc" rel="Chapter"/>
+<link href="Printf.html" title="Printf" rel="Chapter"/>
+<link href="Profile.html" title="Profile" rel="Chapter"/>
+<link href="Queue.html" title="Queue" rel="Chapter"/>
+<link href="Random.html" title="Random" rel="Chapter"/>
+<link href="Scanf.html" title="Scanf" rel="Chapter"/>
+<link href="Seq.html" title="Seq" rel="Chapter"/>
+<link href="Set.html" title="Set" rel="Chapter"/>
+<link href="Simplif.html" title="Simplif" rel="Chapter"/>
+<link href="Sort.html" title="Sort" rel="Chapter"/>
+<link href="Spacetime.html" title="Spacetime" rel="Chapter"/>
+<link href="Stack.html" title="Stack" rel="Chapter"/>
+<link href="StdLabels.html" title="StdLabels" rel="Chapter"/>
+<link href="Str.html" title="Str" rel="Chapter"/>
+<link href="Stream.html" title="Stream" rel="Chapter"/>
+<link href="String.html" title="String" rel="Chapter"/>
+<link href="StringLabels.html" title="StringLabels" rel="Chapter"/>
+<link href="Strongly_connected_components.html" title="Strongly_connected_components" rel="Chapter"/>
+<link href="Syntaxerr.html" title="Syntaxerr" rel="Chapter"/>
+<link href="Sys.html" title="Sys" rel="Chapter"/>
+<link href="Targetint.html" title="Targetint" rel="Chapter"/>
+<link href="Tbl.html" title="Tbl" rel="Chapter"/>
+<link href="Terminfo.html" title="Terminfo" rel="Chapter"/>
+<link href="Thread.html" title="Thread" rel="Chapter"/>
+<link href="ThreadUnix.html" title="ThreadUnix" rel="Chapter"/>
+<link href="Typemod.html" title="Typemod" rel="Chapter"/>
+<link href="Uchar.html" title="Uchar" rel="Chapter"/>
+<link href="Unix.html" title="Unix" rel="Chapter"/>
+<link href="UnixLabels.html" title="UnixLabels" rel="Chapter"/>
+<link href="Warnings.html" title="Warnings" rel="Chapter"/>
+<link href="Weak.html" title="Weak" rel="Chapter"/><title>Printf</title>
+</head>
+<body>
+<div class="navbar"><a href="Printexc.html" class="pre" title="Printexc">Previous</a>
+&nbsp;<a href="index.html" class="up" title="Index">Up</a>
+&nbsp;<a href="Profile.html" class="post" title="Profile">Next</a>
+</div>
+<h1>Module <a href="type_Printf.html">Printf</a></h1>
+
+<pre><span id="MODULEPrintf"><span class="keyword">module</span> Printf</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Printf.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Formatted output functions.</p>
+</div>
+</div>
+<hr width="100%"/>
+
+<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="Pervasives.html#TYPEout_channel">out_channel</a> -><br/>       ('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">fprintf&nbsp;outchan&nbsp;format&nbsp;arg1&nbsp;...&nbsp;argN</code> formats the arguments
+   <code class="code">arg1</code> to <code class="code">argN</code> according to the format string <code class="code">format</code>, and
+   outputs the resulting string on the channel <code class="code">outchan</code>.</p>
+
+<p>The format string is a character string which contains two types of
+   objects: plain characters, which are simply copied to the output
+   channel, and conversion specifications, each of which causes
+   conversion and printing of arguments.</p>
+
+<p>Conversion specifications have the following form:</p>
+
+<p><code class="code">%&nbsp;[flags]&nbsp;[width]&nbsp;[.precision]&nbsp;<span class="keyword">type</span></code></p>
+
+<p>In short, a conversion specification consists in the <code class="code">%</code> character,
+   followed by optional modifiers and a type which is made of one or
+   two characters.</p>
+
+<p>The types and their meanings are:</p>
+
+<ul>
+<li><code class="code">d</code>, <code class="code">i</code>: convert an integer argument to signed decimal.</li>
+<li><code class="code">u</code>, <code class="code">n</code>, <code class="code">l</code>, <code class="code"><span class="constructor">L</span></code>, or <code class="code"><span class="constructor">N</span></code>: convert an integer argument to
+     unsigned decimal.  Warning: <code class="code">n</code>, <code class="code">l</code>, <code class="code"><span class="constructor">L</span></code>, and <code class="code"><span class="constructor">N</span></code> are
+     used for <code class="code">scanf</code>, and should not be used for <code class="code">printf</code>.</li>
+<li><code class="code">x</code>: convert an integer argument to unsigned hexadecimal,
+     using lowercase letters.</li>
+<li><code class="code"><span class="constructor">X</span></code>: convert an integer argument to unsigned hexadecimal,
+     using uppercase letters.</li>
+<li><code class="code">o</code>: convert an integer argument to unsigned octal.</li>
+<li><code class="code">s</code>: insert a string argument.</li>
+<li><code class="code"><span class="constructor">S</span></code>: convert a string argument to OCaml syntax (double quotes, escapes).</li>
+<li><code class="code">c</code>: insert a character argument.</li>
+<li><code class="code"><span class="constructor">C</span></code>: convert a character argument to OCaml syntax
+     (single quotes, escapes).</li>
+<li><code class="code">f</code>: convert a floating-point argument to decimal notation,
+     in the style <code class="code">dddd.ddd</code>.</li>
+<li><code class="code"><span class="constructor">F</span></code>: convert a floating-point argument to OCaml syntax (<code class="code">dddd.</code>
+     or <code class="code">dddd.ddd</code> or <code class="code">d.ddd&nbsp;e+-dd</code>).</li>
+<li><code class="code">e</code> or <code class="code"><span class="constructor">E</span></code>: convert a floating-point argument to decimal notation,
+     in the style <code class="code">d.ddd&nbsp;e+-dd</code> (mantissa and exponent).</li>
+<li><code class="code">g</code> or <code class="code"><span class="constructor">G</span></code>: convert a floating-point argument to decimal notation,
+     in style <code class="code">f</code> or <code class="code">e</code>, <code class="code"><span class="constructor">E</span></code> (whichever is more compact). Moreover,
+     any trailing zeros are removed from the fractional part of the result
+     and the decimal-point character is removed if there is no fractional
+     part remaining.</li>
+<li><code class="code">h</code> or <code class="code"><span class="constructor">H</span></code>: convert a floating-point argument to hexadecimal notation,
+     in the style <code class="code">0xh.hhhh&nbsp;e+-dd</code> (hexadecimal mantissa, exponent in
+     decimal and denotes a power of 2).</li>
+<li><code class="code"><span class="constructor">B</span></code>: convert a boolean argument to the string <code class="code"><span class="keyword">true</span></code> or <code class="code"><span class="keyword">false</span></code></li>
+<li><code class="code">b</code>: convert a boolean argument (deprecated; do not use in new
+     programs).</li>
+<li><code class="code">ld</code>, <code class="code">li</code>, <code class="code">lu</code>, <code class="code">lx</code>, <code class="code">lX</code>, <code class="code">lo</code>: convert an <code class="code">int32</code> argument to
+     the format specified by the second letter (decimal, hexadecimal, etc).</li>
+<li><code class="code">nd</code>, <code class="code">ni</code>, <code class="code">nu</code>, <code class="code">nx</code>, <code class="code">nX</code>, <code class="code">no</code>: convert a <code class="code">nativeint</code> argument to
+     the format specified by the second letter.</li>
+<li><code class="code"><span class="constructor">Ld</span></code>, <code class="code"><span class="constructor">Li</span></code>, <code class="code"><span class="constructor">Lu</span></code>, <code class="code"><span class="constructor">Lx</span></code>, <code class="code"><span class="constructor">LX</span></code>, <code class="code"><span class="constructor">Lo</span></code>: convert an <code class="code">int64</code> argument to
+     the format specified by the second letter.</li>
+<li><code class="code">a</code>: user-defined printer. Take two arguments and apply the
+     first one to <code class="code">outchan</code> (the current output channel) and to the
+     second argument. The first argument must therefore have type
+     <code class="code">out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit</code> and the second <code class="code"><span class="keywordsign">'</span>b</code>.
+     The output produced by the function is inserted in the output of
+     <code class="code">fprintf</code> at the current point.</li>
+<li><code class="code">t</code>: same as <code class="code">%a</code>, but take only one argument (with type
+     <code class="code">out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit</code>) and apply it to <code class="code">outchan</code>.</li>
+<li><code class="code">{&nbsp;fmt&nbsp;%}</code>: convert a format string argument to its type digest.
+     The argument must have the same type as the internal format string
+     <code class="code">fmt</code>.</li>
+<li><code class="code">(&nbsp;fmt&nbsp;%)</code>: format string substitution. Take a format string
+     argument and substitute it to the internal format string <code class="code">fmt</code>
+     to print following arguments. The argument must have the same
+     type as the internal format string <code class="code">fmt</code>.</li>
+<li><code class="code">!</code>: take no argument and flush the output.</li>
+<li><code class="code">%</code>: take no argument and output one <code class="code">%</code> character.</li>
+<li><code class="code">@</code>: take no argument and output one <code class="code">@</code> character.</li>
+<li><code class="code">,</code>: take no argument and output nothing: a no-op delimiter for
+     conversion specifications.</li>
+</ul>
+<p>The optional <code class="code">flags</code> are:</p>
+<ul>
+<li><code class="code">-</code>: left-justify the output (default is right justification).</li>
+<li><code class="code">0</code>: for numerical conversions, pad with zeroes instead of spaces.</li>
+<li><code class="code">+</code>: for signed numerical conversions, prefix number with a <code class="code">+</code>
+     sign if positive.</li>
+<li>space: for signed numerical conversions, prefix number with a
+     space if positive.</li>
+<li><code class="code"><span class="keywordsign">#</span></code>: request an alternate formatting style for the hexadecimal
+     and octal integer types (<code class="code">x</code>, <code class="code"><span class="constructor">X</span></code>, <code class="code">o</code>, <code class="code">lx</code>, <code class="code">lX</code>, <code class="code">lo</code>, <code class="code"><span class="constructor">Lx</span></code>,
+     <code class="code"><span class="constructor">LX</span></code>, <code class="code"><span class="constructor">Lo</span></code>).</li>
+</ul>
+<p>The optional <code class="code">width</code> is an integer indicating the minimal
+   width of the result. For instance, <code class="code">%6d</code> prints an integer,
+   prefixing it with spaces to fill at least 6 characters.</p>
+
+<p>The optional <code class="code">precision</code> is a dot <code class="code">.</code> followed by an integer
+   indicating how many digits follow the decimal point in the <code class="code">%f</code>,
+   <code class="code">%e</code>, and <code class="code">%<span class="constructor">E</span></code> conversions. For instance, <code class="code">%.4f</code> prints a <code class="code">float</code> with
+   4 fractional digits.</p>
+
+<p>The integer in a <code class="code">width</code> or <code class="code">precision</code> can also be specified as
+   <code class="code">*</code>, in which case an extra integer argument is taken to specify
+   the corresponding <code class="code">width</code> or <code class="code">precision</code>. This integer argument
+   precedes immediately the argument to print.
+   For instance, <code class="code">%.*f</code> prints a <code class="code">float</code> with as many fractional
+   digits as the value of the argument given before the float.</p>
+</div>
+</div>
+
+<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Printf.html#VALfprintf"><code class="code"><span class="constructor">Printf</span>.fprintf</code></a>, but output on <code class="code">stdout</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Printf.html#VALfprintf"><code class="code"><span class="constructor">Printf</span>.fprintf</code></a>, but output on <code class="code">stderr</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) <a href="Pervasives.html#TYPEformat">format</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Printf.html#VALfprintf"><code class="code"><span class="constructor">Printf</span>.fprintf</code></a>, but instead of printing on an output channel,
+   return a string containing the result of formatting the arguments.</p>
+</div>
+</div>
+
+<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type"><a href="Buffer.html#TYPEt">Buffer.t</a> -> ('a, <a href="Buffer.html#TYPEt">Buffer.t</a>, unit) <a href="Pervasives.html#TYPEformat">format</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Printf.html#VALfprintf"><code class="code"><span class="constructor">Printf</span>.fprintf</code></a>, but instead of printing on an output channel,
+   append the formatted arguments to the given extensible buffer
+   (see module <a href="Buffer.html"><code class="code"><span class="constructor">Buffer</span></code></a>).</p>
+</div>
+</div>
+
+<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type">'b -> ('a, 'b, 'c, unit) <a href="Pervasives.html#TYPEformat4">format4</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <a href="Printf.html#VALfprintf"><code class="code"><span class="constructor">Printf</span>.fprintf</code></a>, but does not print anything.
+    Useful to ignore some material when conditionally printing.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.10.0</li>
+</ul>
+</div>
+<p>Formatted output functions with continuations.</p>
+
+<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="Pervasives.html#TYPEout_channel">out_channel</a> -> 'd) -><br/>       <a href="Pervasives.html#TYPEout_channel">out_channel</a> -><br/>       ('a, <a href="Pervasives.html#TYPEout_channel">out_channel</a>, unit, 'd) <a href="Pervasives.html#TYPEformat4">format4</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <code class="code">fprintf</code>, but instead of returning immediately,
+   passes the out channel to its first argument at the end of printing.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.09.0</li>
+</ul>
+</div>
+
+<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">('b -> 'd) -> 'b -> ('a, 'b, 'c, 'd) <a href="Pervasives.html#TYPEformat4">format4</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <code class="code">kfprintf</code> above, but does not print anything.
+   Useful to ignore some material when conditionally printing.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 4.01.0</li>
+</ul>
+</div>
+
+<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -> 'd) -> ('a, unit, string, 'd) <a href="Pervasives.html#TYPEformat4">format4</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <code class="code">sprintf</code> above, but instead of returning the string,
+   passes it to the first argument.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.09.0</li>
+</ul>
+</div>
+
+<pre><span id="VALkbprintf"><span class="keyword">val</span> kbprintf</span> : <code class="type">(<a href="Buffer.html#TYPEt">Buffer.t</a> -> 'd) -><br/>       <a href="Buffer.html#TYPEt">Buffer.t</a> -> ('a, <a href="Buffer.html#TYPEt">Buffer.t</a>, unit, 'd) <a href="Pervasives.html#TYPEformat4">format4</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>Same as <code class="code">bprintf</code>, but instead of returning immediately,
+   passes the buffer to its first argument at the end of printing.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 3.10.0</li>
+</ul>
+</div>
+<p>Deprecated</p>
+
+<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -> 'b) -> ('a, unit, string, 'b) <a href="Pervasives.html#TYPEformat4">format4</a> -> 'a</code></pre><div class="info ">
+<div class="info-desc">
+<p>A deprecated synonym for <code class="code">ksprintf</code>.</p>
+</div>
+</div>
+</body></html>
